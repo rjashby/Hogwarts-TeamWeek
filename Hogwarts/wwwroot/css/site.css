@@ -69,3 +69,28 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+
+#slytherin {
+  background-image: url("../img/slythCommon.jpeg");
+}
+
+#gryffindor {
+  background-image: url("../img/gryffCommon.jpeg");
+}
+
+#ravenclaw {
+  background-image: url("../img/ravenCommon.jpeg");
+}
+
+#hufflepuff {
+  background-image: url("../img/huffCommon.jpg");
+}
+
+#great-hall {
+  background-image: url("../img/great_hall.png");
+}
+
+.full-size {
+  width: 100vw;
+  height: 100vh;
+}
