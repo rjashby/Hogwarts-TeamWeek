@@ -21,28 +21,28 @@ namespace Hogwarts.Controllers
           _db = db;
         }
 
-        // public async Task<ActionResult> Index()
-        // {
-        //   var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-        //   var currentUser = await _userManager.FindByIdAsync(userId);
-        //   var usersStudent = _db.Students.Where(entry => entry.User.Id == currentUser.Id).ToList();
-        //   return View(usersStudent);
-        // }
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
-          return View(_db.Students.ToList());
+          var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+          var currentUser = await _userManager.FindByIdAsync(userId);
+          var usersStudent = _db.Students.Where(entry => entry.User.Id == currentUser.Id).ToList();
+          return View(usersStudent);
         }
-
-        // [HttpPost]
-        // public async Task<ActionResult> Create (Student Student)
+        // public ActionResult Index()
         // {
-        //   var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-        //   var currentUser = await _userManager.FindByIdAsync(userId);
-        //   Student.User = currentUser;
-        //   _db.Students.Add(Student);
-        //   _db.SaveChanges();
-        //   return RedirectToAction("Index");
+        //   return View(_db.Students.ToList());
         // }
+
+        [HttpPost]
+        public async Task<ActionResult> Create (Student Student)
+        {
+          var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+          var currentUser = await _userManager.FindByIdAsync(userId);
+          Student.User = currentUser;
+          _db.Students.Add(Student);
+          _db.SaveChanges();
+          return RedirectToAction("Index");
+        }
 
         public ActionResult Create()
         {
