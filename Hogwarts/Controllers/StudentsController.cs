@@ -13,11 +13,11 @@ namespace Hogwarts.Controllers
     public class StudentsController : Controller
     {
         private readonly HogwartsContext _db;
-        //private readonly UserManager<ApplicationUser> _userManager;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public StudentsController(/*UserManager<ApplicationUser> userManager,*/ HogwartsContext db)
+        public StudentsController(UserManager<ApplicationUser> userManager, HogwartsContext db)
         {
-          //_userManager = userManager;
+          _userManager = userManager;
           _db = db;
         }
 

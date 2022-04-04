@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Hogwarts.Models
 {
-  public class HogwartsContext //: IdentityDbContext<ApplicationUser>
+  public class HogwartsContext : IdentityDbContext<ApplicationUser>
   {
     public DbSet<Course> Courses {get; set;}
     public DbSet<Student> Students {get; set;}

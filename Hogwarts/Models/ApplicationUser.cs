@@ -1,9 +1,9 @@
-// using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity;
 
-// namespace Hogwarts.Models
-// {
-//     public class ApplicationUser : IdentityUser
-//     {
+namespace Hogwarts.Models
+{
+    public class ApplicationUser : IdentityUser
+    {
         
-//     }
-// }
+    }
+}

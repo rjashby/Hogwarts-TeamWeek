@@ -15,11 +15,11 @@ namespace Hogwarts.Controllers
   public class CoursesController : Controller
   {
     private readonly HogwartsContext _db;
-    //private readonly UserManager<ApplicationUser> _userManager;
+    private readonly UserManager<ApplicationUser> _userManager;
 
-    public CoursesController(/*UserManager<ApplicationUser> userManager,*/ HogwartsContext db)
+    public CoursesController(UserManager<ApplicationUser> userManager, HogwartsContext db)
     {
-      //_userManager = userManager;
+      _userManager = userManager;
       _db = db;
     }
 
@@ -45,7 +45,7 @@ namespace Hogwarts.Controllers
     public ActionResult Details(int id)
     {
       var thisCourse = _db.Courses
-        .Include(course => course.JoinEntities)
+        .Include(course => course.JoinEntitiesCS)
         .ThenInclude(join => join.Student)
         .FirstOrDefault(course => course.CourseId == id);
       return View(thisCourse);
