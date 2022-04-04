@@ -1,0 +1,26 @@
+@{
+  Layout = "_Layout";
+}
+
+@using Hogwarts.Models;
+@model IEnumerable<Hogwarts.Models.Course>
+
+<h1>Courses</h1>
+
+@if (Model.Any())
+{
+  <ul>
+    @foreach (Course course in Model)
+    {
+      <li>@Html.ActionLink($"{course.CourseName}", "Details", new { id = course.CourseId })</li>
+    }
+  </ul>
+} 
+else
+{
+  <h3>No Courses have been added yet!</h3>
+}
+
+<p>@Html.ActionLink("Add new course", "Create")</p>
+
+<p>@Html.ActionLink("Home", "Index", "Home")</p>

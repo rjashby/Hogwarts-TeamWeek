@@ -1,0 +1,25 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Hogwarts.Models.Teacher
+
+<h2>Teacher Details</h2>
+<h4>First Name: @Html.DisplayFor(model => model.FirstName)</h4>
+<h4>Last Name: @Html.DisplayFor(model => model.LastName)</h4>
+<h4>House: @Html.DisplayFor(model => model.House)</h4>
+
+@if(@Model.JoinEntitiesCT.Count == 0)
+{
+  <p>This teacher is not assigned to any classes.</p>
+}
+else
+{
+  <h4>Teaching the following courses:</h4>
+  <ul>
+  @foreach(var item in Model.JoinEntitiesCT)
+  {
+    <li>@Html.ActionLink($"{item.Course.CourseName}", "Details", "Courses", new { id = item.Course.CourseId })</li>
+  }
+  </ul> 
+}

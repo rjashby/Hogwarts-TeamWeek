@@ -5,6 +5,9 @@
 <div class="text-center">
     <h1 class="display-4">Welcome to Hogwarts!</h1>
     <p>Learn more about <a href="https://harrypotter.fandom.com/wiki/Hogwarts:_A_History">the legendary school</a>.</p>
+    <p>@Html.ActionLink("See all Teachers", "Index", "Teachers")</p> 
+    <p>@Html.ActionLink("See all Students", "Index", "Students")</p>
+    <p>@Html.ActionLink("Create an account", "Index", "Account")</p>
 </div>
 
 @if (User.Identity.IsAuthenticated && @Model.House != "")
