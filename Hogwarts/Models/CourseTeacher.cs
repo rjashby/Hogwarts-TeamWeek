@@ -1,8 +1,8 @@
 namespace Hogwarts.Models
 {
-  public class TeacherCourse
+  public class CourseTeacher
   {
-    public int TeacherCourseId {get;set;}
+    public int CourseTeacherId {get;set;}
     public int TeacherId {get;set;}
     public int CourseId {get;set;}
     

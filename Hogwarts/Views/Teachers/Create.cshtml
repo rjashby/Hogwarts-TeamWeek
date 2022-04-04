@@ -1,0 +1,29 @@
+@{
+  Layout = "_Layout";
+}
+@using Hogwarts.Models
+@model Hogwarts.Models.Teacher
+
+<div class="container p-5 border rounded-3">
+@using (Html.BeginForm("Create", "Teachers"))
+{
+  <div class="row text-white">
+    <div class="col-7">
+      <label for="Name" class="mt-3">What is the professor's first name?</label>
+      @Html.TextBoxFor(model => model.FirstName, new {@class="form-control shadow-sm", required="required"})
+      
+      <label for="Name" class="mt-3">What is the professor's last name?</label>
+      @Html.TextBoxFor(model => model.LastName, new {@class="form-control shadow-sm", required="required"})
+      
+      <label for="Last Name" class="mt-3">If the teacher oversees a house, what is it?</label>
+      @Html.TextBoxFor(model => model.House, new {@class="form-control shadow-sm"})
+      
+      <label for="HeadshotPhotoURL" class="mt-3">Please add a link to the headshot photo URL</label>
+      @Html.TextBoxFor(model => model.HeadshotPhotoURL, new {@class="form-control shadow-sm", required="required"})
+    </div>
+    <div class="col-5">
+    </div>
+  </div>
+  <button type="submit" class="btn btn-light mt-3">Add Teacher</button>
+}
+</div>

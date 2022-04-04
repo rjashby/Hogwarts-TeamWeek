@@ -10,8 +10,11 @@ namespace Hogwarts.Models
       this.JoinEntitiesCT = new HashSet<CourseTeacher>();
     }
     public int TeacherId {get;set;}
-    public string Name {get;set;}
+    public string FirstName {get; set;}
+    public string LastName {get; set;}
+    public string House {get; set;}
     public string HeadshotPhotoURL {get;set;}
+    // public virtual ApplicationUser User {get; set;}
     public virtual ICollection<CourseTeacher> JoinEntitiesCT { get; }
   }
 }

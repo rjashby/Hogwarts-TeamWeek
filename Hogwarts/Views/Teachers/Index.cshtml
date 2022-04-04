@@ -1,4 +1,29 @@
 @{
   Layout = "_Layout";
 }
+@using Hogwarts.Models
+@* @model Hogwarts.Models.Teacher *@
 
+<div class="container bg-dark p-5 border rounded-3 text-center">
+<h1 class="display-1">Hogwarts Teachers</h1>
+  @foreach (Teacher teacher in @Model)
+  {
+    <div class="card my-5 p-5 bg-dark bg-gradient border rounded shadow-sm">
+    
+      <div class="card bg-dark text-white">
+        <img src="../@teacher.HeadshotPhotoURL" class="card-img" alt="photo of @teacher.FirstName @teacher.LastName">
+        <div class="card-img-overlay text-center">
+          <h1 class="card-title">@teacher.FirstName @teacher.LastName</h1>
+          @if (@teacher.House != null)
+          {
+            <h3>Head of @teacher.House</h3>
+          }
+          @foreach (var join in @teacher.JoinEntitiesCT)
+          {
+            @join.Course.CourseName
+          }
+        </div>
+      </div>
+    </div>
+  }
+</div>
