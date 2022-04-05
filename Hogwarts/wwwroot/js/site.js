@@ -1,6 +1,11 @@
 ﻿$("#closed-letter").on("click", function () {
-  $("#closed-letter").addClass("hide");
-  $("#acceptance-letter").removeClass("hide");
+  $("#closed-letter").hide();
+  $("#gif-letter").removeClass("hide");
+  setTimeout(function () {
+    $("#gif-letter").addClass("hide");
+    $("#acceptance-letter").removeClass("hide");
+  }, 3000);
+
 });
 
 $("#open-shopping-list").on("click", function () {
