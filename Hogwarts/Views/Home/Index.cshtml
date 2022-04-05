@@ -5,6 +5,7 @@
 @using Hogwarts.Models
 @model RegisterViewModel
 
+
 @if (User.Identity.IsAuthenticated && @ViewBag.ThisStudent.House != null)
 {
   <div id=@ViewBag.ThisStudent.House class="full-size">

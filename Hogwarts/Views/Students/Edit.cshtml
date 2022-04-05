@@ -1,0 +1,36 @@
+@{
+  Layout = "_Layout";
+}
+@using Hogwarts.Models
+@model Hogwarts.Models.Student
+
+<div class="container p-5 border rounded-3">
+@using (Html.BeginForm("Edit", "Students"))
+{
+  <div class="row text-white">
+    <div class="col-7">
+      <label for="Title" class="mt-3">What is the Title?</label>
+      @Html.TextBoxFor(model => model.Title, new {@class="form-control shadow-sm", required="required"})
+      
+      <label for="FirstName" class="mt-3">What is the Student's first name?</label>
+      @Html.TextBoxFor(model => model.FirstName, new {@class="form-control shadow-sm", required="required"})
+
+      <label for="LastName" class="mt-3">What is the Student's last name?</label>
+      @Html.TextBoxFor(model => model.LastName, new {@class="form-control shadow-sm", required="required"})
+
+      <label for="House" class="mt-3">What house does the student belong to?</label>
+      @Html.TextBoxFor(model => model.House, new {@class="form-control shadow-sm", required="required"})
+
+      <label for="Wand" class="mt-3">What is the students wand made of?</label>
+      @Html.TextBoxFor(model => model.Wand, new {@class="form-control shadow-sm", required="required"})
+
+      <label for="Year" class="mt-3">What year is the student in?</label>
+      @Html.TextBoxFor(model => model.Year, new {@class="form-control shadow-sm", required="required", @type="number"})
+
+      @Html.HiddenFor(model => model.StudentId)
+    </div>
+    <div class="col-5">
+    </div>
+  </div>
+  <button type="submit" value="Save" class="btn btn-light mt-3">Edit Student</button>
+}

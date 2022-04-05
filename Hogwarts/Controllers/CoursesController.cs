@@ -37,8 +37,11 @@ namespace Hogwarts.Controllers
     [HttpPost]
     public ActionResult Create(Course course)
     {
-      _db.Courses.Add(course);
-      _db.SaveChanges();
+      if (_db.Courses.Where(c => c.CourseName != course.CourseName).Any() == true) 
+      {
+        _db.Courses.Add(course);
+        _db.SaveChanges();
+      }  
       return RedirectToAction("Index");
     }
 
@@ -79,20 +82,34 @@ namespace Hogwarts.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
-
-        public ActionResult AddStudent(int id)
+    public ActionResult AddStudent(int id)
     {
       var thisCourse = _db.Courses.FirstOrDefault(course => course.CourseId == id);
-      ViewBag.DepartmentId = new SelectList(_db.Students, "StudentId", "StudentName");
+      var thisCourseStudent = _db.CourseStudent.Where(thisStudent => thisStudent.CourseId == id);
+      
+      List<Student> students = _db.Students.ToList();
+      List<Student> students2 = _db.Students.ToList();
+
+      foreach (CourseStudent courseStudent in thisCourseStudent)
+      {
+        foreach(Student student in students)
+        {
+          if (student.StudentId == courseStudent.StudentId)
+          {
+            students2.Remove(student);
+          }
+        }
+      } 
+      ViewBag.StudentId = new SelectList(students2, "StudentId", "FirstName");
       return View(thisCourse);
-    }
+    } 
 
     [HttpPost]
-    public ActionResult AddStudent(Course course, int StudentId)
+    public ActionResult AddStudent(Course course, int studentId)
     {
-      if (StudentId != 0)
+      if (studentId != 0)
       {
-        _db.CourseStudent.Add(new CourseStudent() { StudentId = StudentId, CourseId = course.CourseId });
+        _db.CourseStudent.Add(new CourseStudent() { StudentId = studentId, CourseId = course.CourseId });
         _db.SaveChanges();
       }
       return RedirectToAction("Index");

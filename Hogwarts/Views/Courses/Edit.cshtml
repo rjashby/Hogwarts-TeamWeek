@@ -1,0 +1,22 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Hogwarts.Models.Course
+
+<h4 class="center margin">Edit this Course: @Html.DisplayFor(model => model.CourseName)</h4>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.CourseId)
+
+    @Html.LabelFor(model => model.CourseName)
+    @Html.EditorFor(model => model.CourseName)
+
+    @Html.LabelFor(model => model.CourseNum)
+    @Html.EditorFor(model => model.CourseNum)
+
+    <input type="submit" value="Save" />
+}
+
+<p class="btn btn-primary">@Html.ActionLink("Back to Course", "Index")</p>

@@ -1,0 +1,27 @@
+@{
+  Layout = "_Layout";
+}
+@using Hogwarts.Models
+@model Hogwarts.Models.Course
+
+<h2>Course Details</h2>
+<h4>Course Name: @Html.DisplayFor(model => model.CourseName)</h4>
+<h4>Course Number: @Html.DisplayFor(model => model.CourseNum)</h4>
+
+@if(@Model.JoinEntitiesCS.Count == 0)
+{
+  <p>There are no students enrolled for this class.</p>
+}
+else
+{
+  <h4>Students enrolled in this class:</h4>
+  <ul>
+  @foreach(var join in Model.JoinEntitiesCS)
+  {
+    <li>@Html.ActionLink($"{join.Student.FirstName}", "Details", "Students", new { id = join.Student.StudentId })</li>
+  }
+  </ul> 
+}
+<p class="btn btn-primary">@Html.ActionLink("Add a Student", "AddStudent", new {id = Model.CourseId})</p>
+<p class="btn btn-primary">@Html.ActionLink("Edit Course Profile", "Edit", new { id = Model.CourseId })</p>
+<p class="btn btn-primary">@Html.ActionLink("Remove Course", "Delete", new { id = Model.CourseId })</p>

@@ -22,37 +22,33 @@ namespace Hogwarts.Controllers
       _db = db;
     }
 
-    // public async Task<ActionResult> Index()
-    // {
-    //   var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-    //   var currentUser = await _userManager.FindByIdAsync(userId);
-    //   var usersStudent = _db.Students.Where(entry => entry.User.Id == currentUser.Id).ToList();
-    //   return View(usersStudent);
-    // }
-    public ActionResult Index()
+    public async Task<ActionResult> Index()
     {
-      return View(_db.Students.ToList());
+      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+      var currentUser = await _userManager.FindByIdAsync(userId);
+      var usersStudent = _db.Students.Where(entry => entry.User.Id == currentUser.Id).ToList();
+      return View(usersStudent);
     }
-
-    // [HttpPost]
-    // public async Task<ActionResult> Create()
+    // public ActionResult Index()
     // {
-    //   var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-    //   var currentUser = await _userManager.FindByIdAsync(userId);
-    //   student.User = currentUser;
-    //   _db.Students.Add(student);
-    //   _db.SaveChanges();
-    //   return RedirectToAction("Index", "Home");
-    // }
-
-    //https://localhost:5001/Student/Create?student=Hogwarts.Models.Student
-
-    // public ActionResult Create()
-    // {
-    //   return View();
+    //   return View(_db.Students.ToList());
     // }
 
     [HttpPost]
+    public async Task<ActionResult> Create(Student Student)
+    {
+      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+      var currentUser = await _userManager.FindByIdAsync(userId);
+      Student.User = currentUser;
+      _db.Students.Add(Student);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
+
+    public ActionResult Create()
+    {
+      return View();
+    }
     public ActionResult Details(int id)
     {
       var thisStudent = _db.Students
@@ -76,10 +72,16 @@ namespace Hogwarts.Controllers
       return RedirectToAction("Index");
     }
 
-    [HttpPost]
-    public ActionResult Delete(int StudentId)
+    public ActionResult Delete(int id)
     {
-      var thisStudent = _db.Students.FirstOrDefault(b => b.StudentId == StudentId);
+      var thisStudent = _db.Students.FirstOrDefault(student => student.StudentId == id);
+      return View(thisStudent);
+    }
+
+    [HttpPost, ActionName("Delete")]
+    public ActionResult DeleteConfirmed(int id)
+    {
+      var thisStudent = _db.Students.FirstOrDefault(b => b.StudentId == id);
       _db.Students.Remove(thisStudent);
       _db.SaveChanges();
       return RedirectToAction("Index");
