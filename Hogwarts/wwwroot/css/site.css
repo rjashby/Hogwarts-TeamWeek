@@ -379,3 +379,10 @@ button {
 .bg-corkboard {
   background-image: url("../img/bg-corkboard.jpg");
 }
+
+#ollivanders {
+  background-image: url("../img/ollivanders.jpg");
+  background-size: 100vw;
+  background-position: center;
+  background-repeat: no-repeat;
+}
