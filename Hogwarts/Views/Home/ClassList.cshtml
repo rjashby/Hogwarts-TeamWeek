@@ -1,0 +1,237 @@
+@if (@ViewBag.ThisStudent.Year == 1)
+{
+  <ul class="list-group list-group-flush bg-transparent">
+    <li class="list-group-item text-center  bg-transparent">
+      <h2>Monday</h2>
+    </li>
+    <li class="list-group-item  bg-transparent fs-5 fw-bolder"><span class="time">9:15</span> Transfiguration</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">11:45</span> History of Magic</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">14:15</span> Potions</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder "><span class="time">16:45</span> Charms</li>
+  </ul>
+  <hr>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item text-center">
+      <h2>Tuesday</h2>
+    </li>
+    <li class="list-group-item"><span class="time">9:15</span> Transfiguration</li>
+    <li class="list-group-item"><span class="time">11:45</span> History of Magic</li>
+    <li class="list-group-item"><span class="time">14:15</span> Potions</li>
+    <li class="list-group-item"><span class="time">16:45</span> Charms</li>
+  </ul>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item text-center">
+      <h2>Wednesday</h2>
+    </li>
+    <li class="list-group-item"><span class="time">9:15</span> Transfiguration</li>
+    <li class="list-group-item"><span class="time">11:45</span> History of Magic</li>
+    <li class="list-group-item"><span class="time">14:15</span> Potions</li>
+    <li class="list-group-item"><span class="time">16:45</span> Charms</li>
+  </ul>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item text-center">
+      <h2>Thursday</h2>
+    </li>
+    <li class="list-group-item"><span class="time">9:15</span> Transfiguration</li>
+    <li class="list-group-item"><span class="time">11:45</span> History of Magic</li>
+    <li class="list-group-item"><span class="time">14:15</span> Potions</li>
+    <li class="list-group-item"><span class="time">16:45</span> Charms</li>
+  </ul>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item text-center">
+      <h2>Friday</h2>
+    </li>
+    <li class="list-group-item"><span class="time">9:15</span> Transfiguration</li>
+    <li class="list-group-item"><span class="time">11:45</span> History of Magic</li>
+    <li class="list-group-item"><span class="time">14:15</span> Potions</li>
+    <li class="list-group-item"><span class="time">16:45</span> Charms</li>
+  </ul>
+
+}
+else if (@ViewBag.ThisStudent.Year == 2)
+{
+  <ul>
+    <li class="year">Second Year</li>
+    <li class="weekday">Monday</li>
+    <li><span class="time">14:15</span> Transfiguration</li>
+    <li><span class="time">15:30</span> History of Magic</li>
+    <li><span class="time">16:45</span> Potions</li>
+    <li class="weekday">Tuesday</li>
+    <li><span class="time">9:15</span> DADA</li>
+    <li><span class="time">10:30</span> Charms</li>
+    <li><span class="time">11:45</span> Herbology</li>
+    <li class="weekday">Wednesday</li>
+    <li><span class="time">14:15</span> Transfiguration</li>
+    <li><span class="time">15:30</span> History of Magic</li>
+    <li><span class="time">16:45</span> Potions</li>
+    <li class="weekday">Thursday</li>
+    <li><span class="time">9:15</span> DADA</li>
+    <li><span class="time">10:30</span> Charms</li>
+    <li><span class="time">11:45</span> Herbology</li>
+  </ul>
+}
+else if (@ViewBag.ThisStudent.Year == 3)
+{
+  <ul>
+    <li class="year">Third Year</li>
+    <li class="weekday">Monday</li>
+    <li><span class="time">9:15</span> Divination</li>
+    <li><span class="time">10:30</span> Divination</li>
+    <li><span class="time">16:45</span> Transfiguration</li>
+    <li class="weekday">Tuesday</li>
+    <li><span class="time">9:15</span> History of Magic</li>
+    <li><span class="time">10:30</span> Potions</li>
+    <li><span class="time">11:45</span> DADA</li>
+    <li><span class="time">14:15</span> Charms</li>
+    <li><span class="time">15:30</span> Herbology</li>
+    <li><span class="time">16:45</span> Herbology</li>
+    <li class="weekday">Wednesday</li>
+    <li><span class="time">9:15</span> Arithmancy</li>
+    <li><span class="time">10:30</span> Arithmancy</li>
+    <li><span class="time">16:45</span> Transfiguration</li>
+    <li class="weekday">Thursday</li>
+    <li><span class="time">9:15</span> History of Magic</li>
+    <li><span class="time">10:30</span> Potions</li>
+    <li><span class="time">11:45</span> DADA</li>
+    <li><span class="time">14:15</span> Charms</li>
+    <li><span class="time">15:30</span> Care Of Magical Creatures</li>
+    <li><span class="time">16:45</span> Care Of Magical Creatures</li>
+    <li class="weekday">Friday</li>
+    <li><span class="time">9:15</span> Muggle Studies</li>
+    <li><span class="time">10:30</span> Muggle Studies</li>
+    <li><span class="time">14:15</span> Ancient Runes</li>
+    <li><span class="time">15:30</span> Ancient Runes</li>
+  </ul>
+}
+else if (@ViewBag.ThisStudent.Year == 4)
+{
+  <ul>
+    <li class="year">Fourth Year</li>
+    <li class="weekday">Monday</li>
+    <li><span class="time">9:15</span> Muggle Studies</li>
+    <li><span class="time">10:30</span> Muggle Studies</li>
+    <li><span class="time">11:45</span> Ancient Runes</li>
+    <li><span class="time">14:15</span> Divination</li>
+    <li class="weekday">Tuesday</li>
+    <li><span class="time">10:30</span> Transfiguration</li>
+    <li><span class="time">11:45</span> History of Magic</li>
+    <li><span class="time">14:15</span> Potions</li>
+    <li><span class="time">15:30</span> DADA</li>
+    <li><span class="time">16:45</span> DADA</li>
+    <li class="weekday">Wednesday</li>
+    <li><span class="time">9:15</span> Charms</li>
+    <li><span class="time">10:30</span> Charms</li>
+    <li><span class="time">14:15</span> Divination</li>
+    <li class="weekday">Thursday</li>
+    <li><span class="time">10:30</span> Transfiguration</li>
+    <li><span class="time">11:45</span> History of Magic</li>
+    <li><span class="time">14:15</span> Potions</li>
+    <li><span class="time">15:30</span> Herbology</li>
+    <li><span class="time">16:45</span> Herbology</li>
+    <li class="weekday">Friday</li>
+    <li><span class="time">9:15</span> Arithmancy</li>
+    <li><span class="time">10:30</span> Arithmancy</li>
+    <li><span class="time">11:45</span> Ancient Runes</li>
+    <li><span class="time">14:15</span> Care Of Magical Creatures</li>
+    <li><span class="time">15:30</span> Care Of Magical Creatures</li>
+  </ul>
+}
+else if (@ViewBag.ThisStudent.Year == 5)
+{
+  <ul>
+    <li class="year">Fifth Year</li>
+    <li class="weekday">Monday</li>
+    <li><span class="time">9:15</span> Arithmancy</li>
+    <li><span class="time">10:30</span> Arithmancy</li>
+    <li><span class="time">11:45</span> Care Of Magical Creatures</li>
+    <li><span class="time">14:15</span> Muggle Studies</li>
+    <li><span class="time">15:30</span> Ancient Runes</li>
+    <li><span class="time">16:45</span> Divination</li>
+    <li class="weekday">Tuesday</li>
+    <li><span class="time">14:15</span> Transfiguration</li>
+    <li><span class="time">15:30</span> History of Magic</li>
+    <li><span class="time">16:45</span> History of Magic</li>
+    <li class="weekday">Wednesday</li>
+    <li><span class="time">9:15</span> Potions</li>
+    <li><span class="time">10:30</span> Potions</li>
+    <li><span class="time">14:15</span> Muggle Studies</li>
+    <li><span class="time">15:30</span> Ancient Runes</li>
+    <li><span class="time">16:45</span> Divination</li>
+    <li class="weekday">Thursday</li>
+    <li><span class="time">14:15</span> Transfiguration</li>
+    <li><span class="time">15:30</span> History of Magic</li>
+    <li><span class="time">16:45</span> History of Magic</li>
+    <li class="weekday">Friday</li>
+    <li><span class="time">9:15</span> Charms</li>
+    <li><span class="time">10:30</span> Charms</li>
+    <li><span class="time">11:45</span> Care Of Magical Creatures</li>
+    <li><span class="time">14:15</span> Herbology</li>
+    <li><span class="time">15:30</span> Herbology</li>
+  </ul>
+}
+else if (@ViewBag.ThisStudent.Year == 6)
+{
+  <ul>
+    <li class="year">Sixth Year</li>
+    <li class="weekday">Monday</li>
+    <li><span class="time">9:15</span> Charms</li>
+    <li><span class="time">10:30</span> Charms</li>
+    <li><span class="time">11:45</span> Herbology</li>
+    <li><span class="time">14:15</span> Arithmancy</li>
+    <li><span class="time">15:30</span> Care Of Magical Creatures</li>
+    <li><span class="time">16:45</span> Muggle Studies</li>
+    <li class="weekday">Tuesday</li>
+    <li><span class="time">9:15</span> Ancient Runes</li>
+    <li><span class="time">10:30</span> Divination</li>
+    <li class="weekday">Wednesday</li>
+    <li><span class="time">9:15</span> Transfiguration</li>
+    <li><span class="time">10:30</span> Transfiguration</li>
+    <li><span class="time">14:15</span> Arithmancy</li>
+    <li><span class="time">15:30</span> Care Of Magical Creatures</li>
+    <li><span class="time">16:45</span> Muggle Studies</li>
+    <li class="weekday">Thursday</li>
+    <li><span class="time">9:15</span> Ancient Runes</li>
+    <li><span class="time">10:30</span> Divination</li>
+    <li><span class="time">15:30</span> History of Magic</li>
+    <li><span class="time">16:45</span> History of Magic</li>
+    <li class="weekday">Friday</li>
+    <li><span class="time">9:15</span> Potions</li>
+    <li><span class="time">10:30</span> Potions</li>
+    <li><span class="time">11:45</span> Herbology</li>
+    <li><span class="time">14:15</span> DADA</li>
+    <li><span class="time">15:30</span> DADA</li>
+  </ul>
+}
+else if (@ViewBag.ThisStudent.Year == 7)
+{
+  <ul>
+    <li class="year">Seveth Year</li>
+    <li class="weekday">Monday</li>
+    <li><span class="time">9:15</span> Herbology</li>
+    <li><span class="time">10:30</span> Herbology</li>
+    <li><span class="time">11:45</span> Charms</li>
+    <li><span class="time">14:15</span> Care Of Magical Creatures</li>
+    <li><span class="time">15:30</span> Arithmancy</li>
+    <li><span class="time">16:45</span> Ancient Runes</li>
+    <li class="weekday">Tuesday</li>
+    <li><span class="time">9:15</span> Muggle Studies</li>
+    <li><span class="time">11:45</span> Divination</li>
+    <li class="weekday">Wednesday</li>
+    <li><span class="time">9:15</span> History of Magic</li>
+    <li><span class="time">10:30</span> History of Magic</li>
+    <li><span class="time">14:15</span> Care Of Magical Creatures</li>
+    <li><span class="time">15:30</span> Arithmancy</li>
+    <li><span class="time">16:45</span> Ancient Runes</li>
+    <li class="weekday">Thursday</li>
+    <li><span class="time">9:15</span> Muggle Studies</li>
+    <li><span class="time">11:45</span> Divination</li>
+    <li><span class="time">15:30</span> Transfiguration</li>
+    <li><span class="time">16:45</span> Transfiguration</li>
+    <li class="weekday">Friday</li>
+    <li><span class="time">9:15</span> DADA</li>
+    <li><span class="time">10:30</span> DADA</li>
+    <li><span class="time">11:45</span> Charms</li>
+    <li><span class="time">14:15</span> Potions</li>
+    <li><span class="time">15:30</span> Potions</li>
+  </ul>
+}
