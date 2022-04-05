@@ -50,7 +50,7 @@ namespace Hogwarts.Controllers
 
       Microsoft.AspNetCore.Identity.SignInResult loginResult = await _signInManager.PasswordSignInAsync(model.Email, model.Password, isPersistent: true, lockoutOnFailure: false);
 
-      Student student = new Student { FirstName = model.FirstName, LastName = model.LastName, Title = model.Title, Email = model.Email, Year = model.Year };
+      Student student = new Student { FirstName = model.FirstName, LastName = model.LastName, Title = model.Title, Email = model.Email, Year = model.Year, };
 
       _db.Students.Add(student);
       _db.SaveChanges();

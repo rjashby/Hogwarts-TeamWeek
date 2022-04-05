@@ -84,41 +84,47 @@ else if (User.Identity.IsAuthenticated)
           <img src="~/img/hogwarts_bw.png">
           <h3>Uniform</h3>
           <p>First-year students will require:</p>
-          <p>&emsp;&emsp;Three sets of plain work robes (black)</p>
-          <p>&emsp;&emsp;One plain pointed hat (black) for day wear</p>
-          <p>&emsp;&emsp;One pair of protective gloves (dragon hide or similar)</p>
-          <p>&emsp;&emsp;One winter cloak (black, with silver fastenings)</p>
+          <p><span class="box"></span>Three sets of plain work robes (black)</p>
+          <p><span class="box"></span>One plain pointed hat (black) for day wear</p>
+          <p><span class="box"></span>One pair of protective gloves (dragon hide or similar)</p>
+          <p><span class="box"></span>One winter cloak (black, with silver fastenings)</p>
           <p>Please note that all pupil's clothes should carry name tags.</p>
           <h3>Books</h3>
           <p>All students should have a copy of each of the following:</p>
-          <p>&emsp;&emsp;The Standard Book of Spells (Grade 1) by Miranda Goshawk</p>
-          <p>&emsp;&emsp;A History of Magic by Bathilda Bagshot</p>
-          <p>&emsp;&emsp;Magical Theory by Adalbert Waffling</p>
-          <p>&emsp;&emsp;A Beginner's Guide to Transfiguration by Emeric Switch</p>
-          <p>&emsp;&emsp;One Thousand Magical Herbs and Fungi by Phyllida Spore</p>
-          <p>&emsp;&emsp;Magical Drafts and Potions by Arsenius Jigger</p>
-          <p>&emsp;&emsp;Fantastic Beasts and Where to Find Them by Newt Scamander</p>
-          <p>&emsp;&emsp;The Dark Forces: A Guide to Self-Protection by Quentin Trimble</p>
+          <p><span class="box"></span>The Standard Book of Spells (Grade 1) by Miranda Goshawk</p>
+          <p><span class="box"></span>A History of Magic by Bathilda Bagshot</p>
+          <p><span class="box"></span>Magical Theory by Adalbert Waffling</p>
+          <p><span class="box"></span>A Beginner's Guide to Transfiguration by Emeric Switch</p>
+          <p><span class="box"></span>One Thousand Magical Herbs and Fungi by Phyllida Spore</p>
+          <p><span class="box"></span>Magical Drafts and Potions by Arsenius Jigger</p>
+          <p><span class="box"></span>Fantastic Beasts and Where to Find Them by Newt Scamander</p>
+          <p><span class="box"></span>The Dark Forces: A Guide to Self-Protection by Quentin Trimble</p>
           <h3>Other Equipment</h3>
-          <p>&emsp;&emsp;1 wand</p>
-          <p>&emsp;&emsp;1 cauldron (pewter, standard size 2)</p>
-          <p>&emsp;&emsp;1 set glass or crystal phials</p>
-          <p>&emsp;&emsp;1 telescope</p>
-          <p>&emsp;&emsp;1 set brass scales</p>
+          <p><span class="box"></span>1 wand</p>
+          <p><span class="box"></span>1 cauldron (pewter, standard size 2)</p>
+          <p><span class="box"></span>1 set glass or crystal phials</p>
+          <p><span class="box"></span>1 telescope</p>
+          <p><span class="box"></span>1 set brass scales</p>
           <p class="center">Students may also bring, if they desire, an Owl OR a Cat OR a Toad.<br>PARENTS ARE REMINDED THAT FIRST YEARS ARE NOT ALLOWED THEIR OWN BROOMSTICK</p>
           <p class="letter-footer">HOGWARTS SCHOOL of WITCHCRAFT & WIZARDRY<br>Headmaster: Albus Dumbledore<br>(Order of Merlin, First Class, Grand Sorc., Chf. Warlock, Supreme Mugwump, International Confed. of Wizards)</p>
           <button type="button" id="open-shopping">Purchase</button>
         </div>
+        <div id="shopping" class="full-size hide">
+        
+          @Html.Partial("Shops/DiagonAlley.cshtml")
+        </div>
       </div>
     </div>
   </div>
+
+  
   // pass sorting quiz
   <div id="the-great-hall" class="full-size hide">
     <div id="welcome">
       <div id="welcome-text">
         <h1>Welcome to Hogwarts</h1>
         <p>The start-of-term banquet will begin shortly, but before you take your seats in the Great Hall, you will be sorted into your houses. The Sorting is a very important ceremony because, while you are here, your house will be something like your family within Hogwarts. You will have classes with the rest of your house, sleep in your house dormitory and spend free time in your house common room. </p>
-        <p>&emsp;&emsp;The four houses are called Gryffindor, Hufflepuff, Ravenclaw and Slytherin. Each house has its own noble history and each has produced outstanding witches and wizards. While you are at Hogwarts, your triumphs will earn your house points, while any rule-breaking will lose house points. At the end of the year, the house with the most points is awarded the House Cup, a great honour. I hope each of you will be a credit to whichever house becomes yours. </p>
+        <p>&emsp;&emsp;The four houses are called Gryffindor, Hufflepuff, Ravenclaw and Slytherin. Each house has its own noble history and each has produced outstanding witches and wizards. While you are at Hogwarts, your triumphs will earn you house points, while any rule-breaking will lose house points. At the end of the year, the house with the most points is awarded the House Cup, a great honour. I hope each of you will be a credit to whichever house becomes yours. </p>
 
         <button type="button" id="start-sorting">Let the Sorting now begin</button>
       </div>
@@ -219,7 +225,7 @@ else if (User.Identity.IsAuthenticated)
           </label>
         </div>
         <div class="form-group">
-          <p>If you can make a potion that is going to guarantee you one thing, what is it gonna be?</p>
+          <p>If you could make a potion that is going to guarantee you one thing, what would it be?</p>
           <label>
             <input type="radio" name="6" value="h" checked>
             Love
@@ -276,7 +282,7 @@ else if (User.Identity.IsAuthenticated)
           </label>
         </div>
         <div class="form-group">
-          <p>You're having trouble mastering a new spell, and you've decided to ask for help. Who do you go to?</p>
+          <p>Choose a deathly Hallow:</p>
           <label>
             <input type="radio" name="9" value="s" checked>
             The Elder Wand
@@ -333,7 +339,7 @@ else if (User.Identity.IsAuthenticated)
           </label>
         </div>
         <div class="form-group">
-          <button type="submit">Find Out Your House</button>
+          <button type="submit">Find Your House</button>
         </div>
       </form>
       <div id="sorting-result" class="hide">
@@ -349,7 +355,7 @@ else
   // request to register and/or login
   <div id="lake" class="full-size">
     <div class="video">
-      <video src="..\video\HogwartsNight.mp4" loop muted autoplay></video>
+      <video src="..\video\HogwartsArrival.mp4" loop muted autoplay></video>
     </div>
 
     <button type="button" style="z-index:1;" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registerModal" id="showRegisterButton">
