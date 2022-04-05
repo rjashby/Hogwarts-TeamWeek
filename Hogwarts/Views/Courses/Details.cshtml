@@ -23,3 +23,5 @@ else
   </ul> 
 }
 <p class="btn btn-primary">@Html.ActionLink("Add a Student", "AddStudent", new {id = Model.CourseId})</p>
+<p class="btn btn-primary">@Html.ActionLink("Edit Course Profile", "Edit", new { id = Model.CourseId })</p>
+<p class="btn btn-primary">@Html.ActionLink("Remove Course", "Delete", new { id = Model.CourseId })</p>

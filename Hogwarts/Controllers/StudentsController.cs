@@ -49,7 +49,6 @@ namespace Hogwarts.Controllers
           return View();
         }
 
-        [HttpPost]
         public ActionResult Details(int id)
         {
             var thisStudent = _db.Students
@@ -59,11 +58,11 @@ namespace Hogwarts.Controllers
             return View(thisStudent);
         }
 
-          public ActionResult Edit(int id)
-          {
-            var thisStudent = _db.Students.FirstOrDefault(s => s.StudentId == id);
-            return View(thisStudent);
-          }
+        public ActionResult Edit(int id)
+        {
+          var thisStudent = _db.Students.FirstOrDefault(s => s.StudentId == id);
+          return View(thisStudent);
+        }
 
         [HttpPost]
         public ActionResult Edit(Student student)
@@ -73,10 +72,16 @@ namespace Hogwarts.Controllers
           return RedirectToAction("Index");
         }
 
-        [HttpPost]
-        public ActionResult Delete(int StudentId)
+        public ActionResult Delete(int id)
         {
-          var thisStudent = _db.Students.FirstOrDefault(b => b.StudentId == StudentId);
+          var thisStudent = _db.Students.FirstOrDefault(student => student.StudentId == id);
+          return View(thisStudent);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public ActionResult DeleteConfirmed(int id)
+        {
+          var thisStudent = _db.Students.FirstOrDefault(b => b.StudentId == id);
           _db.Students.Remove(thisStudent);
           _db.SaveChanges();
           return RedirectToAction("Index");
