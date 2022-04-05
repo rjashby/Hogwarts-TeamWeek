@@ -1,5 +1,9 @@
 @if (@ViewBag.ThisStudent.Year == 1)
 {
+  <div class="px-5 text-center min-vh-25">
+    <img src="~/img/script-@(ViewBag.ThisStudent.House).png" class="w-75" alt="Hufflepuff">
+    <img src="~/img/1Years.png" class="w-75" alt="First years">
+  </div>
   <ul class="list-group list-group-flush bg-transparent">
     <li class="list-group-item text-center  bg-transparent">
       <h2>Monday</h2>
@@ -7,231 +11,381 @@
     <li class="list-group-item  bg-transparent fs-5 fw-bolder"><span class="time">9:15</span> Transfiguration</li>
     <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">11:45</span> History of Magic</li>
     <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">14:15</span> Potions</li>
-    <li class="list-group-item bg-transparent fs-5 fw-bolder "><span class="time">16:45</span> Charms</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">16:45</span> Charms</li>
   </ul>
   <hr>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item text-center">
+  <ul class="list-group list-group-flush bg-transparent">
+    <li class="list-group-item text-center bg-transparent">
       <h2>Tuesday</h2>
     </li>
-    <li class="list-group-item"><span class="time">9:15</span> Transfiguration</li>
-    <li class="list-group-item"><span class="time">11:45</span> History of Magic</li>
-    <li class="list-group-item"><span class="time">14:15</span> Potions</li>
-    <li class="list-group-item"><span class="time">16:45</span> Charms</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">9:15</span> Transfiguration</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">11:45</span> History of Magic</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">14:15</span> Potions</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">16:45</span> Charms</li>
   </ul>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item text-center">
+  <ul class="list-group list-group-flush bg-transparent">
+    <li class="list-group-item text-center bg-transparent">
       <h2>Wednesday</h2>
     </li>
-    <li class="list-group-item"><span class="time">9:15</span> Transfiguration</li>
-    <li class="list-group-item"><span class="time">11:45</span> History of Magic</li>
-    <li class="list-group-item"><span class="time">14:15</span> Potions</li>
-    <li class="list-group-item"><span class="time">16:45</span> Charms</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">9:15</span> Transfiguration</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">11:45</span> History of Magic</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">14:15</span> Potions</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">16:45</span> Charms</li>
   </ul>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item text-center">
+  <ul class="list-group list-group-flush bg-transparent">
+    <li class="list-group-item text-center bg-transparent">
       <h2>Thursday</h2>
     </li>
-    <li class="list-group-item"><span class="time">9:15</span> Transfiguration</li>
-    <li class="list-group-item"><span class="time">11:45</span> History of Magic</li>
-    <li class="list-group-item"><span class="time">14:15</span> Potions</li>
-    <li class="list-group-item"><span class="time">16:45</span> Charms</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">9:15</span> Transfiguration</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">11:45</span> History of Magic</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">14:15</span> Potions</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">16:45</span> Charms</li>
   </ul>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item text-center">
+  <ul class="list-group list-group-flush bg-transparent">
+    <li class="list-group-item text-center bg-transparent">
       <h2>Friday</h2>
     </li>
-    <li class="list-group-item"><span class="time">9:15</span> Transfiguration</li>
-    <li class="list-group-item"><span class="time">11:45</span> History of Magic</li>
-    <li class="list-group-item"><span class="time">14:15</span> Potions</li>
-    <li class="list-group-item"><span class="time">16:45</span> Charms</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">9:15</span> Transfiguration</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">11:45</span> History of Magic</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">14:15</span> Potions</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">16:45</span> Charms</li>
   </ul>
 
 }
-else if (@ViewBag.ThisStudent.Year == 2)
+else
+@if (@ViewBag.ThisStudent.Year == 2)
 {
-  <ul>
-    <li class="year">Second Year</li>
-    <li class="weekday">Monday</li>
-    <li><span class="time">14:15</span> Transfiguration</li>
-    <li><span class="time">15:30</span> History of Magic</li>
-    <li><span class="time">16:45</span> Potions</li>
-    <li class="weekday">Tuesday</li>
-    <li><span class="time">9:15</span> DADA</li>
-    <li><span class="time">10:30</span> Charms</li>
-    <li><span class="time">11:45</span> Herbology</li>
-    <li class="weekday">Wednesday</li>
-    <li><span class="time">14:15</span> Transfiguration</li>
-    <li><span class="time">15:30</span> History of Magic</li>
-    <li><span class="time">16:45</span> Potions</li>
-    <li class="weekday">Thursday</li>
-    <li><span class="time">9:15</span> DADA</li>
-    <li><span class="time">10:30</span> Charms</li>
-    <li><span class="time">11:45</span> Herbology</li>
+  <div class="px-5 text-center min-vh-25">
+    <img src="~/img/script-@(ViewBag.ThisStudent.House).png" class="w-75" alt="House Script">
+    <img src="~/img/2Years.png" class="w-75" alt="Second years">
+  </div>
+  <ul class="list-group list-group-flush bg-transparent">
+    <li class="list-group-item text-center  bg-transparent">
+      <h2>Monday</h2>
+    </li>
+    <li class="list-group-item  bg-transparent fs-5 fw-bolder"><span class="time">9:15</span> Transfiguration</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">11:45</span> History of Magic</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">14:15</span> Potions</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">16:45</span> Charms</li>
   </ul>
+  <hr>
+  <ul class="list-group list-group-flush bg-transparent">
+    <li class="list-group-item text-center bg-transparent">
+      <h2>Tuesday</h2>
+    </li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">9:15</span> Transfiguration</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">11:45</span> History of Magic</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">14:15</span> Potions</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">16:45</span> Charms</li>
+  </ul>
+  <ul class="list-group list-group-flush bg-transparent">
+    <li class="list-group-item text-center bg-transparent">
+      <h2>Wednesday</h2>
+    </li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">9:15</span> Transfiguration</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">11:45</span> History of Magic</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">14:15</span> Potions</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">16:45</span> Charms</li>
+  </ul>
+  <ul class="list-group list-group-flush bg-transparent">
+    <li class="list-group-item text-center bg-transparent">
+      <h2>Thursday</h2>
+    </li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">9:15</span> Transfiguration</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">11:45</span> History of Magic</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">14:15</span> Potions</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">16:45</span> Charms</li>
+  </ul>
+  <ul class="list-group list-group-flush bg-transparent">
+    <li class="list-group-item text-center bg-transparent">
+      <h2>Friday</h2>
+    </li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">9:15</span> Transfiguration</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">11:45</span> History of Magic</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">14:15</span> Potions</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">16:45</span> Charms</li>
+  </ul>
+
 }
-else if (@ViewBag.ThisStudent.Year == 3)
+else
+@if (@ViewBag.ThisStudent.Year == 3)
 {
-  <ul>
-    <li class="year">Third Year</li>
-    <li class="weekday">Monday</li>
-    <li><span class="time">9:15</span> Divination</li>
-    <li><span class="time">10:30</span> Divination</li>
-    <li><span class="time">16:45</span> Transfiguration</li>
-    <li class="weekday">Tuesday</li>
-    <li><span class="time">9:15</span> History of Magic</li>
-    <li><span class="time">10:30</span> Potions</li>
-    <li><span class="time">11:45</span> DADA</li>
-    <li><span class="time">14:15</span> Charms</li>
-    <li><span class="time">15:30</span> Herbology</li>
-    <li><span class="time">16:45</span> Herbology</li>
-    <li class="weekday">Wednesday</li>
-    <li><span class="time">9:15</span> Arithmancy</li>
-    <li><span class="time">10:30</span> Arithmancy</li>
-    <li><span class="time">16:45</span> Transfiguration</li>
-    <li class="weekday">Thursday</li>
-    <li><span class="time">9:15</span> History of Magic</li>
-    <li><span class="time">10:30</span> Potions</li>
-    <li><span class="time">11:45</span> DADA</li>
-    <li><span class="time">14:15</span> Charms</li>
-    <li><span class="time">15:30</span> Care Of Magical Creatures</li>
-    <li><span class="time">16:45</span> Care Of Magical Creatures</li>
-    <li class="weekday">Friday</li>
-    <li><span class="time">9:15</span> Muggle Studies</li>
-    <li><span class="time">10:30</span> Muggle Studies</li>
-    <li><span class="time">14:15</span> Ancient Runes</li>
-    <li><span class="time">15:30</span> Ancient Runes</li>
+  <div class="px-5 text-center min-vh-25">
+    <img src="~/img/script-@(ViewBag.ThisStudent.House).png" class="w-75" alt="House Script">
+    <img src="~/img/3Years.png" class="w-75" alt="Three years">
+  </div>
+  <ul class="list-group list-group-flush bg-transparent">
+    <li class="list-group-item text-center  bg-transparent">
+      <h2>Monday</h2>
+    </li>
+    <li class="list-group-item  bg-transparent fs-5 fw-bolder"><span class="time">9:15</span> Herbology</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">11:45</span> Care of Magical Creatures</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">14:15</span> Break</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">16:45</span> Divination</li>
   </ul>
+  <hr>
+  <ul class="list-group list-group-flush bg-transparent">
+    <li class="list-group-item text-center bg-transparent">
+      <h2>Tuesday</h2>
+    </li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">9:15</span> Studies of Ancient Runes</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">14:15</span> Break</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">16:45</span> Apparition</li>
+  </ul>
+  <ul class="list-group list-group-flush bg-transparent">
+    <li class="list-group-item text-center bg-transparent">
+      <h2>Wednesday</h2>
+    </li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">9:15</span> Defense Against the Dark Arts</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">11:45</span> Break</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">14:15</span> Charms</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">16:45</span> Arithmancy</li>
+  </ul>
+  <ul class="list-group list-group-flush bg-transparent">
+    <li class="list-group-item text-center bg-transparent">
+      <h2>Thursday</h2>
+    </li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">9:15</span> Muggle Studies</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">11:45</span> History of Magic</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">14:15</span> Break</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">16:45</span> Arithmancy</li>
+  </ul>
+  <ul class="list-group list-group-flush bg-transparent">
+    <li class="list-group-item text-center bg-transparent">
+      <h2>Friday</h2>
+    </li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">9:15</span> Care of Magical Creatures</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">11:45</span> Astronomy</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">14:15</span> Herbology</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">16:45</span> Charms</li>
+  </ul>
+
 }
-else if (@ViewBag.ThisStudent.Year == 4)
+else
+@if (@ViewBag.ThisStudent.Year == 4)
 {
-  <ul>
-    <li class="year">Fourth Year</li>
-    <li class="weekday">Monday</li>
-    <li><span class="time">9:15</span> Muggle Studies</li>
-    <li><span class="time">10:30</span> Muggle Studies</li>
-    <li><span class="time">11:45</span> Ancient Runes</li>
-    <li><span class="time">14:15</span> Divination</li>
-    <li class="weekday">Tuesday</li>
-    <li><span class="time">10:30</span> Transfiguration</li>
-    <li><span class="time">11:45</span> History of Magic</li>
-    <li><span class="time">14:15</span> Potions</li>
-    <li><span class="time">15:30</span> DADA</li>
-    <li><span class="time">16:45</span> DADA</li>
-    <li class="weekday">Wednesday</li>
-    <li><span class="time">9:15</span> Charms</li>
-    <li><span class="time">10:30</span> Charms</li>
-    <li><span class="time">14:15</span> Divination</li>
-    <li class="weekday">Thursday</li>
-    <li><span class="time">10:30</span> Transfiguration</li>
-    <li><span class="time">11:45</span> History of Magic</li>
-    <li><span class="time">14:15</span> Potions</li>
-    <li><span class="time">15:30</span> Herbology</li>
-    <li><span class="time">16:45</span> Herbology</li>
-    <li class="weekday">Friday</li>
-    <li><span class="time">9:15</span> Arithmancy</li>
-    <li><span class="time">10:30</span> Arithmancy</li>
-    <li><span class="time">11:45</span> Ancient Runes</li>
-    <li><span class="time">14:15</span> Care Of Magical Creatures</li>
-    <li><span class="time">15:30</span> Care Of Magical Creatures</li>
+  <div class="px-5 text-center min-vh-25">
+    <img src="~/img/script-@(ViewBag.ThisStudent.House).png" class="w-75" alt="House Script">
+    <img src="~/img/4Years.png" class="w-75" alt="Four years">
+  </div>
+  <ul class="list-group list-group-flush bg-transparent mt-3 ">
+    <li class="list-group-item text-center  bg-transparent">
+      <h2>Monday</h2>
+    </li>
+    <li class="list-group-item  bg-transparent fs-5 fw-bolder"><span class="time">9:15</span> Defense Against the Dark Arts</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">11:45</span> Charms</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">14:15</span> Herbology</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">16:45</span> Potions</li>
   </ul>
+  <hr>
+  <ul class="list-group list-group-flush bg-transparent mt-3 ">
+    <li class="list-group-item text-center bg-transparent">
+      <h2>Tuesday</h2>
+    </li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">9:15</span> Transfiguration</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">11:45</span> History of Magic</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">14:15</span> Break</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">16:45</span> Charms</li>
+  </ul>
+  <ul class="list-group list-group-flush bg-transparent mt-3 ">
+    <li class="list-group-item text-center bg-transparent">
+      <h2>Wednesday</h2>
+    </li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">9:15</span> Arithmancy</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">11:45</span> Care of Magical Creatures</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">14:15</span> Potions</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">16:45</span> Divinations</li>
+  </ul>
+  <ul class="list-group list-group-flush bg-transparent mt-3 ">
+    <li class="list-group-item text-center bg-transparent">
+      <h2>Thursday</h2>
+    </li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">9:15</span> Transfiguration</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">11:45</span> Care of Magical Creatures</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">14:15</span> Studies of Ancient Runes</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">16:45</span> Charms</li>
+  </ul>
+  <ul class="list-group list-group-flush bg-transparent mt-3 ">
+    <li class="list-group-item text-center bg-transparent">
+      <h2>Friday</h2>
+    </li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">9:15</span> Herbology</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">11:45</span> History of Magic</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">14:15</span> Divinations</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">16:45</span> Charms</li>
+  </ul>
+
 }
-else if (@ViewBag.ThisStudent.Year == 5)
+else
+@if (@ViewBag.ThisStudent.Year == 5)
 {
-  <ul>
-    <li class="year">Fifth Year</li>
-    <li class="weekday">Monday</li>
-    <li><span class="time">9:15</span> Arithmancy</li>
-    <li><span class="time">10:30</span> Arithmancy</li>
-    <li><span class="time">11:45</span> Care Of Magical Creatures</li>
-    <li><span class="time">14:15</span> Muggle Studies</li>
-    <li><span class="time">15:30</span> Ancient Runes</li>
-    <li><span class="time">16:45</span> Divination</li>
-    <li class="weekday">Tuesday</li>
-    <li><span class="time">14:15</span> Transfiguration</li>
-    <li><span class="time">15:30</span> History of Magic</li>
-    <li><span class="time">16:45</span> History of Magic</li>
-    <li class="weekday">Wednesday</li>
-    <li><span class="time">9:15</span> Potions</li>
-    <li><span class="time">10:30</span> Potions</li>
-    <li><span class="time">14:15</span> Muggle Studies</li>
-    <li><span class="time">15:30</span> Ancient Runes</li>
-    <li><span class="time">16:45</span> Divination</li>
-    <li class="weekday">Thursday</li>
-    <li><span class="time">14:15</span> Transfiguration</li>
-    <li><span class="time">15:30</span> History of Magic</li>
-    <li><span class="time">16:45</span> History of Magic</li>
-    <li class="weekday">Friday</li>
-    <li><span class="time">9:15</span> Charms</li>
-    <li><span class="time">10:30</span> Charms</li>
-    <li><span class="time">11:45</span> Care Of Magical Creatures</li>
-    <li><span class="time">14:15</span> Herbology</li>
-    <li><span class="time">15:30</span> Herbology</li>
+  <div class="px-5 text-center min-vh-25">
+    <img src="~/img/script-@(ViewBag.ThisStudent.House).png" class="w-75" alt="House Script">
+    <img src="~/img/5Years.png" class="w-75" alt="five years">
+  </div>
+  <ul class="list-group list-group-flush bg-transparent mt-3 ">
+    <li class="list-group-item text-center  bg-transparent">
+      <h2>Monday</h2>
+    </li>
+    <li class="list-group-item  bg-transparent fs-5 fw-bolder"><span class="time">9:15</span> Defense Against the Dark Arts</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">11:45</span> Charms</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">14:15</span> Herbology</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">16:45</span> Potions</li>
   </ul>
+  <hr>
+  <ul class="list-group list-group-flush bg-transparent mt-3 ">
+    <li class="list-group-item text-center bg-transparent">
+      <h2>Tuesday</h2>
+    </li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">9:15</span> Transfiguration</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">11:45</span> History of Magic</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">14:15</span> Break</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">16:45</span> Charms</li>
+  </ul>
+  <ul class="list-group list-group-flush bg-transparent mt-3 ">
+    <li class="list-group-item text-center bg-transparent">
+      <h2>Wednesday</h2>
+    </li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">9:15</span> Arithmancy</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">11:45</span> Care of Magical Creatures</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">14:15</span> Potions</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">16:45</span> Divinations</li>
+  </ul>
+  <ul class="list-group list-group-flush bg-transparent mt-3 ">
+    <li class="list-group-item text-center bg-transparent">
+      <h2>Thursday</h2>
+    </li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">9:15</span> Transfiguration</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">11:45</span> Care of Magical Creatures</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">14:15</span> Studies of Ancient Runes</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">16:45</span> Charms</li>
+  </ul>
+  <ul class="list-group list-group-flush bg-transparent mt-3 ">
+    <li class="list-group-item text-center bg-transparent">
+      <h2>Friday</h2>
+    </li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">9:15</span> Herbology</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">11:45</span> History of Magic</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">14:15</span> Divinations</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">16:45</span> Charms</li>
+  </ul>
+
 }
-else if (@ViewBag.ThisStudent.Year == 6)
+else
+@if (@ViewBag.ThisStudent.Year == 6)
 {
-  <ul>
-    <li class="year">Sixth Year</li>
-    <li class="weekday">Monday</li>
-    <li><span class="time">9:15</span> Charms</li>
-    <li><span class="time">10:30</span> Charms</li>
-    <li><span class="time">11:45</span> Herbology</li>
-    <li><span class="time">14:15</span> Arithmancy</li>
-    <li><span class="time">15:30</span> Care Of Magical Creatures</li>
-    <li><span class="time">16:45</span> Muggle Studies</li>
-    <li class="weekday">Tuesday</li>
-    <li><span class="time">9:15</span> Ancient Runes</li>
-    <li><span class="time">10:30</span> Divination</li>
-    <li class="weekday">Wednesday</li>
-    <li><span class="time">9:15</span> Transfiguration</li>
-    <li><span class="time">10:30</span> Transfiguration</li>
-    <li><span class="time">14:15</span> Arithmancy</li>
-    <li><span class="time">15:30</span> Care Of Magical Creatures</li>
-    <li><span class="time">16:45</span> Muggle Studies</li>
-    <li class="weekday">Thursday</li>
-    <li><span class="time">9:15</span> Ancient Runes</li>
-    <li><span class="time">10:30</span> Divination</li>
-    <li><span class="time">15:30</span> History of Magic</li>
-    <li><span class="time">16:45</span> History of Magic</li>
-    <li class="weekday">Friday</li>
-    <li><span class="time">9:15</span> Potions</li>
-    <li><span class="time">10:30</span> Potions</li>
-    <li><span class="time">11:45</span> Herbology</li>
-    <li><span class="time">14:15</span> DADA</li>
-    <li><span class="time">15:30</span> DADA</li>
+  <div class="px-5 text-center min-vh-25">
+    <img src="~/img/script-@(ViewBag.ThisStudent.House).png" class="w-75" alt="House Script">
+    <img src="~/img/6Years.png" class="w-75" alt="Six years">
+  </div>
+  <ul class="list-group list-group-flush bg-transparent mt-3 ">
+    <li class="list-group-item text-center  bg-transparent">
+      <h2>Monday</h2>
+    </li>
+    <li class="list-group-item  bg-transparent fs-5 fw-bolder"><span class="time">9:15</span> Defense Against the Dark Arts</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">11:45</span> Charms</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">14:15</span> Herbology</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">16:45</span> Potions</li>
   </ul>
+  <hr>
+  <ul class="list-group list-group-flush bg-transparent mt-3 ">
+    <li class="list-group-item text-center bg-transparent">
+      <h2>Tuesday</h2>
+    </li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">9:15</span> Alchemy</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">11:45</span> History of Magic</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">14:15</span> Break</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">16:45</span> Apparation</li>
+  </ul>
+  <ul class="list-group list-group-flush bg-transparent mt-3 ">
+    <li class="list-group-item text-center bg-transparent">
+      <h2>Wednesday</h2>
+    </li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">9:15</span> Advanced Arithmancy Studies</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">11:45</span> Care of Magical Creatures</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">14:15</span> Potions</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">16:45</span> Divinations</li>
+  </ul>
+  <ul class="list-group list-group-flush bg-transparent mt-3 ">
+    <li class="list-group-item text-center bg-transparent">
+      <h2>Thursday</h2>
+    </li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">9:15</span> Transfiguration</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">11:45</span> Apparation</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">14:15</span> Studies of Ancient Runes</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">16:45</span> Charms</li>
+  </ul>
+  <ul class="list-group list-group-flush bg-transparent mt-3 ">
+    <li class="list-group-item text-center bg-transparent">
+      <h2>Friday</h2>
+    </li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">9:15</span> Herbology</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">11:45</span> Advanced Arithmancy Studies</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">14:15</span> Alchemy</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">16:45</span> Charms</li>
+  </ul>
+
 }
-else if (@ViewBag.ThisStudent.Year == 7)
+else
+@if (@ViewBag.ThisStudent.Year == 7)
 {
-  <ul>
-    <li class="year">Seveth Year</li>
-    <li class="weekday">Monday</li>
-    <li><span class="time">9:15</span> Herbology</li>
-    <li><span class="time">10:30</span> Herbology</li>
-    <li><span class="time">11:45</span> Charms</li>
-    <li><span class="time">14:15</span> Care Of Magical Creatures</li>
-    <li><span class="time">15:30</span> Arithmancy</li>
-    <li><span class="time">16:45</span> Ancient Runes</li>
-    <li class="weekday">Tuesday</li>
-    <li><span class="time">9:15</span> Muggle Studies</li>
-    <li><span class="time">11:45</span> Divination</li>
-    <li class="weekday">Wednesday</li>
-    <li><span class="time">9:15</span> History of Magic</li>
-    <li><span class="time">10:30</span> History of Magic</li>
-    <li><span class="time">14:15</span> Care Of Magical Creatures</li>
-    <li><span class="time">15:30</span> Arithmancy</li>
-    <li><span class="time">16:45</span> Ancient Runes</li>
-    <li class="weekday">Thursday</li>
-    <li><span class="time">9:15</span> Muggle Studies</li>
-    <li><span class="time">11:45</span> Divination</li>
-    <li><span class="time">15:30</span> Transfiguration</li>
-    <li><span class="time">16:45</span> Transfiguration</li>
-    <li class="weekday">Friday</li>
-    <li><span class="time">9:15</span> DADA</li>
-    <li><span class="time">10:30</span> DADA</li>
-    <li><span class="time">11:45</span> Charms</li>
-    <li><span class="time">14:15</span> Potions</li>
-    <li><span class="time">15:30</span> Potions</li>
+  <div class="px-5 text-center min-vh-25">
+    <img src="~/img/script-@(ViewBag.ThisStudent.House).png" class="w-75" alt="House Script">
+    <img src="~/img/7Years.png" class="w-75" alt="Seven years">
+  </div>
+  <ul class="list-group list-group-flush bg-transparent mt-3 ">
+    <li class="list-group-item text-center  bg-transparent">
+      <h2>Monday</h2>
+    </li>
+    <li class="list-group-item  bg-transparent fs-5 fw-bolder"><span class="time">9:15</span> Defense Against the Dark Arts</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">11:45</span> Charms</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">14:15</span> Herbology</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">16:45</span> Potions</li>
   </ul>
+  <hr>
+  <ul class="list-group list-group-flush bg-transparent mt-3 ">
+    <li class="list-group-item text-center bg-transparent">
+      <h2>Tuesday</h2>
+    </li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">9:15</span> Alchemy</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">11:45</span> History of Magic</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">14:15</span> Break</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">16:45</span> Apparation</li>
+  </ul>
+  <ul class="list-group list-group-flush bg-transparent mt-3 ">
+    <li class="list-group-item text-center bg-transparent">
+      <h2>Wednesday</h2>
+    </li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">9:15</span> Advanced Arithmancy Studies</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">11:45</span> Care of Magical Creatures</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">14:15</span> Potions</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">16:45</span> Divinations</li>
+  </ul>
+  <ul class="list-group list-group-flush bg-transparent mt-3 ">
+    <li class="list-group-item text-center bg-transparent">
+      <h2>Thursday</h2>
+    </li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">9:15</span> Transfiguration</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">11:45</span> Apparation</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">14:15</span> Studies of Ancient Runes</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">16:45</span> Charms</li>
+  </ul>
+  <ul class="list-group list-group-flush bg-transparent mt-3 ">
+    <li class="list-group-item text-center bg-transparent">
+      <h2>Friday</h2>
+    </li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">9:15</span> Herbology</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">11:45</span> Advanced Arithmancy Studies</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">14:15</span> Alchemy</li>
+    <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">16:45</span> Charms</li>
+  </ul>
+
 }
+<ul class="list-group list-group-flush bg-transparent">
+  <li class="list-group-item text-center  bg-transparent">
+    <h2>Meals</h2>
+  </li>
+  <li class="list-group-item  bg-transparent fs-5 fw-bolder"><span class="time">7:00 to 9:00</span> Breakfast</li>
+  <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">12:45 to 14:00</span> Lunch</li>
+  <li class="list-group-item bg-transparent fs-5 fw-bolder"><span class="time">17:45 to 19:45</span> Dinner</li>
+</ul>

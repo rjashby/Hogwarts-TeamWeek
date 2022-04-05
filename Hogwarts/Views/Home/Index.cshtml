@@ -9,36 +9,53 @@
 @if (User.Identity.IsAuthenticated && @ViewBag.ThisStudent.House != null)
 {
   <div id=@ViewBag.ThisStudent.House class="full-size">
-    <div id="frogs">
-    </div>
-    <div id="notice-board">
-    </div>
-    <a data-bs-toggle="modal" data-bs-target="#scheduleModal">
+
+    <a data-bs-toggle="modal" data-bs-target="#scheduleModal" class="schedule-sheet">
       <div class="card">
-        <div class="card-body text-dark">
-          Schedule
+        <div class="card-body text-dark bg-letter" style="max-width: 200px; height: 200px;">
+          <img src="~/img/script-schedule.png" class="w-100" alt="schedule">
         </div>
       </div>
     </a>
     <div class="modal fade text-dark" id="scheduleModal" tabindex="-1" aria-labelledby="scheduleModalLabel" aria-hidden="true">
-      <div class="modal-dialog ">
+      <div class="modal-dialog">
         <div class="modal-content">
-          <div class="modal-header">
+          @* <div class="modal-header bg-letter">
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
+            </div> *@
           <div class="modal-body bg-letter ">
             @Html.Partial("ClassList.cshtml")
           </div>
-          <div class="modal-footer">
+          @* <div class="modal-footer bg-letter">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
+            </div> *@
         </div>
       </div>
     </div>
-    <div id="large-notice-board">
-      <div id="schedule">
+    <div id="frogs">
 
+    </div>
+    <a data-bs-toggle="modal" id="large-notice-board" class="notice-board-sheet" data-bs-target="#largeNoticeModal">
+      <div class="card">
+        <div class="card-body rounded text-dark bg-noticeboard" style="width: 200px; height: 340px;">
+          @* <img src="~/img/script-schedule.png" class="w-100" alt="schedule"> *@
+
+        </div>
+      </div>
+    </a>
+    <div class="modal fade text-dark" id="largeNoticeModal" tabindex="-1" aria-labelledby="largeNoticeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content ">
+          @* <div class="modal-header bg-letter">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div> *@
+          <div class="modal-body bg-corkboard">
+            @Html.Partial("NoticeBoard.cshtml")
+          </div>
+          @* <div class="modal-footer bg-letter">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div> *@
+        </div>
       </div>
     </div>
   </div>
@@ -50,6 +67,7 @@ else if (User.Identity.IsAuthenticated)
     <div class="overlay">
       <div class="pop-up">
         <div id="closed-letter"></div>
+        <div id="gif-letter" class="hide"><img src="~/img/hogwarts-letter.gif"></img></div>
         <div id="acceptance-letter" class="letter hide">
           <img src="~/img/hogwarts_bw.png">
           <p>Dear @ViewBag.ThisStudent.Title @ViewBag.ThisStudent.LastName</p>
@@ -112,15 +130,15 @@ else if (User.Identity.IsAuthenticated)
             Trusted
           </label>
           <label>
-            <input type="radio" name="1" value="s" >
+            <input type="radio" name="1" value="s">
             Feared
           </label>
           <label>
-            <input type="radio" name="1" value="h" >
+            <input type="radio" name="1" value="h">
             Liked
           </label>
           <label>
-            <input type="radio" name="1" value="r" >
+            <input type="radio" name="1" value="r">
             Praised
           </label>
         </div>
@@ -131,15 +149,15 @@ else if (User.Identity.IsAuthenticated)
             Myself, surrounded by riches.
           </label>
           <label>
-            <input type="radio" name="2" value="h" >
+            <input type="radio" name="2" value="h">
             Myself, surrounded by my loving family and friends.
           </label>
           <label>
-            <input type="radio" name="2" value="r" >
+            <input type="radio" name="2" value="r">
             Myself, knowledgable above all.
           </label>
           <label>
-            <input type="radio" name="2" value="g" >
+            <input type="radio" name="2" value="g">
             Myself, experiencing a marvellous adventure.
           </label>
         </div>
@@ -150,15 +168,15 @@ else if (User.Identity.IsAuthenticated)
             Beater. I like having all that power.
           </label>
           <label>
-            <input type="radio" name="3" value="g" >
+            <input type="radio" name="3" value="g">
             Seeker. I want the glory!
           </label>
           <label>
-            <input type="radio" name="3" value="r" >
+            <input type="radio" name="3" value="r">
             Chaser. I like to be involved, and work as part of the team.
           </label>
           <label>
-            <input type="radio" name="3" value="h" >
+            <input type="radio" name="3" value="h">
             I'll be in the crowd, making sure supporter morale is high!
           </label>
         </div>
@@ -169,15 +187,15 @@ else if (User.Identity.IsAuthenticated)
             Toad
           </label>
           <label>
-            <input type="radio" name="4" value="g" >
+            <input type="radio" name="4" value="g">
             Owl
           </label>
           <label>
-            <input type="radio" name="4" value="r" >
+            <input type="radio" name="4" value="r">
             Cat
           </label>
           <label>
-            <input type="radio" name="4" value="s" >
+            <input type="radio" name="4" value="s">
             Super poisonous angry toad
           </label>
         </div>
@@ -188,15 +206,15 @@ else if (User.Identity.IsAuthenticated)
             The Forbidden Forest
           </label>
           <label>
-            <input type="radio" name="5" value="r" >
+            <input type="radio" name="5" value="r">
             The Library
           </label>
           <label>
-            <input type="radio" name="5" value="g" >
+            <input type="radio" name="5" value="g">
             The Room of Requirement
           </label>
           <label>
-            <input type="radio" name="5" value="h" >
+            <input type="radio" name="5" value="h">
             The Lake
           </label>
         </div>
@@ -207,15 +225,15 @@ else if (User.Identity.IsAuthenticated)
             Love
           </label>
           <label>
-            <input type="radio" name="6" value="g" >
+            <input type="radio" name="6" value="g">
             Glory
           </label>
           <label>
-            <input type="radio" name="6" value="s" >
+            <input type="radio" name="6" value="s">
             Power
           </label>
           <label>
-            <input type="radio" name="6" value="r" >
+            <input type="radio" name="6" value="r">
             Knowledge
           </label>
         </div>
@@ -226,15 +244,15 @@ else if (User.Identity.IsAuthenticated)
             Ask them to explain what they are talking about.
           </label>
           <label>
-            <input type="radio" name="7" value="h" >
+            <input type="radio" name="7" value="h">
             Agree and walk away.
           </label>
           <label>
-            <input type="radio" name="7" value="s" >
+            <input type="radio" name="7" value="s">
             Jinx them.
           </label>
           <label>
-            <input type="radio" name="7" value="g" >
+            <input type="radio" name="7" value="g">
             Modify their memory.
           </label>
         </div>
@@ -245,15 +263,15 @@ else if (User.Identity.IsAuthenticated)
             My professor
           </label>
           <label>
-            <input type="radio" name="8" value="s" >
+            <input type="radio" name="8" value="s">
             My house ghost
           </label>
           <label>
-            <input type="radio" name="8" value="g" >
+            <input type="radio" name="8" value="g">
             My smartest friend
           </label>
           <label>
-            <input type="radio" name="8" value="r" >
+            <input type="radio" name="8" value="r">
             The library
           </label>
         </div>
@@ -264,15 +282,15 @@ else if (User.Identity.IsAuthenticated)
             The Elder Wand
           </label>
           <label>
-            <input type="radio" name="9" value="r" >
+            <input type="radio" name="9" value="r">
             The Resurrection Stone
           </label>
           <label>
-            <input type="radio" name="9" value="g" >
+            <input type="radio" name="9" value="g">
             The Cloak of Inivisibilty
           </label>
           <label>
-            <input type="radio" name="9" value="h" >
+            <input type="radio" name="9" value="h">
             No thanks, those things are dangerous!
           </label>
         </div>
@@ -283,15 +301,15 @@ else if (User.Identity.IsAuthenticated)
             The Triwizard Tournament
           </label>
           <label>
-            <input type="radio" name="10" value="g" >
+            <input type="radio" name="10" value="g">
             The Quidditch World Cup
           </label>
           <label>
-            <input type="radio" name="10" value="s" >
+            <input type="radio" name="10" value="s">
             Halloween at Hogwarts
           </label>
           <label>
-            <input type="radio" name="10" value="h" >
+            <input type="radio" name="10" value="h">
             Christmas at Hogwarts
           </label>
         </div>
@@ -302,15 +320,15 @@ else if (User.Identity.IsAuthenticated)
             Gryffindor
           </label>
           <label>
-            <input type="radio" name="11" value="h" >
+            <input type="radio" name="11" value="h">
             Hufflepuff
           </label>
           <label>
-            <input type="radio" name="11" value="r" >
+            <input type="radio" name="11" value="r">
             Ravenclaw
           </label>
           <label>
-            <input type="radio" name="11" value="s" >
+            <input type="radio" name="11" value="s">
             Slytherin
           </label>
         </div>

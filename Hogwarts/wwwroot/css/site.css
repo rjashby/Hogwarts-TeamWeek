@@ -47,6 +47,7 @@ a.navbar-brand {
 .nav-link {
   border: 3px solid black;
 }
+
 /* Provide sufficient contrast against white background */
 a {
   color: #0366d6;
@@ -59,7 +60,7 @@ a {
 }
 
 .nav-pills .nav-link.active,
-.nav-pills .show > .nav-link {
+.nav-pills .show>.nav-link {
   color: #fff;
   background-color: #1b6ec2;
   border-color: #1861ac;
@@ -118,6 +119,8 @@ html {
 
 #Gryffindor {
   background-image: url("../img/gryffCommon.jpeg");
+  background-size: cover;
+  background-position: bottom;
 }
 
 #Ravenclaw {
@@ -182,6 +185,13 @@ html {
   background-position: center;
   background-repeat: no-repeat;
   cursor: pointer;
+  margin: 0;
+}
+
+#gif-letter img {
+  width: 500px;
+  margin: auto;
+  display: block;
 }
 
 #diagon-alley {
@@ -209,7 +219,7 @@ html {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  width: 600px;
+  max-width: 600px;
   padding: 40px 100px;
   color: black;
 }
@@ -243,6 +253,7 @@ button {
   padding: 40px 70px;
   font-size: 0.8em;
 }
+
 #shopping-list p {
   margin: 1px 0;
 }
@@ -263,10 +274,10 @@ button {
   text-align: center;
 }
 
-.pop-up {
+/* .pop-up {
   width: 700px;
   display: block;
-}
+} */
 
 .flex {
   display: flex;
@@ -294,9 +305,11 @@ button {
   color: rgb(117, 24, 24);
   font-size: 1.5em;
 }
+
 #sorting-quiz p {
   font-size: 1.4em;
 }
+
 #sorting-quiz .form-group {
   display: flex;
   justify-content: center;
@@ -343,4 +356,26 @@ button {
 
 .scroll {
   overflow: scroll;
+}
+
+.schedule-sheet {
+  position: absolute !important;
+  top: 400px !important;
+  left: 40px !important;
+  transform: rotate(-4deg);
+}
+
+#Hufflepuff .notice-board-sheet {
+  position: absolute !important;
+  top: 400px !important;
+  left: 70% !important;
+  transform: rotate(4deg);
+}
+
+.bg-noticeboard {
+  background-image: url("../img/noticeboard.png");
+}
+
+.bg-corkboard {
+  background-image: url("../img/bg-corkboard.jpg");
 }
