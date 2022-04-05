@@ -25,3 +25,6 @@ else
   }
   </ul> 
 }
+@* <p class="btn btn-primary">@Html.ActionLink("Add a Course", "AddCourse", new { id = Model.StudentId })</p> NEEDS CONTROLLER ROUTE *@
+<p class="btn btn-primary">@Html.ActionLink("Edit Student Profile", "Edit", new { id = Model.StudentId })</p>
+<p class="btn btn-primary">@Html.ActionLink("Expel Student", "Delete", new { id = Model.StudentId })</p>

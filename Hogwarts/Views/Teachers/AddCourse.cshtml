@@ -1,0 +1,23 @@
+@{
+  Layout = "_Layout";
+}
+
+@using Hogwarts.Models
+@model Hogwarts.Models.Teacher
+
+
+<h2>Add a course</h2>
+
+<h4>Add a course to this Teacher: @Html.DisplayFor(model => model.LastName)</h4>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.TeacherId)
+
+    @Html.Label("Select course")
+    @Html.DropDownList("CourseId")
+
+    <input type="submit" value="Save" />
+}
+
+<p>@Html.ActionLink("Back to list", "Index")</p>
