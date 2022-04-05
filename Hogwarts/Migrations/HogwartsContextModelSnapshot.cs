@@ -167,9 +167,6 @@ namespace Hogwarts.Migrations
                     b.Property<string>("Title")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.Property<string>("UserId")
-                        .HasColumnType("varchar(255) CHARACTER SET utf8mb4");
-
                     b.Property<string>("Wand")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
@@ -177,8 +174,6 @@ namespace Hogwarts.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("StudentId");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("Students");
                 });
@@ -370,15 +365,6 @@ namespace Hogwarts.Migrations
                     b.Navigation("Course");
 
                     b.Navigation("Teacher");
-                });
-
-            modelBuilder.Entity("Hogwarts.Models.Student", b =>
-                {
-                    b.HasOne("Hogwarts.Models.ApplicationUser", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId");
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
