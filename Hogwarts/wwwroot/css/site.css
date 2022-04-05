@@ -1,5 +1,32 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
+@font-face {
+  font-family: "Lumos";
+  src: url("../assets/fonts/Lumos.woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Letter";
+  src: url("../assets/fonts/Letter.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  height: 100vh;
+}
+
+body {
+  margin: 0;
+  font-family: "Lumos";
+}
+
+header {
+  position: fixed;
+  z-index: 1;
+}
 
 a.navbar-brand {
   white-space: normal;
@@ -7,6 +34,19 @@ a.navbar-brand {
   word-break: break-all;
 }
 
+.navbar-brand img {
+  width: 125px;
+}
+
+.nav-item {
+  border: 1px solid black;
+  padding: 2px;
+  background-image: url("../img/paper.jpeg");
+}
+
+.nav-link {
+  border: 3px solid black;
+}
 /* Provide sufficient contrast against white background */
 a {
   color: #0366d6;
@@ -18,7 +58,8 @@ a {
   border-color: #1861ac;
 }
 
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
   color: #fff;
   background-color: #1b6ec2;
   border-color: #1861ac;
@@ -29,6 +70,7 @@ a {
 html {
   font-size: 14px;
 }
+
 @media (min-width: 768px) {
   html {
     font-size: 16px;
@@ -38,12 +80,13 @@ html {
 .border-top {
   border-top: 1px solid #e5e5e5;
 }
+
 .border-bottom {
   border-bottom: 1px solid #e5e5e5;
 }
 
 .box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
 }
 
 button.accept-policy {
@@ -58,46 +101,246 @@ html {
   min-height: 100%;
 }
 
-body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
-}
 .footer {
   position: absolute;
   bottom: 0;
   width: 100%;
   white-space: nowrap;
-  line-height: 60px; /* Vertically center the text there */
+  line-height: 60px;
+  /* Vertically center the text there */
 }
 
-#slytherin {
+#Slytherin {
   background-image: url("../img/slythCommon.jpeg");
+  height: 100vh;
+  background-size: cover;
 }
 
-#gryffindor {
+#Gryffindor {
   background-image: url("../img/gryffCommon.jpeg");
 }
 
-#ravenclaw {
+#Ravenclaw {
   background-image: url("../img/ravenCommon.jpeg");
 }
 
-#hufflepuff {
+#Hufflepuff {
   background-image: url("../img/huffCommon.jpg");
 }
 
-#great-hall {
-  background-image: url("../img/great_hall.png");
+#the-great-hall {
+  background-image: url("../img/greathall.png");
+}
+
+#account {
+  background-image: url("../img/account.png");
+  width: 100%;
+  background-size: cover;
+  background-position: bottom;
 }
 
 .full-size {
   width: 100vw;
   height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Letter";
 }
-.btn a {
-  color: white;
+
+.video {
+  position: absolute;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+  clip-path: 0 0;
+  transform: translatez(0);
 }
-.btn a:hover {
-  text-decoration: none;
-  color: white;
+
+#lake video {
+  z-index: -1;
+  transform: translatez(0);
+  position: absolute;
+  top: -100%;
+  bottom: -100%;
+  left: -100%;
+  right: -100%;
+
+  margin: auto;
+
+  min-width: 100%;
+  min-height: 100%;
+}
+
+#closed-letter {
+  background-image: url("../img/closed_letter.png");
+  width: 600px;
+  height: 400px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+#diagon-alley {
+  background-image: url("../img/diagon_alley.jpeg");
+  background-size: 100vw;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(113, 106, 106, 0.4);
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.letter {
+  font-family: "Letter";
+  background-image: url("../img/letter.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 600px;
+  padding: 40px 100px;
+  color: black;
+}
+
+.bg-letter {
+  background-image: url("../img/paper.jpeg");
+}
+
+.letter img {
+  width: 100px;
+  display: block;
+  margin: auto;
+  padding-bottom: 20px;
+}
+
+.signature {
+  font-family: "Sassy Frass", cursive;
+  font-size: 2em;
+  margin: -20px 0 0;
+}
+
+button {
+  font-family: "Lumos";
+  background-color: transparent;
+  margin: auto;
+  padding: 10px 20px;
+  display: block;
+}
+
+#shopping-list {
+  padding: 40px 70px;
+  font-size: 0.8em;
+}
+#shopping-list p {
+  margin: 1px 0;
+}
+
+#shopping-list h3 {
+  text-transform: uppercase;
+  font-size: 1em;
+  margin: 3px 0;
+}
+
+.center {
+  text-align: center;
+  padding: 3px 0;
+}
+
+.letter-footer {
+  font-size: 0.5em;
+  text-align: center;
+}
+
+.pop-up {
+  width: 700px;
+  display: block;
+}
+
+.flex {
+  display: flex;
+}
+
+.hide {
+  display: none;
+}
+
+#welcome {
+  background-color: rgba(251, 246, 233, 0.9);
+  color: rgb(117, 24, 24);
+  padding: 40px;
+  max-width: 800px;
+  text-align: center;
+  max-height: 800px;
+}
+
+#welcome-text {
+  width: 600px;
+}
+
+#welcome button {
+  border: solid 3px rgb(117, 24, 24);
+  color: rgb(117, 24, 24);
+  font-size: 1.5em;
+}
+#sorting-quiz p {
+  font-size: 1.4em;
+}
+#sorting-quiz .form-group {
+  display: flex;
+  justify-content: center;
+  column-gap: 20px;
+  align-items: stretch;
+  flex-wrap: wrap;
+  font-size: 1.25em;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgb(117, 24, 24);
+}
+
+#sorting-quiz .form-group input {
+  display: none;
+}
+
+#sorting-quiz .form-group label {
+  border: 1px solid rgb(117, 24, 24);
+  margin: 2px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.form-group p {
+  width: 100%;
+}
+
+#sorting-quiz:first-child {
+  border: none;
+}
+
+.checked {
+  background-color: rgb(117, 24, 24);
+  color: rgb(251, 246, 233);
+}
+
+#account-info {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(251, 246, 233, 0.9);
+  color: black;
+  width: 500px;
+}
+
+.scroll {
+  overflow: scroll;
 }
