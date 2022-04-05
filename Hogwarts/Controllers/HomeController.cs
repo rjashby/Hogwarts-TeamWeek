@@ -22,7 +22,6 @@ namespace Hogwarts.Controllers
 
     public HomeController(UserManager<ApplicationUser> userManager, HogwartsContext db, ILogger<HomeController> logger)
     {
-
       _userManager = userManager;
       _db = db;
       _logger = logger;

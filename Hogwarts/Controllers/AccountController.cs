@@ -26,66 +26,21 @@ namespace Hogwarts.Controllers
       _db = db;
     }
 
-    public ActionResult Index()
+    public ActionResult Index(string house)
     {
-      return View();
+      var thisStudent = _db.Students.FirstOrDefault(s => s.Email == User.Identity.Name);
+      if (house != null)
+      {
+        thisStudent.House = house;
+        _db.SaveChanges();
+      }
+      return View(thisStudent);
     }
 
     public IActionResult Register()
     {
       return View();
     }
-
-    // [HttpPost]
-    // public async Task<ActionResult> Register(RegisterViewModel model)
-    // {
-    //   var user = new ApplicationUser { UserName = model.Email };
-    //   var student = new Student { FirstName = model.FirstName, LastName = model.LastName, Title = model.Title };
-    //   IdentityResult result = await _userManager.CreateAsync(user, model.Password);
-    //   if (result.Succeeded)
-    //   {
-    //     return RedirectToAction("Index");
-    //   }
-    //   else
-    //   {
-    //     return View();
-    //   }
-    // }
-
-    // [HttpPost]
-    // public async Task<ActionResult> Register(RegisterViewModel model)
-    // {
-    //   var user = new ApplicationUser { UserName = model.Email };
-    //   IdentityResult result = await _userManager.CreateAsync(user, model.Password);
-    //   Student student = new Student { FirstName = model.FirstName, LastName = model.LastName, Title = model.Title };
-    //   return RedirectToAction("Create", "Student", new { student = student });
-    //   // if (result.Succeeded)
-    //   // {
-    //   //   //then log in the newly registered user
-    //   //   Microsoft.AspNetCore.Identity.SignInResult loginResult = await _signInManager.PasswordSignInAsync(model.Email, model.Password, isPersistent: true, lockoutOnFailure: false);
-    //   //   Student student = new Student { FirstName = model.FirstName, LastName = model.LastName, Title = model.Title };
-    //   //   return RedirectToAction("Create", "Student", new { student = student });
-    //     //   if (loginResult.Succeeded)
-    //     //   {
-    //     //     // Console.WriteLine(this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
-    //     //     // var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-    //     //     // var currentUser = await _userManager.FindByIdAsync(userId);
-    //     //     // Console.WriteLine(currentUser);
-    //     //     // , User = currentUser };
-    //     //     // _db.Students.Add(student);
-    //     //     // _db.SaveChanges();
-    //     //     return RedirectToAction("Create", "Student", new { student = student });
-    //     //   }
-    //     //   else
-    //     //   {
-    //     //     return View();
-    //     //   }
-    //   // }
-    //   // else
-    //   // {
-    //   //   return View();
-    //   // }
-    // }
 
     [HttpPost]
     public async Task<ActionResult> Register(RegisterViewModel model)

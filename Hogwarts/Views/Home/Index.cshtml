@@ -49,46 +49,44 @@ else if (User.Identity.IsAuthenticated)
     <div class="overlay">
       <div class="pop-up">
         <div id="closed-letter"></div>
-        <div id="acceptance-letter" class="letter">
+        <div id="acceptance-letter" class="letter hide">
           <img src="~/img/hogwarts_bw.png">
-          <p>To: @ViewBag.ThisStudent.Title @ViewBag.ThisStudent.FirstName @ViewBag.ThisStudent.LastName</p>
           <p>Dear @ViewBag.ThisStudent.Title @ViewBag.ThisStudent.LastName</p>
-          <p> We are pleased to inform you that you have been accepted at Hogwarts School of Witchcraft and Wizardy.</p>
+          <p>&emsp;&emsp;We are pleased to inform you that you have been accepted at Hogwarts School of Witchcraft and Wizardy.</p>
           <p>Please find enclosed a lost of all necessary books and equipment</p>
           <p>Term begins on September 1st. We await your owl by no later than July 31st.</p>
           <p>Yours sincerely,</p>
-          <p class="signature">Minerva McGonagall</p>
-          <p>Minerva McGonagall</p>
-          <p>Deputy Headmistress</p>
+          <p class="signature">M.McGonagall</p>
+          <p>Professor McGonagall</p>
           <p class="letter-footer">HOGWARTS SCHOOL of WITCHCRAFT & WIZARDRY<br>Headmaster: Albus Dumbledore<br>(Order of Merlin, First Class, Grand Sorc., Chf. Warlock, Supreme Mugwump, International Confed. of Wizards)</p>
           <button type="button" id="open-shopping-list">Shopping List</button>
         </div>
-        <div id="shopping-list" class="letter">
+        <div id="shopping-list" class="letter hide">
           <img src="~/img/hogwarts_bw.png">
           <h3>Uniform</h3>
           <p>First-year students will require:</p>
-          <p> Three sets of plain work robes (black)</p>
-          <p> One plain pointed hat (black) for day wear</p>
-          <p> One pair of protective gloves (dragon hide or similar)</p>
-          <p> One winter cloak (black, with silver fastenings)</p>
+          <p>&emsp;&emsp;Three sets of plain work robes (black)</p>
+          <p>&emsp;&emsp;One plain pointed hat (black) for day wear</p>
+          <p>&emsp;&emsp;One pair of protective gloves (dragon hide or similar)</p>
+          <p>&emsp;&emsp;One winter cloak (black, with silver fastenings)</p>
           <p>Please note that all pupil's clothes should carry name tags.</p>
-          <h3>Uniform</h3>
+          <h3>Books</h3>
           <p>All students should have a copy of each of the following:</p>
-          <p> The Standard Book of Spells (Grade 1) by Miranda Goshawk</p>
-          <p> A History of Magic by Bathilda Bagshot</p>
-          <p> Magical Theory by Adalbert Waffling</p>
-          <p> A Beginner's Guide to Transfiguration by Emeric Switch</p>
-          <p> One Thousand Magical Herbs and Fungi by Phyllida Spore</p>
-          <p> Magical Drafts and Potions by Arsenius Jigger</p>
-          <p> Fantastic Beasts and Where to Find Them by Newt Scamander</p>
-          <p> The Dark Forces: A Guide to Self-Protection by Quentin Trimble</p>
-          <h3>OTHER EQUIPMENT</h3>
-          <p> 1 wand</p>
-          <p> 1 cauldron (pewter, standard size 2)</p>
-          <p> 1 set glass or crystal phials</p>
-          <p> 1 telescope</p>
-          <p> 1 set brass scales</p>
-          <p class="center">Students may also bring, if they desire, an Owl OR a Cat OR a Toad.<br>PARENTS ARE REMINDED THAT FIRST YEARS<br>ARE NOT ALLOWED THEIR OWN BROOMSTICK</p>
+          <p>&emsp;&emsp;The Standard Book of Spells (Grade 1) by Miranda Goshawk</p>
+          <p>&emsp;&emsp;A History of Magic by Bathilda Bagshot</p>
+          <p>&emsp;&emsp;Magical Theory by Adalbert Waffling</p>
+          <p>&emsp;&emsp;A Beginner's Guide to Transfiguration by Emeric Switch</p>
+          <p>&emsp;&emsp;One Thousand Magical Herbs and Fungi by Phyllida Spore</p>
+          <p>&emsp;&emsp;Magical Drafts and Potions by Arsenius Jigger</p>
+          <p>&emsp;&emsp;Fantastic Beasts and Where to Find Them by Newt Scamander</p>
+          <p>&emsp;&emsp;The Dark Forces: A Guide to Self-Protection by Quentin Trimble</p>
+          <h3>Other Equipment</h3>
+          <p>&emsp;&emsp;1 wand</p>
+          <p>&emsp;&emsp;1 cauldron (pewter, standard size 2)</p>
+          <p>&emsp;&emsp;1 set glass or crystal phials</p>
+          <p>&emsp;&emsp;1 telescope</p>
+          <p>&emsp;&emsp;1 set brass scales</p>
+          <p class="center">Students may also bring, if they desire, an Owl OR a Cat OR a Toad.<br>PARENTS ARE REMINDED THAT FIRST YEARS ARE NOT ALLOWED THEIR OWN BROOMSTICK</p>
           <p class="letter-footer">HOGWARTS SCHOOL of WITCHCRAFT & WIZARDRY<br>Headmaster: Albus Dumbledore<br>(Order of Merlin, First Class, Grand Sorc., Chf. Warlock, Supreme Mugwump, International Confed. of Wizards)</p>
           <button type="button" id="open-shopping">Purchase</button>
         </div>
@@ -96,226 +94,234 @@ else if (User.Identity.IsAuthenticated)
     </div>
   </div>
   // pass sorting quiz
-  <div id="the-great-hall" class="full-size">
-    //pop-up window
-    <div class="pop-up">
-      <h1>Welcome to Hogwarts</h1>
-      <p>The start-of-term banquet will begin shortly, but before you take your seats in the Great Hall, you will be sorted into your houses. The Sorting is a very important ceremony because, while you are here, your house will be something like your family within Hogwarts. You will have classes with the rest of your house, sleep in your house dormitory and spend free time in your house common room. </p>
-      <p> The four houses are called Gryffindor, Hufflepuff, Ravenclaw and Slytherin. Each house has its own noble history and each has produced outstanding witches and wizards. While you are at Hogwarts, your triumphs will earn your house points, while any rule-breaking will lose house points. At the end of the year, the house with the most points is awarded the House Cup, a great honour. I hope each of you will be a credit to whichever house becomes yours. </p>
+  <div id="the-great-hall" class="full-size hide">
+    <div id="welcome">
+      <div id="welcome-text">
+        <h1>Welcome to Hogwarts</h1>
+        <p>The start-of-term banquet will begin shortly, but before you take your seats in the Great Hall, you will be sorted into your houses. The Sorting is a very important ceremony because, while you are here, your house will be something like your family within Hogwarts. You will have classes with the rest of your house, sleep in your house dormitory and spend free time in your house common room. </p>
+        <p>&emsp;&emsp;The four houses are called Gryffindor, Hufflepuff, Ravenclaw and Slytherin. Each house has its own noble history and each has produced outstanding witches and wizards. While you are at Hogwarts, your triumphs will earn your house points, while any rule-breaking will lose house points. At the end of the year, the house with the most points is awarded the House Cup, a great honour. I hope each of you will be a credit to whichever house becomes yours. </p>
 
-      <button type="button" id="start-sorting">Let the Sorting now begin</button>
-      //hidden form
-      <form id="sorting-quiz">
+        <button type="button" id="start-sorting">Let the Sorting now begin</button>
+      </div>
+      <form id="sorting-quiz" class="hide">
         <div class="form-group">
-          <label>What would you rather be?</label>
+          <p>What would you rather be?</p>
           <label>
             <input type="radio" name="1" value="g" checked>
             Trusted
           </label>
           <label>
-            <input type="radio" name="1" value="s" checked>
+            <input type="radio" name="1" value="s" >
             Feared
           </label>
           <label>
-            <input type="radio" name="1" value="h" checked>
+            <input type="radio" name="1" value="h" >
             Liked
           </label>
           <label>
-            <input type="radio" name="1" value="r" checked>
+            <input type="radio" name="1" value="r" >
             Praised
           </label>
         </div>
         <div class="form-group">
-          <label>What would you see in the Mirror of Erised?</label>
+          <p>What would you see in the Mirror of Erised?</p>
           <label>
             <input type="radio" name="2" value="s" checked>
             Myself, surrounded by riches.
           </label>
           <label>
-            <input type="radio" name="2" value="h" checked>
+            <input type="radio" name="2" value="h" >
             Myself, surrounded by my loving family and friends.
           </label>
           <label>
-            <input type="radio" name="2" value="r" checked>
+            <input type="radio" name="2" value="r" >
             Myself, knowledgable above all.
           </label>
           <label>
-            <input type="radio" name="2" value="g" checked>
+            <input type="radio" name="2" value="g" >
             Myself, experiencing a marvellous adventure.
           </label>
         </div>
         <div class="form-group">
-          <label>The first Quidditch match of the season is approaching, and you can't wait to get involved. What role are you playing?</label>
+          <p>The first Quidditch match of the season is approaching, and you can't wait to get involved. What role are you playing?</p>
           <label>
             <input type="radio" name="3" value="s" checked>
             Beater. I like having all that power.
           </label>
           <label>
-            <input type="radio" name="3" value="g" checked>
+            <input type="radio" name="3" value="g" >
             Seeker. I want the glory!
           </label>
           <label>
-            <input type="radio" name="3" value="r" checked>
+            <input type="radio" name="3" value="r" >
             Chaser. I like to be involved, and work as part of the team.
           </label>
           <label>
-            <input type="radio" name="3" value="h" checked>
+            <input type="radio" name="3" value="h" >
             I'll be in the crowd, making sure supporter morale is high!
           </label>
         </div>
         <div class="form-group">
-          <label>You're allowed a pet at Hogwarts: an owl, a cat, or a toad. Which do you bring?</label>
+          <p>You're allowed a pet at Hogwarts: an owl, a cat, or a toad. Which do you bring?</p>
           <label>
             <input type="radio" name="4" value="h" checked>
             Toad
           </label>
           <label>
-            <input type="radio" name="4" value="g" checked>
+            <input type="radio" name="4" value="g" >
             Owl
           </label>
           <label>
-            <input type="radio" name="4" value="r" checked>
+            <input type="radio" name="4" value="r" >
             Cat
           </label>
           <label>
-            <input type="radio" name="4" value="s" checked>
+            <input type="radio" name="4" value="s" >
             Super poisonous angry toad
           </label>
         </div>
         <div class="form-group">
-          <label>It's Saturday, you've finished your homework, and you have some free time. You decide to spend some time away from your common room. Where do you go?</label>
+          <p>It's Saturday, you've finished your homework, and you have some free time. You decide to spend some time away from your common room. Where do you go?</p>
           <label>
             <input type="radio" name="5" value="s" checked>
             The Forbidden Forest
           </label>
           <label>
-            <input type="radio" name="5" value="r" checked>
+            <input type="radio" name="5" value="r" >
             The Library
           </label>
           <label>
-            <input type="radio" name="5" value="g" checked>
+            <input type="radio" name="5" value="g" >
             The Room of Requirement
           </label>
           <label>
-            <input type="radio" name="5" value="h" checked>
+            <input type="radio" name="5" value="h" >
             The Lake
           </label>
         </div>
         <div class="form-group">
-          <label>If you can make a potion that is going to guarantee you one thing, what is it gonna be?</label>
+          <p>If you can make a potion that is going to guarantee you one thing, what is it gonna be?</p>
           <label>
             <input type="radio" name="6" value="h" checked>
             Love
           </label>
           <label>
-            <input type="radio" name="6" value="g" checked>
+            <input type="radio" name="6" value="g" >
             Glory
           </label>
           <label>
-            <input type="radio" name="6" value="s" checked>
+            <input type="radio" name="6" value="s" >
             Power
           </label>
           <label>
-            <input type="radio" name="6" value="r" checked>
+            <input type="radio" name="6" value="r" >
             Knowledge
           </label>
         </div>
         <div class="form-group">
-          <label>You are approached by a Muggle who calls you a wizard. How would you react?</label>
+          <p>You are approached by a Muggle who calls you a wizard. How would you react?</p>
           <label>
             <input type="radio" name="7" value="r" checked>
             Ask them to explain what they are talking about.
           </label>
           <label>
-            <input type="radio" name="7" value="h" checked>
+            <input type="radio" name="7" value="h" >
             Agree and walk away.
           </label>
           <label>
-            <input type="radio" name="7" value="s" checked>
+            <input type="radio" name="7" value="s" >
             Jinx them.
           </label>
           <label>
-            <input type="radio" name="7" value="g" checked>
+            <input type="radio" name="7" value="g" >
             Modify their memory.
           </label>
         </div>
         <div class="form-group">
-          <label>You're having trouble mastering a new spell, and you've decided to ask for help. Who do you go to?</label>
+          <p>You're having trouble mastering a new spell, and you've decided to ask for help. Who do you go to?</p>
           <label>
             <input type="radio" name="8" value="h" checked>
             My professor
           </label>
           <label>
-            <input type="radio" name="8" value="s" checked>
+            <input type="radio" name="8" value="s" >
             My house ghost
           </label>
           <label>
-            <input type="radio" name="8" value="g" checked>
+            <input type="radio" name="8" value="g" >
             My smartest friend
           </label>
           <label>
-            <input type="radio" name="8" value="r" checked>
+            <input type="radio" name="8" value="r" >
             The library
           </label>
         </div>
         <div class="form-group">
-          <label>You're having trouble mastering a new spell, and you've decided to ask for help. Who do you go to?</label>
+          <p>You're having trouble mastering a new spell, and you've decided to ask for help. Who do you go to?</p>
           <label>
             <input type="radio" name="9" value="s" checked>
             The Elder Wand
           </label>
           <label>
-            <input type="radio" name="9" value="r" checked>
+            <input type="radio" name="9" value="r" >
             The Resurrection Stone
           </label>
           <label>
-            <input type="radio" name="9" value="g" checked>
+            <input type="radio" name="9" value="g" >
             The Cloak of Inivisibilty
           </label>
           <label>
-            <input type="radio" name="9" value="h" checked>
+            <input type="radio" name="9" value="h" >
             No thanks, those things are dangerous!
           </label>
         </div>
         <div class="form-group">
-          <label>Which of these magical events would you most like to experience?</label>
+          <p>Which of these magical events would you most like to experience?</p>
           <label>
             <input type="radio" name="10" value="r" checked>
             The Triwizard Tournament
           </label>
           <label>
-            <input type="radio" name="10" value="g" checked>
+            <input type="radio" name="10" value="g" >
             The Quidditch World Cup
           </label>
           <label>
-            <input type="radio" name="10" value="s" checked>
+            <input type="radio" name="10" value="s" >
             Halloween at Hogwarts
           </label>
           <label>
-            <input type="radio" name="10" value="h" checked>
+            <input type="radio" name="10" value="h" >
             Christmas at Hogwarts
           </label>
         </div>
         <div class="form-group">
-          <label>We know that the Sorting Hat takes into account your preferences. So which Hogwarts house do you feel you identify with most closely?</label>
+          <p>We know that the Sorting Hat takes into account your preferences. So which Hogwarts house do you feel you identify with most closely?</p>
           <label>
             <input type="radio" name="11" value="g" checked>
             Gryffindor
           </label>
           <label>
-            <input type="radio" name="11" value="h" checked>
+            <input type="radio" name="11" value="h" >
             Hufflepuff
           </label>
           <label>
-            <input type="radio" name="11" value="r" checked>
+            <input type="radio" name="11" value="r" >
             Ravenclaw
           </label>
           <label>
-            <input type="radio" name="11" value="s" checked>
+            <input type="radio" name="11" value="s" >
             Slytherin
           </label>
         </div>
+        <div class="form-group">
+          <button type="submit">Find Out Your House</button>
+        </div>
       </form>
+      <div id="sorting-result" class="hide">
+        <h3>Congratulations!</h3>
+        <p>Your house is <span id="new-house"></span></p>
+        <button onclick="location.reload();" type="button">Visit Your Common Rooom</button>
+      </div>
     </div>
   </div>
 }
