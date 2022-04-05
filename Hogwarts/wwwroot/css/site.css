@@ -113,23 +113,24 @@ html {
 }
 
 #Slytherin {
-  background-image: url("../img/slythCommon.jpeg");
-  height: 100vh;
+  background-image: url("../img/common_rooms/Slytherin.jpeg");
   background-size: cover;
 }
 
 #Gryffindor {
-  background-image: url("../img/gryffCommon.jpeg");
+  background-image: url("../img/common_rooms/Gryffindor.jpeg");
   background-size: cover;
   background-position: bottom;
 }
 
 #Ravenclaw {
-  background-image: url("../img/ravenCommon.jpeg");
+  background-image: url("../img/common_rooms/Ravenclaw.jpeg");
+  background-size: cover;
 }
 
 #Hufflepuff {
-  background-image: url("../img/huffCommon.jpg");
+  background-image: url("../img/common_rooms/Hufflepuff.jpg");
+  background-size: cover;
 }
 
 #the-great-hall {
@@ -138,7 +139,6 @@ html {
 
 #account {
   background-image: url("../img/account.png");
-  width: 100%;
   background-size: cover;
   background-position: bottom;
 }
@@ -451,7 +451,7 @@ button,
   transform: rotate(3deg);
 }
 
-.chocolate-frog-wizard-gif {
+.chocolate_frog/wizard-gif {
   height: 500px;
   width: 274px;
   object-fit: cover;
