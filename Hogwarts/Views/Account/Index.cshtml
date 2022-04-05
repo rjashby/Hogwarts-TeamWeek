@@ -3,22 +3,75 @@
 }
 
 @using System.Security.Claims
+@model Hogwarts.Models.Student
 
-@if (User.Identity.IsAuthenticated)
-{
-  <div id="account" class="full-size">
-    <div class="account-info">
-     <p>Hello @Model.FirstName!</p>
-     <p>House: @Model.House</p>
-      @using (Html.BeginForm("LogOff", "Account"))
+<div id="account" class="full-size">
+  <div class="overlay @(@Model != null ? "@(Model.House)-overlay" : "")">
+    <div class="letter">
+      @if (User.Identity.IsAuthenticated)
       {
-        <input type="submit" class ="btn btn-dark" value="Log out" />
+        <div id="account-info">
+          @if (Model.House != null)
+          {
+            <img src="~/img/house_crests/@(Model.House).png">
+          }
+          else
+          {
+            <img src="~/img/hogwarts_bw.png">
+          }
+          <p>Student Name: @Model.FirstName @Model.LastName</p>
+          <p>Email: @Model.Email</p>
+          <p>Year: @Model.Year</p>
+          @if (Model.Animal != null)
+          {
+            <p>Animal: @Model.Animal</p>
+          }
+          @if (Model.Wand != null)
+          {
+            <p>Wand: @Model.Wand</p>
+          }
+          <button type="button" id="edit-student">Edit</button>
+          @using (Html.BeginForm("LogOff", "Account"))
+          {
+            <input type="submit" class="button" value="Log out" />
+          }
+        </div>
+        <div id="edit-student-window" class="hide">
+          @using (Html.BeginForm("Edit", "Students", FormMethod.Post))
+          {
+            <label for="Title" class="mt-3">Title</label>
+            <select name="title" id="title" class="form-control shadow-sm" required="required">
+              <option value="Mr.">Mr.</option>
+              <option value="Miss">Miss</option>
+            </select>
+
+            <label for="FirstName" class="mt-3">First Name</label>
+            @Html.TextBoxFor(model => model.FirstName, new {@class="form-control shadow-sm", required="required"})
+
+            <label for="LastName" class="mt-3">Last Name</label>
+            @Html.TextBoxFor(model => model.LastName, new {@class="form-control shadow-sm", required="required"})
+
+            <label for="Email" class="mt-3">Email</label>
+            @Html.TextBoxFor(model => model.Email, new {@class="form-control shadow-sm", required="required"})
+
+            <label for="Year" class="mt-3">Year</label>
+            @Html.TextBoxFor(model => model.Year, new {@class="form-control shadow-sm", required="required", @type="number"})
+
+            @Html.HiddenFor(model => model.StudentId)
+            @Html.HiddenFor(model => model.Wand)
+            @Html.HiddenFor(model => model.Robes)
+            @Html.HiddenFor(model => model.House)
+            @Html.HiddenFor(model => model.StudentId)
+            <button type="submit" value="Save" class="btn btn-light mt-3">Edit</button>
+          }
+        </div>
+      }
+      else
+      {
+        <button>@Html.ActionLink("Register", "Register", "Account", null, new {@class="button"})</button>
+        <button>@Html.ActionLink("Log in", "Login", "Account", null, new {@class="button"})</button>
       }
     </div>
   </div>
-}
-else
-{
-  <button class="btn-dark">@Html.ActionLink("Register", "Register")</button>
-  <button class="btn-dark">@Html.ActionLink("Log in", "Login")</button>
+</div>
 }

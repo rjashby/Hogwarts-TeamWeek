@@ -1,0 +1,94 @@
+@using System
+<style>
+  .parent {
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+
+  .image1 {
+    position: relative;
+    top: 0;
+    left: -130px;
+  }
+
+  .wizard-name {
+    position: relative;
+    top: -60px;
+    left: 9px;
+  }
+
+  .image2 {
+    position: absolute;
+    top: 115px;
+    left: 110px;
+  }
+</style>
+
+<a data-bs-toggle="modal" data-bs-target="#frogModal" id="frogLink" class="chocolate-frog">
+  <div class="card  bg-transparent">
+    <div class="card-body text-dark" style="max-width: 150px; height: 150px;">
+      <img src="~/img/chocolate-frog.png" class="w-100" alt="schedule">
+    </div>
+  </div>
+</a>
+<script>
+  $(`#frogLink`).click(function () {
+    let num = Math.floor(Math.random() * 7);
+    console.log(num);
+    for (let x = 0; x < 7; x++) {
+      $("#chocolate-frog-container-" + x).addClass("d-none");
+    }
+    $("#chocolate-frog-container-" + num).removeClass("d-none");
+  });
+</script>
+<div class="modal fade text-dark bg-transparent" id="frogModal" tabindex="-1" aria-labelledby="frogModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered bg-transparent">
+    <div class="modal-content bg-transparent border-0">
+      <div class="modal-body bg-transparent">
+        <div class="px-5 text-center parent d-none" id="chocolate-frog-container-0">
+          <img src="~/img/chocolate-frog-harry-potter.gif" class="chocolate-frog-wizard-gif image2" alt="chocolate frog card">
+          <img src="~/img/chocolate-frog-card.png" class="image1" alt="chocolate frog card">
+          <h4 class="wizard-name">Harry Potter</h4>
+        </div>
+
+        <div class="px-5 text-center parent d-none" id="chocolate-frog-container-1">
+          <img src="~/img/chocolate-frog-albus-dumbledore.gif" class="chocolate-frog-wizard-gif image2" alt="chocolate frog card">
+          <img src="~/img/chocolate-frog-card.png" class="image1" alt="chocolate frog card">
+          <h4 class="wizard-name">Albus Dumbledore</h4>
+        </div>
+
+        <div class="px-5 text-center parent d-none" id="chocolate-frog-container-2">
+          <img src="~/img/chocolate-frog-severus-snape.gif" class="chocolate-frog-wizard-gif image2" alt="chocolate frog card" style="object-position: 64% 0;">
+          <img src="~/img/chocolate-frog-card.png" class="image1" alt="chocolate frog card">
+          <h4 class="wizard-name">Severus Snape</h4>
+        </div>
+
+        <div class="px-5 text-center parent d-none" id="chocolate-frog-container-3">
+          <img src="~/img/chocolate-frog-gilderoy-lockheart.gif" class="chocolate-frog-wizard-gif image2" alt="chocolate frog card" style="object-position: 39% 0;">
+          <img src="~/img/chocolate-frog-card.png" class="image1" alt="chocolate frog card">
+          <h4 class="wizard-name fs-5">Gilderoy Lockheart</h4>
+        </div>
+
+        <div class="px-5 text-center parent d-none" id="chocolate-frog-container-4">
+          <img src="~/img/chocolate-frog-viktor-krum.gif" class="chocolate-frog-wizard-gif image2" alt="chocolate frog card" style="object-position: 54% 0;">
+          <img src="~/img/chocolate-frog-card.png" class="image1" alt="chocolate frog card">
+          <h4 class="wizard-name">Viktor Krum</h4>
+        </div>
+
+        <div class="px-5 text-center parent d-none" id="chocolate-frog-container-5">
+          <img src="~/img/chocolate-frog-lily-james-potter.gif" class="chocolate-frog-wizard-gif image2" alt="chocolate frog card" style="object-position: 54% 0;">
+          <img src="~/img/chocolate-frog-card.png" class="image1" alt="chocolate frog card">
+          <h4 class="wizard-name fs-5">James and Lily Potter</h4>
+        </div>
+
+
+        <div class="px-5 text-center parent d-none" id="chocolate-frog-container-6">
+          <img src="~/img/chocolate-frog-lord-voldemort.gif" class="chocolate-frog-wizard-gif image2" alt="chocolate frog card" style="object-position: 54% 0;">
+          <img src="~/img/chocolate-frog-card.png" class="image1" alt="chocolate frog card">
+          <h4 class="wizard-name">Lord Voldemort</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -34,6 +34,10 @@ namespace Hogwarts.Controllers
         thisStudent.House = house;
         _db.SaveChanges();
       }
+      if (thisStudent != null)
+      {
+        ViewBag.Sorted = true;
+      }
       return View(thisStudent);
     }
 
@@ -60,7 +64,7 @@ namespace Hogwarts.Controllers
       }
       else
       {
-        return View();
+        return RedirectToAction("Index", "Home");
       }
     }
 

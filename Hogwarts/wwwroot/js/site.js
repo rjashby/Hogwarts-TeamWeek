@@ -92,3 +92,9 @@ $("#sorting-quiz").submit(function (event) {
   $("#sorting-quiz").addClass("hide");
   $("#welcome").removeClass("scroll");
 });
+
+$("#edit-student").on("click", function () {
+  console.log("edit");
+  $("#account-info").addClass("hide");
+  $("#edit-student-window").removeClass("hide");
+});

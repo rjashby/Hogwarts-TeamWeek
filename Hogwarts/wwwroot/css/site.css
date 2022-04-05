@@ -38,7 +38,8 @@ a.navbar-brand {
   width: 125px;
 }
 
-.nav-item {
+.nav-item,
+button {
   border: 1px solid black;
   padding: 2px;
   background-image: url("../img/paper.jpeg");
@@ -219,7 +220,7 @@ html {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  max-width: 600px;
+  width: 600px;
   padding: 40px 100px;
   color: black;
 }
@@ -241,7 +242,8 @@ html {
   margin: -20px 0 0;
 }
 
-button {
+button,
+.button {
   font-family: "Lumos";
   background-color: transparent;
   margin: auto;
@@ -346,10 +348,17 @@ button {
   color: rgb(251, 246, 233);
 }
 
-#account-info {
+.account-info {
   display: flex;
   flex-direction: column;
-  background-color: rgba(251, 246, 233, 0.9);
+  justify-content: center;
+  align-items: center;
+  background-image: url("../img/letter.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 600px;
+  height: 500px;
   color: black;
   width: 500px;
 }
@@ -358,11 +367,17 @@ button {
   overflow: scroll;
 }
 
-.schedule-sheet {
+#Hufflepuff .schedule-sheet {
   position: absolute !important;
   top: 400px !important;
   left: 40px !important;
   transform: rotate(-4deg);
+}
+
+#Hufflepuff .chocolate-frog {
+  position: absolute !important;
+  top: 672px !important;
+  left: 435px !important;
 }
 
 #Hufflepuff .notice-board-sheet {
@@ -372,10 +387,102 @@ button {
   transform: rotate(4deg);
 }
 
+
+
+#Slytherin .schedule-sheet {
+  position: absolute !important;
+  top: calc(43vh);
+  left: calc(50vw);
+  transform: rotate(-4deg);
+}
+
+#Slytherin .chocolate-frog {
+  position: absolute !important;
+  top: calc(70vh);
+  left: calc(14vw);
+}
+
+#Slytherin .notice-board-sheet {
+  position: absolute !important;
+  top: 269px !important;
+  left: 105px !important;
+  transform: rotate(-7deg);
+}
+
+
+
+#Ravenclaw .schedule-sheet {
+  position: absolute !important;
+  top: 318px !important;
+  left: 70px !important;
+}
+
+#Ravenclaw .chocolate-frog {
+  position: absolute !important;
+  top: 512px !important;
+  left: 47% !important;
+}
+
+#Ravenclaw .notice-board-sheet {
+  position: absolute !important;
+  top: 180px !important;
+  left: 57% !important;
+  transform: rotate(-7deg);
+}
+
+
+#Gryffindor .schedule-sheet {
+  position: absolute !important;
+  top: 590px !important;
+  left: -8px !important;
+  transform: rotate(-4deg);
+}
+
+#Gryffindor .chocolate-frog {
+  position: absolute !important;
+  top: 915px !important;
+  left: 403px !important;
+}
+
+#Gryffindor .notice-board-sheet {
+  position: absolute !important;
+  top: 425px !important;
+  left: 84% !important;
+  transform: rotate(3deg);
+}
+
+.chocolate-frog-wizard-gif {
+  height: 500px;
+  width: 274px;
+  object-fit: cover;
+  object-position: 82% 0;
+}
+
 .bg-noticeboard {
   background-image: url("../img/noticeboard.png");
 }
 
 .bg-corkboard {
   background-image: url("../img/bg-corkboard.jpg");
+}
+
+.handwriting {
+  font-family: 'Beau Rivage', cursive;
+  font-size: 3rem;
+}
+
+.Slytherin-overlay {
+  background-color: rgba(29, 116, 84, 0.4);
+}
+
+.Gryffindor-overlay {
+  background-color: rgba(214, 26, 85, 0.4);
+}
+
+.Hufflepuff-overlay {
+  background-color: rgba(255, 228, 139, 0.4);
+}
+
+.Ravenclaw-overlay {
+  background-color: rgba(136, 183, 213, 0.4);
 }

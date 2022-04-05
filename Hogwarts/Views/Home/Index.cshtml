@@ -24,7 +24,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div> *@
           <div class="modal-body bg-letter ">
-            @Html.Partial("ClassList.cshtml")
+            @Html.Partial("HomeRoom/ClassList.cshtml")
           </div>
           @* <div class="modal-footer bg-letter">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -32,9 +32,8 @@
         </div>
       </div>
     </div>
-    <div id="frogs">
+    @Html.Partial("HomeRoom/ChocolateFrog.cshtml")
 
-    </div>
     <a data-bs-toggle="modal" id="large-notice-board" class="notice-board-sheet" data-bs-target="#largeNoticeModal">
       <div class="card">
         <div class="card-body rounded text-dark bg-noticeboard" style="width: 200px; height: 340px;">
@@ -50,7 +49,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div> *@
           <div class="modal-body bg-corkboard">
-            @Html.Partial("NoticeBoard.cshtml")
+            @Html.Partial("HomeRoom/NoticeBoard.cshtml")
           </div>
           @* <div class="modal-footer bg-letter">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -351,8 +350,43 @@ else
     <div class="video">
       <video src="..\video\HogwartsNight.mp4" loop muted autoplay></video>
     </div>
-
-    <button type="button" style="z-index:1;" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registerModal" id="showRegisterButton">
+    <button type="button" style="z-index:1;" data-bs-toggle="modal" data-bs-target="#loginModal" id="showRegisterButton">
+      Login
+    </button>
+    <div class="modal fade rounded" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header text-dark">
+            <h5 class="modal-title" id="loginModalLabel">Register</h5>
+            <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          @using (Html.BeginForm("Login", "Account", FormMethod.Post))
+          {
+            <div class="modal-body p-5 text-dark bg-light">
+              <p class="mb-5 fs-6">Welcome back! Please login below with your email and password.
+              </p>
+              <div class="form-group my-3">
+                @Html.LabelFor(user => user.Email)
+                @Html.TextBoxFor(user=> user.Email, new {@id="registerEmail", @class="form-control"})
+              </div>
+              <div class="form-group my-3">
+                @Html.LabelFor(user=> user.Password)
+                @Html.PasswordFor(user=> user.Password,new {@id="registerPassword", @class="form-control"})
+              </div>
+              <div class="form-group my-3">
+                @Html.LabelFor(user=> user.ConfirmPassword)
+                @Html.PasswordFor(user=> user.ConfirmPassword,new {@id="registerConfirmPassword", @class="form-control"})
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+              <button type="submit" class="btn btn-primary">Login</button>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+    <button type="button" style="z-index:1;" data-bs-toggle="modal" data-bs-target="#registerModal" id="showRegisterButton">
       Register
     </button>
     <div class="modal fade rounded" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
