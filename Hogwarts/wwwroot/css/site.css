@@ -61,7 +61,7 @@ a {
 }
 
 .nav-pills .nav-link.active,
-.nav-pills .show>.nav-link {
+.nav-pills .show > .nav-link {
   color: #fff;
   background-color: #1b6ec2;
   border-color: #1861ac;
@@ -112,27 +112,6 @@ html {
   /* Vertically center the text there */
 }
 
-#Slytherin {
-  background-image: url("../img/common_rooms/Slytherin.jpeg");
-  background-size: cover;
-}
-
-#Gryffindor {
-  background-image: url("../img/common_rooms/Gryffindor.jpeg");
-  background-size: cover;
-  background-position: bottom;
-}
-
-#Ravenclaw {
-  background-image: url("../img/common_rooms/Ravenclaw.jpeg");
-  background-size: cover;
-}
-
-#Hufflepuff {
-  background-image: url("../img/common_rooms/Hufflepuff.jpg");
-  background-size: cover;
-}
-
 #the-great-hall {
   background-image: url("../img/greathall.png");
 }
@@ -150,6 +129,7 @@ html {
   align-items: center;
   justify-content: center;
   font-family: "Letter";
+  overflow: hidden;
 }
 
 .video {
@@ -348,7 +328,7 @@ button,
   color: rgb(251, 246, 233);
 }
 
-.account-info {
+/* .account-info {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -361,97 +341,13 @@ button,
   height: 500px;
   color: black;
   width: 500px;
-}
+} */
 
 .scroll {
   overflow: scroll;
 }
 
-#Hufflepuff .schedule-sheet {
-  position: absolute !important;
-  top: 400px !important;
-  left: 40px !important;
-  transform: rotate(-4deg);
-}
-
-#Hufflepuff .chocolate-frog {
-  position: absolute !important;
-  top: 672px !important;
-  left: 435px !important;
-}
-
-#Hufflepuff .notice-board-sheet {
-  position: absolute !important;
-  top: 400px !important;
-  left: 70% !important;
-  transform: rotate(4deg);
-}
-
-
-
-#Slytherin .schedule-sheet {
-  position: absolute !important;
-  top: calc(43vh);
-  left: calc(50vw);
-  transform: rotate(-4deg);
-}
-
-#Slytherin .chocolate-frog {
-  position: absolute !important;
-  top: calc(70vh);
-  left: calc(14vw);
-}
-
-#Slytherin .notice-board-sheet {
-  position: absolute !important;
-  top: 269px !important;
-  left: 105px !important;
-  transform: rotate(-7deg);
-}
-
-
-
-#Ravenclaw .schedule-sheet {
-  position: absolute !important;
-  top: 318px !important;
-  left: 70px !important;
-}
-
-#Ravenclaw .chocolate-frog {
-  position: absolute !important;
-  top: 512px !important;
-  left: 47% !important;
-}
-
-#Ravenclaw .notice-board-sheet {
-  position: absolute !important;
-  top: 180px !important;
-  left: 57% !important;
-  transform: rotate(-7deg);
-}
-
-
-#Gryffindor .schedule-sheet {
-  position: absolute !important;
-  top: 590px !important;
-  left: -8px !important;
-  transform: rotate(-4deg);
-}
-
-#Gryffindor .chocolate-frog {
-  position: absolute !important;
-  top: 915px !important;
-  left: 403px !important;
-}
-
-#Gryffindor .notice-board-sheet {
-  position: absolute !important;
-  top: 425px !important;
-  left: 84% !important;
-  transform: rotate(3deg);
-}
-
-.chocolate_frog/wizard-gif {
+.chocolate-frog-wizard-gif {
   height: 500px;
   width: 274px;
   object-fit: cover;
@@ -463,11 +359,12 @@ button,
 }
 
 .bg-corkboard {
-  background-image: url("../img/bg-corkboard.jpg");
+  background-image: url("../img/notice_board.png");
+  background-size: 102% 102%;
 }
 
 .handwriting {
-  font-family: 'Beau Rivage', cursive;
+  font-family: "Beau Rivage", cursive;
   font-size: 3rem;
 }
 
@@ -485,4 +382,49 @@ button,
 
 .Ravenclaw-overlay {
   background-color: rgba(136, 183, 213, 0.4);
+}
+
+.modal-content {
+  background-color: transparent;
+}
+
+.bg-corkboard .notice {
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("../img/letter.png");
+  max-width: 300px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 10px;
+  justify-content: center;
+  text-align: center;
+}
+
+.notices {
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: wrap;
+  row-gap: 40px;
+}
+
+.notice-header {
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("../img/letter.png");
+  max-width: 400px;
+  margin: 30px auto 0;
+  text-align: center;
+  padding: 20px;
+}
+
+#common-room-map {
+  object-fit: cover;
+  min-width: 100%;
+  min-height: 100%;
 }

@@ -62,12 +62,36 @@ namespace Hogwarts.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Students",
+                columns: table => new
+                {
+                    StudentId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Email = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
+                    Title = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
+                    FirstName = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
+                    LastName = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
+                    House = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
+                    Year = table.Column<int>(type: "int", nullable: false),
+                    Wand = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
+                    WandURL = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
+                    Animal = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
+                    Robes = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Students", x => x.StudentId);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Teachers",
                 columns: table => new
                 {
                     TeacherId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
+                    FirstName = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
+                    LastName = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
+                    House = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
                     HeadshotPhotoURL = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true)
                 },
                 constraints: table =>
@@ -182,26 +206,29 @@ namespace Hogwarts.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Students",
+                name: "CourseStudent",
                 columns: table => new
                 {
-                    StudentId = table.Column<int>(type: "int", nullable: false)
+                    CourseStudentId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
-                    House = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
-                    Year = table.Column<int>(type: "int", nullable: false),
-                    Wand = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
-                    UserId = table.Column<string>(type: "varchar(255) CHARACTER SET utf8mb4", nullable: true)
+                    CourseId = table.Column<int>(type: "int", nullable: false),
+                    StudentId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Students", x => x.StudentId);
+                    table.PrimaryKey("PK_CourseStudent", x => x.CourseStudentId);
                     table.ForeignKey(
-                        name: "FK_Students_AspNetUsers_UserId",
-                        column: x => x.UserId,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        name: "FK_CourseStudent_Courses_CourseId",
+                        column: x => x.CourseId,
+                        principalTable: "Courses",
+                        principalColumn: "CourseId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_CourseStudent_Students_StudentId",
+                        column: x => x.StudentId,
+                        principalTable: "Students",
+                        principalColumn: "StudentId",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -227,32 +254,6 @@ namespace Hogwarts.Migrations
                         column: x => x.TeacherId,
                         principalTable: "Teachers",
                         principalColumn: "TeacherId",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "CourseStudent",
-                columns: table => new
-                {
-                    CourseStudentId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    CourseId = table.Column<int>(type: "int", nullable: false),
-                    StudentId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_CourseStudent", x => x.CourseStudentId);
-                    table.ForeignKey(
-                        name: "FK_CourseStudent_Courses_CourseId",
-                        column: x => x.CourseId,
-                        principalTable: "Courses",
-                        principalColumn: "CourseId",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_CourseStudent_Students_StudentId",
-                        column: x => x.StudentId,
-                        principalTable: "Students",
-                        principalColumn: "StudentId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -312,11 +313,6 @@ namespace Hogwarts.Migrations
                 name: "IX_CourseTeacher_TeacherId",
                 table: "CourseTeacher",
                 column: "TeacherId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Students_UserId",
-                table: "Students",
-                column: "UserId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -346,6 +342,9 @@ namespace Hogwarts.Migrations
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
+                name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
                 name: "Students");
 
             migrationBuilder.DropTable(
@@ -353,9 +352,6 @@ namespace Hogwarts.Migrations
 
             migrationBuilder.DropTable(
                 name: "Teachers");
-
-            migrationBuilder.DropTable(
-                name: "AspNetUsers");
         }
     }
 }
