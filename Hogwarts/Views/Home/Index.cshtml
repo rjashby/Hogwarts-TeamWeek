@@ -8,57 +8,56 @@
 
 @if (User.Identity.IsAuthenticated && @ViewBag.ThisStudent.House != null)
 {
-  <div id=@ViewBag.ThisStudent.House class="full-size">
-
-    <a data-bs-toggle="modal" data-bs-target="#scheduleModal" class="schedule-sheet">
+  <div class="full-size">
+    <img id="common-room-map" src="~/img/common_rooms/@(ViewBag.ThisStudent.House).png" usemap="#@(ViewBag.ThisStudent.House)-map"></img>
+    <map name="Slytherin-map">
+      <area target="" alt="notice-board" title="notice-board" href="#" coords="534,164,633,195,644,312,618,332,590,338,543,312,524,232" shape="poly" data-bs-toggle="modal" data-bs-target="#largeNoticeModal">
+      <area target="" alt="chocolate-frog" title="chocolate-frog" href="#" coords="173,582,221,565,282,582,276,629,255,645,177,645,152,605" shape="poly" data-bs-toggle="modal" data-bs-target="#frogModal" class="frogLink">
+    </map>
+    <map name="Gryffindor-map">
+      <area target="" alt="chocolate-frog" title="chocolate-frog" href="#" coords="345,769,426,801,409,873,287,885,255,823,276,788,277,785,276,788" shape="poly" data-bs-toggle="modal" data-bs-target="#frogModal" class="frogLink">
+      <area target="" alt="notice-board" title="notice-board" href="#" coords="336,335,406,378,399,537,326,582,260,531,255,388"  shape="poly" data-bs-toggle="modal" data-bs-target="#largeNoticeModal">
+    </map>
+    <map name="Hufflepuff-map">
+      <area target="" alt="chocolate-frog" title="chocolate-frog" href="#" coords="419,863,499,832,571,866,549,932,453,947" shape="poly" data-bs-toggle="modal" data-bs-target="#frogModal" class="frogLink">
+      <area target="" alt="notice-board" title="notice-board" href="#" coords="262,381,344,350,404,392,400,536,341,575,263,558" shape="poly" data-bs-toggle="modal" data-bs-target="#largeNoticeModal">
+    </map>
+    <map name="Ravenclaw-map">
+      <area target="" alt="chocolate-frog" title="chocolate-frog" href="#" coords="228,427,279,447,257,502,202,496,172,454" shape="poly" data-bs-toggle="modal" data-bs-target="#frogModal" class="frogLink">
+      <area target="" alt="notice-board" title="notice-board" href="#" coords="240,256,276,273,288,323,261,379,235,390,202,376,186,303,195,270" shape="poly" data-bs-toggle="modal" data-bs-target="#largeNoticeModal">    
+    </map>
+    @* <script>
+      $("#common-room-map").on("click", function () {
+      $("img#common-room-map").rwdImageMaps();
+      $("img[usemap]").addClass("done");
+    });
+    </script> *@
+    @* <a data-bs-toggle="modal" data-bs-target="#scheduleModal" class="schedule-sheet">
       <div class="card">
-        <div class="card-body text-dark bg-letter" style="max-width: 200px; height: 200px;">
-          <img src="~/img/script-schedule.png" class="w-100" alt="schedule">
-        </div>
+        <p class="card-body text-dark bg-letter" style="max-width: 200px; height: 200px;">
+          Schedule
+        </p>
       </div>
-    </a>
+    </a>*@
     <div class="modal fade text-dark" id="scheduleModal" tabindex="-1" aria-labelledby="scheduleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
-          @* <div class="modal-header bg-letter">
+          <div class="modal-header bg-letter">
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div> *@
+            </div>
           <div class="modal-body bg-letter ">
-            @Html.Partial("ClassList.cshtml")
+            @Html.Partial("HomeRoom/ClassList.cshtml")
           </div>
-          @* <div class="modal-footer bg-letter">
+          <div class="modal-footer bg-letter">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            </div> *@
+            </div>
         </div>
       </div>
     </div>
-    <div id="frogs">
-
-    </div>
-    <a data-bs-toggle="modal" id="large-notice-board" class="notice-board-sheet" data-bs-target="#largeNoticeModal">
-      <div class="card">
-        <div class="card-body rounded text-dark bg-noticeboard" style="width: 200px; height: 340px;">
-          @* <img src="~/img/script-schedule.png" class="w-100" alt="schedule"> *@
-
-        </div>
-      </div>
-    </a>
-    <div class="modal fade text-dark" id="largeNoticeModal" tabindex="-1" aria-labelledby="largeNoticeModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content ">
-          @* <div class="modal-header bg-letter">
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div> *@
-          <div class="modal-body bg-corkboard">
-            @Html.Partial("NoticeBoard.cshtml")
-          </div>
-          @* <div class="modal-footer bg-letter">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            </div> *@
-        </div>
-      </div>
-    </div>
-  </div>
+    @Html.Partial("HomeRoom/ChocolateFrog.cshtml")
+    @Html.Partial("HomeRoom/NoticeBoard.cshtml")
+     
+  </div> 
 }
 else if (User.Identity.IsAuthenticated)
 {
@@ -357,8 +356,43 @@ else
     <div class="video">
       <video src="..\video\HogwartsArrival.mp4" loop muted autoplay></video>
     </div>
-
-    <button type="button" style="z-index:1;" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registerModal" id="showRegisterButton">
+    <button type="button" style="z-index:1;" data-bs-toggle="modal" data-bs-target="#loginModal" id="showRegisterButton">
+      Login
+    </button>
+    <div class="modal fade rounded" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header text-dark">
+            <h5 class="modal-title" id="loginModalLabel">Register</h5>
+            <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          @using (Html.BeginForm("Login", "Account", FormMethod.Post))
+          {
+            <div class="modal-body p-5 text-dark bg-light">
+              <p class="mb-5 fs-6">Welcome back! Please login below with your email and password.
+              </p>
+              <div class="form-group my-3">
+                @Html.LabelFor(user => user.Email)
+                @Html.TextBoxFor(user=> user.Email, new {@id="registerEmail", @class="form-control"})
+              </div>
+              <div class="form-group my-3">
+                @Html.LabelFor(user=> user.Password)
+                @Html.PasswordFor(user=> user.Password,new {@id="registerPassword", @class="form-control"})
+              </div>
+              <div class="form-group my-3">
+                @Html.LabelFor(user=> user.ConfirmPassword)
+                @Html.PasswordFor(user=> user.ConfirmPassword,new {@id="registerConfirmPassword", @class="form-control"})
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+              <button type="submit" class="btn btn-primary">Login</button>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+    <button type="button" style="z-index:1;" data-bs-toggle="modal" data-bs-target="#registerModal" id="showRegisterButton">
       Register
     </button>
     <div class="modal fade rounded" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">

@@ -41,7 +41,8 @@ a.navbar-brand {
 .nav-item {
   border: 1px solid black;
   padding: 2px;
-  background-image: url("../img/paper.jpeg");
+  background-image: url("../img/letter.png");
+  background-position: center;
 }
 
 .nav-link {
@@ -60,7 +61,7 @@ a {
 }
 
 .nav-pills .nav-link.active,
-.nav-pills .show>.nav-link {
+.nav-pills .show > .nav-link {
   color: #fff;
   background-color: #1b6ec2;
   border-color: #1861ac;
@@ -111,33 +112,12 @@ html {
   /* Vertically center the text there */
 }
 
-#Slytherin {
-  background-image: url("../img/slythCommon.jpeg");
-  height: 100vh;
-  background-size: cover;
-}
-
-#Gryffindor {
-  background-image: url("../img/gryffCommon.jpeg");
-  background-size: cover;
-  background-position: bottom;
-}
-
-#Ravenclaw {
-  background-image: url("../img/ravenCommon.jpeg");
-}
-
-#Hufflepuff {
-  background-image: url("../img/huffCommon.jpg");
-}
-
 #the-great-hall {
   background-image: url("../img/greathall.png");
 }
 
 #account {
   background-image: url("../img/account.png");
-  width: 100%;
   background-size: cover;
   background-position: bottom;
 }
@@ -149,6 +129,7 @@ html {
   align-items: center;
   justify-content: center;
   font-family: "Letter";
+  overflow: hidden;
 }
 
 .video {
@@ -189,7 +170,7 @@ html {
 
 #gif-letter img {
   width: 500px;
-  margin: auto;
+  margin: 0 auto;
   display: block;
 }
 
@@ -218,7 +199,7 @@ html {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  max-width: 600px;
+  width: 600px;
   padding: 40px 100px;
   color: black;
 }
@@ -240,12 +221,20 @@ html {
   margin: -20px 0 0;
 }
 
-button {
+button,
+.button {
   font-family: "Lumos";
   background-color: transparent;
   margin: auto;
   padding: 10px 20px;
   display: block;
+  background-image: url("../img/letter.png");
+  background-position: center;
+}
+
+.buttons-group {
+  display: flex;
+  gap: 20px;
 }
 
 #shopping-list {
@@ -280,10 +269,6 @@ button {
 
 .flex {
   display: flex;
-}
-
-.hide {
-  display: none;
 }
 
 #welcome {
@@ -348,27 +333,24 @@ button {
 #account-info {
   display: flex;
   flex-direction: column;
-  background-color: rgba(251, 246, 233, 0.9);
-  color: black;
-  width: 500px;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 700px;
+}
+
+#edit-student-window {
+  min-height: 700px;
 }
 
 .scroll {
   overflow: scroll;
 }
 
-.schedule-sheet {
-  position: absolute !important;
-  top: 400px !important;
-  left: 40px !important;
-  transform: rotate(-4deg);
-}
-
-#Hufflepuff .notice-board-sheet {
-  position: absolute !important;
-  top: 400px !important;
-  left: 70% !important;
-  transform: rotate(4deg);
+.chocolate-frog-wizard-gif {
+  height: 500px;
+  width: 274px;
+  object-fit: cover;
+  object-position: 82% 0;
 }
 
 .bg-noticeboard {
@@ -376,7 +358,78 @@ button {
 }
 
 .bg-corkboard {
-  background-image: url("../img/bg-corkboard.jpg");
+  background-image: url("../img/notice_board.png");
+  background-size: 102% 102%;
+}
+
+.handwriting {
+  font-family: "Beau Rivage", cursive;
+  font-size: 3rem;
+}
+
+.Slytherin-overlay {
+  background-color: rgba(29, 116, 84, 0.4);
+}
+
+.Gryffindor-overlay {
+  background-color: rgba(214, 26, 85, 0.4);
+}
+
+.Hufflepuff-overlay {
+  background-color: rgba(255, 228, 139, 0.4);
+}
+
+.Ravenclaw-overlay {
+  background-color: rgba(136, 183, 213, 0.4);
+}
+
+.modal-content {
+  background-color: transparent;
+}
+
+.bg-corkboard .notice {
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("../img/letter.png");
+  max-width: 300px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 10px;
+  justify-content: center;
+  text-align: center;
+}
+
+.notices {
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: wrap;
+  row-gap: 40px;
+}
+
+.notice-header {
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("../img/letter.png");
+  max-width: 400px;
+  margin: 30px auto 0;
+  text-align: center;
+  padding: 20px;
+}
+
+#common-room-map {
+  object-fit: cover;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.hide {
+  display: none !important;
 }
 
 #ollivanders {

@@ -9,8 +9,13 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Hogwarts.Migrations
 {
     [DbContext(typeof(HogwartsContext))]
+<<<<<<<< HEAD:Hogwarts/Migrations/20220406000201_Initial.Designer.cs
+    [Migration("20220406000201_Initial")]
+    partial class Initial
+========
     [Migration("20220405203130_WandURL")]
     partial class WandURL
+>>>>>>>> ffcc24136d648b4ea4b4de33403aeacdf6544c8a:Hogwarts/Migrations/20220405203130_WandURL.Designer.cs
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

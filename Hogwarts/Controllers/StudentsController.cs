@@ -69,7 +69,7 @@ namespace Hogwarts.Controllers
     {
       _db.Entry(student).State = EntityState.Modified;
       _db.SaveChanges();
-      return RedirectToAction("Index");
+      return RedirectToAction("Index", "Account");
     }
 
     public ActionResult Delete(int id)

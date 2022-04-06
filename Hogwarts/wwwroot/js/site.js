@@ -5,7 +5,6 @@
     $("#gif-letter").addClass("hide");
     $("#acceptance-letter").removeClass("hide");
   }, 3000);
-
 });
 
 $("#open-shopping-list").on("click", function () {
@@ -98,6 +97,17 @@ $("#sorting-quiz").submit(function (event) {
   $("#welcome").removeClass("scroll");
 });
 
-$(".box").each(function() {
+$("#edit-student").on("click", function () {
+  console.log("edit");
+  $("#account-info").addClass("hide");
+  $("#edit-student-window").removeClass("hide");
+});
+
+$("document").ready(function () {
+  $("img[usemap]").rwdImageMaps();
+  $("img[usemap]").addClass("done");
+});
+
+$(".box").each(function () {
   $(this).text("✓");
-})
+});
