@@ -225,7 +225,7 @@ html {
   background-image: url("../img/paper.jpeg");
 }
 
-.letter img {
+.letter-logo {
   width: 100px;
   display: block;
   margin: auto;
@@ -509,6 +509,13 @@ button,
   background-repeat: no-repeat;
 }
 
+#flourish-and-blotts {
+  background-image: url("../img/shops/blotts1.jpg");
+  background-size: 100vw;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 #map-wrapper {
   width: 900px;
 }
@@ -535,4 +542,24 @@ button,
 #wand-img-tag {
   max-width: 10em;
   height: auto;
+}
+
+.table {
+  border: black;
+}
+
+/* .books-img {
+  display: inline-block;
+  gap: 10px;
+  width: 100%;
+} */
+
+.books-img img {
+  width: 60px;
+  display: inline-block;
+  margin: 5px 20px;
+}
+
+.table img {
+  max-width: 100px;
 }

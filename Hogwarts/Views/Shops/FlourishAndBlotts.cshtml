@@ -1,10 +1,16 @@
-<div id="malkins" class="full-size">
+<div id="flourish-and-blotts" class="full-size">
   <!-- <audio autoplay controls hidden>
     <source src="~/audio/shopdoor.mp3" type="audio/mp3">
   </audio> -->
   <audio id="register">
     <source src="~/audio/cashreg.wav" type="audio/mp3">
   </audio>
+  <script>
+    function play() {
+      let soundclick = document.getElementById("register");
+      soundclick.play();
+    }
+  </script>
   <div class="container p-5 text-center" style="background-color: #2125299e!important;">
     <div class="h-100 p-4 text-white text-center">
       <h1 class="text-center">Welcome to Flourish and Blotts! </h1>
@@ -12,16 +18,16 @@
     </div>
     @if (ViewBag.Student.Books != null)
     {
-      <h1 class="text-center mt-4" id="aleadyHaveRobeYourRobe">You've already selected your books</h1>
-      <h1 class="text-center mt-4" id="aleadyHaveRobeText">If you'd like, you may select another robe. Would you like do pick a different robe?</h1>
+      <h1 class="text-center mt-4" id="aleadyHaveBooksYourBooks">You've already selected your books</h1>
+      <h1 class="text-center mt-4" id="aleadyHaveBooksText">If you'd like, you may select different books. Would you like do pick different books?</h1>
       <button id="showShop" type="button" class="btn px-5 pt-2 text-dark fs-1">YES</button>
       <script>
         $("#showShop").click(function () {
           $("#displayShop").removeClass("d-none");
           $("#showShop").hide();
-          $("#aleadyHaveRobeText").hide();
-          $("#aleadyHaveRobe").hide();
-          $("#aleadyHaveRobeYourRobe").hide();
+          $("#aleadyHaveBooksText").hide();
+          $("#aleadyHaveBooks").hide();
+          $("#aleadyHaveBooksYourBooks").hide();
         });
 
       </script>
@@ -37,7 +43,7 @@
               <img src="/img/books/darkforces.png" style="max-height:200px;  object-fit: contain;" class="card-img-top" alt="The Dark Forces: A Guide to Self-Protection">
               <div class="card-body bg-dark">
                 <h5 class="card-text">The Dark Forces: A Guide to Self-Protection</h5>
-                <button id="DarkForces" class="btn btn-light btn-sm"><strong>Add</strong></button>
+                <button onclick="play()" id="darkforces" type="button" class="btn btn-sm"><strong>Add</strong></button>
               </div>
             </div>
           </div>
@@ -46,7 +52,7 @@
               <img src="/img/books/fantastic-beasts.png" style="max-height:200px;  object-fit: contain;" class="card-img-top" alt="Fantastic Beasts and Where to Find Them">
               <div class="card-body bg-dark">
                 <h5 class="card-text">Fantastic Beasts and Where to Find Them</h5>
-                <button id="class=" btn btn-light btn-sm"><strong>Add</strong></button>
+                <button onclick="play()" id="fantastic-beasts" type="button" class="btn btn-sm"><strong>Add</strong></button>
               </div>
             </div>
           </div>
@@ -55,7 +61,7 @@
               <img src="/img/books/herbs.png" style="max-height:200px;  object-fit: contain;" class="card-img-top" alt="One Thousand Magical Herbs and Fungi">
               <div class="card-body bg-dark">
                 <h5 class="card-text">One Thousand Magical Herbs and Fungi</h5>
-                <button class="btn btn-light btn-sm"><strong>Add</strong></button>
+                <button onclick="play()" id="herbs" type="button" class="btn btn-sm"><strong>Add</strong></button>
               </div>
             </div>
           </div>
@@ -64,18 +70,47 @@
               <img src="/img/books/historyofmagic.png" style="max-height:200px;  object-fit: contain;" class="card-img-top" alt="A Histroy of Magic">
               <div class="card-body bg-dark">
                 <h5 class="card-text">A History of Magic</h5>
-                <button class="btn btn-light btn-sm"><strong>Add</strong></button>
+                <button onclick="play()" id="historyofmagic" type="button" class="btn btn-sm"><strong>Add</strong></button>
               </div>
             </div>
           </div>
         </div>
         <div class="text-center mt-5">
-          <form method="Post" action="/Student/Books">
-            <input type="hidden" value="" name="booksString">
-            <button type="submit" class="btn btn-lg fs-3">Complete Purchase</button>
+          <form method="Post" action="/Students/Books">
+            <input type="hidden" value="" name="booksString" id="booksString">
+            <button onclick="play()" id="submitBooksForm" type="submit" class="btn btn-lg  fs-3" disabled="disabled">Complete Purchase</button>
           </form>
-          <script>
 
+
+          <script>
+            $("#darkforces").click(function () {
+              let currentValue = $("#booksString").val() + "/img/books/darkforces.png,";
+              $("#booksString").val(currentValue);
+              $("#darkforces").attr("disabled", "disabled");
+              $("#submitBooksForm").removeAttr('disabled');
+              $("#darkforces").text("Added");
+            });
+            $("#fantastic-beasts").click(function () {
+              let currentValue = $("#booksString").val() + "/img/books/fantastic-beasts.png,";
+              $("#booksString").val(currentValue);
+              $("#submitBooksForm").removeAttr('disabled');
+              $("#fantastic-beasts").attr("disabled", "disabled");
+              $("#fantastic-beasts").text("Added");
+            });
+            $("#herbs").click(function () {
+              let currentValue = $("#booksString").val() + "/img/books/herbs.png,";
+              $("#booksString").val(currentValue);
+              $("#submitBooksForm").removeAttr('disabled');
+              $("#herbs").attr("disabled", "disabled");
+              $("#herbs").text("Added");
+            });
+            $("#historyofmagic").click(function () {
+              let currentValue = $("#booksString").val() + "/img/books/historyofmagic.png,";
+              $("#booksString").val(currentValue);
+              $("#submitBooksForm").removeAttr('disabled');
+              $("#historyofmagic").attr("disabled", "disabled");
+              $("#historyofmagic").text("Added");
+            });
           </script>
         </div>
       </div>

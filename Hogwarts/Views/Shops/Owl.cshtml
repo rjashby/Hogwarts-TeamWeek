@@ -5,6 +5,12 @@
   <audio id="register">
     <source src="~/audio/cashreg.wav" type="audio/mp3">
   </audio>
+  <script>
+    function play() {
+      let soundclick = document.getElementById("register");
+      soundclick.play();
+    }
+  </script>
   <div class="container p-5 text-center" style="background-color: #2125299e!important;">
     <div class="h-100 p-5 text-white text-center">
       <h1 style="text-align: center;">Eeylops Owl Emporium</h1>
@@ -15,22 +21,22 @@
         <div class="carousel-item active" data-bs-interval="5000">
           <img src="~/img/animals/barn-owl.png" style="height:350px" alt="...">
           <form method="Post" action="/Students/BuyAnimal">
-            <button class="btn px-5 pt-2 text-dark fs-1">SELECT</button>
+            <button onclick="play()" class="btn px-5 pt-2 text-dark fs-1">SELECT</button>
             <input type="hidden" name="animal" value="img/animals/barn-owl.png">
           </form>
         </div>
         <div class="carousel-item" data-bs-interval="5000">
           <img src="~/img/animals/euro-owl.png" style="height:350px" alt="...">
           <form method="Post" action="/Students/BuyAnimal">
-            <button class="btn px-5 pt-2 text-dark fs-1">SELECT</button>
+            <button onclick="play()" class="btn px-5 pt-2 text-dark fs-1">SELECT</button>
             <input type="hidden" name="animal" value="img/animals/euro-owl.png">
           </form>
         </div>
         <div class="carousel-item" data-bs-interval="5000">
           <img src="~/img/animals/gray-owl.png" style="height:350px" alt="...">
           <form method="Post" action="/Students/BuyAnimal">
-            <button class="btn px-5 pt-2 text-dark fs-1">SELECT</button>
-            <input type="hidden" name="animal" value="img/animals/gray0owl.png">
+            <button onclick="play()" class="btn px-5 pt-2 text-dark fs-1">SELECT</button>
+            <input type="hidden" name="animal" value="img/animals/gray-owl.png">
           </form>
         </div>
       </div>

@@ -5,6 +5,12 @@
   <audio id="register">
     <source src="~/audio/cashreg.wav" type="audio/mp3">
   </audio>
+  <script>
+    function play() {
+      let soundclick = document.getElementById("register");
+      soundclick.play();
+    }
+  </script>
   <div class="container p-5 text-center" style="background-color: #2125299e!important;">
     <div class="h-100 p-5 text-white text-center">
       <h1 style="text-align: center;">Welcome to Mr. Mulpepper's Apothecary</h1>
@@ -15,14 +21,14 @@
         <div class="carousel-item active" data-bs-interval="5000">
           <img src="~/img/potions/My_project_3.png" style="height:350px" alt="...">
           <form method="Post" action="/Students/BuyPhials">
-            <button class="btn px-5 pt-2 text-dark fs-1">SELECT</button>
+            <button onclick="play()" class="btn px-5 pt-2 text-dark fs-1">SELECT</button>
             <input type="hidden" name="phials" value="img/potions/My_project_3.png">
           </form>
         </div>
         <div class="carousel-item" data-bs-interval="5000">
           <img src="~/img/potions/vials3.png" style="height:350px" alt="...">
           <form method="Post" action="/Students/BuyPhials">
-            <button class="btn px-5 pt-2 text-dark fs-1">SELECT</button>
+            <button onclick="play()" class="btn px-5 pt-2 text-dark fs-1">SELECT</button>
             <input type="hidden" name="phials" value="img/potions/vials3.png">
           </form>
         </div>

@@ -5,7 +5,16 @@
 @using Hogwarts.Models
 @model RegisterViewModel
 
-
+@if (@ViewBag.ThisStudent != null && @ViewBag.ThisStudent.Wand != null && @ViewBag.ThisStudent.Robes != null && @ViewBag.ThisStudent.Books != null && @ViewBag.ThisStudent.Cauldron != null && @ViewBag.ThisStudent.Phials != null && @ViewBag.ThisStudent.Animal != null && @ViewBag.ThisStudent.Tools != null)
+{
+  <script>
+    $("document").ready(function () {
+      $("#shopping-list").addClass("hide");
+      $("#diagon-alley").addClass("hide");
+      $("#the-great-hall").removeClass("hide");
+    });
+  </script>
+}
 @if (User.Identity.IsAuthenticated && @ViewBag.ThisStudent.House != null)
 {
   <div class="full-size">
@@ -177,10 +186,9 @@ else
                 @Html.LabelFor(user=> user.ConfirmPassword)
                 @Html.PasswordFor(user=> user.ConfirmPassword,new {@id="registerConfirmPassword", @class="form-control"})
               </div>
-              <div class="form-group my-3">
-                <label for="Year">What's your year?</label>
-                <input type="number" min=1 max=7 class="form-control" name="Year" id="registerYear">
-              </div>
+
+              <input type="number" min=1 max=7 class="form-control" name="Year" id="registerYear">
+
             </div>
             <div class="modal-footer">
               <button type="button" data-bs-dismiss="modal">Close</button>

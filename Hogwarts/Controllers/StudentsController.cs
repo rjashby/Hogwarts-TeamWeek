@@ -6,6 +6,7 @@ using System;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using System.Threading.Tasks;
+using System.Threading;
 using System.Security.Claims;
 using Hogwarts.Models;
 
@@ -139,6 +140,21 @@ namespace Hogwarts.Controllers
         _db.Entry(thisStudent).State = EntityState.Modified;
         _db.SaveChanges();
       }
+      Thread.Sleep(750);
+      return RedirectToAction("Index", "Shops");
+    }
+
+    [HttpPost]
+    public ActionResult Books(string booksString)
+    {
+      if (User.Identity.IsAuthenticated)
+      {
+        Student thisStudent = _db.Students.FirstOrDefault(Student => Student.Email == User.Identity.Name);
+        thisStudent.Books = booksString.Remove(booksString.Length - 1, 1); ;
+        _db.Entry(thisStudent).State = EntityState.Modified;
+        _db.SaveChanges();
+      }
+      Thread.Sleep(750);
       return RedirectToAction("Index", "Shops");
     }
 
@@ -152,6 +168,7 @@ namespace Hogwarts.Controllers
         _db.Entry(thisStudent).State = EntityState.Modified;
         _db.SaveChanges();
       }
+      Thread.Sleep(750);
       return RedirectToAction("Index", "Shops");
     }
 
@@ -162,9 +179,25 @@ namespace Hogwarts.Controllers
       {
         Student thisStudent = _db.Students.FirstOrDefault(Student => Student.Email == User.Identity.Name);
         thisStudent.Tools = tools;
+
         _db.Entry(thisStudent).State = EntityState.Modified;
         _db.SaveChanges();
       }
+      Thread.Sleep(750);
+      return RedirectToAction("Index", "Shops");
+    }
+    [HttpPost]
+    public ActionResult BuyScale(string tools)
+    {
+      if (User.Identity.IsAuthenticated)
+      {
+        Student thisStudent = _db.Students.FirstOrDefault(Student => Student.Email == User.Identity.Name);
+        thisStudent.Scale = tools;
+
+        _db.Entry(thisStudent).State = EntityState.Modified;
+        _db.SaveChanges();
+      }
+      Thread.Sleep(750);
       return RedirectToAction("Index", "Shops");
     }
 
@@ -178,6 +211,7 @@ namespace Hogwarts.Controllers
         _db.Entry(thisStudent).State = EntityState.Modified;
         _db.SaveChanges();
       }
+      Thread.Sleep(750);
       return RedirectToAction("Index", "Shops");
     }
 
@@ -191,6 +225,7 @@ namespace Hogwarts.Controllers
         _db.Entry(thisStudent).State = EntityState.Modified;
         _db.SaveChanges();
       }
+      Thread.Sleep(750);
       return RedirectToAction("Index", "Shops");
     }
   }

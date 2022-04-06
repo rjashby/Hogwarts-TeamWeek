@@ -12,19 +12,6 @@ $("#open-shopping-list").on("click", function () {
   $("#acceptance-letter").addClass("hide");
 });
 
-//shopping
-// $("#open-shopping").on("click", function () {
-//   $("#shopping-list").addClass("move");
-//   $("#shopping").removeClass("hide");
-// });
-
-//go to hogwarts
-$("#finish-shopping").on("click", function () {
-  $("#shopping-list").addClass("hide");
-  $("#diagon-alley").addClass("hide");
-  $("#the-great-hall").removeClass("hide");
-});
-
 $("#start-sorting").on("click", function () {
   $("#welcome-text").addClass("hide");
   $("#sorting-quiz").removeClass("hide");
@@ -108,8 +95,4 @@ $("#edit-student").on("click", function () {
 $("document").ready(function () {
   $("img[usemap]").rwdImageMaps();
   $("img[usemap]").addClass("done");
-});
-
-$(".box").each(function () {
-  $(this).text("✓");
 });

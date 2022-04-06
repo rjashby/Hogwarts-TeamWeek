@@ -5,17 +5,23 @@
   <audio autoplay controls hidden>
     <source src="~/audio/shopdoor.mp3" type="audio/mp3">
   </audio>
-  <div class="container p-5 text-center" style="background-color: #2125299e!important;">
-    <div class="h-100 p-5 text-white text-center">
+  <script>
+    function play() {
+      let soundclick = document.getElementById("register");
+      soundclick.play();
+    }
+  </script>
+  <div class="container p-3 text-center" style="background-color: #2125299e!important;">
+    <div class="h-100 p-3 text-white text-center">
       <h1 class="text-center mt-4">Welcome to Madam Malkin's Robes for all Occasions</h1>
 
     </div>
     @if (ViewBag.Student.Robes != null)
     {
-      <h1 class="text-center mt-4" id="aleadyHaveRobeYourRobe">Your robe</h1>
-      <img src="/@ViewBag.Student.Robes" id="aleadyHaveRobe" style="height:500px;" alt="...">
-      <h1 class="text-center mt-4" id="aleadyHaveRobeText">If you'd like, you may select another robe. Would you like to pick a different robe?</h1>
-      <button id="showShop" type="button" class="btn px-5 pt-2 text-dark fs-1">YES</button>
+      <h1 class="text-center" id="aleadyHaveRobeYourRobe">Your robe</h1>
+      <img src="/@ViewBag.Student.Robes" id="aleadyHaveRobe" style="height:350px;" alt="...">
+      <h1 class="text-center" id="aleadyHaveRobeText">If you'd like, you may select another robe. Would you like to pick a different robe?</h1>
+      <button id="showShop" type="button" class="btn px-5 pt-2 mt-3 text-dark fs-1">YES</button>
       <script>
         $("#showShop").click(function () {
           $("#displayShop").removeClass("d-none");

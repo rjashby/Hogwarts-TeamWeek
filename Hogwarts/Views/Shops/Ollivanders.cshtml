@@ -1,6 +1,3 @@
-@{
-  Layout = "_Layout";
-}
 <div id="ollivanders" class="full-size">
   <!-- <audio autoplay controls hidden>
     <source src="~/audio/shopdoor.mp3" type="audio/mp3">
@@ -8,6 +5,12 @@
   <audio id="register">
     <source src="~/audio/cashreg.wav" type="audio/mp3">
   </audio>
+  <script>
+    function play() {
+      let soundclick = document.getElementById("register");
+      soundclick.play();
+    }
+  </script>
   <div class="container p-5 text-white" style="background-color: #2125299e!important;">
     <div class="h-100 p-5 text-white text-center">
       <h1 style="text-align: center;">Welcome to Ollivanders</h1>

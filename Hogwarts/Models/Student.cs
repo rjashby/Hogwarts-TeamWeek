@@ -23,6 +23,7 @@ namespace Hogwarts.Models
     public string Books { get; set; }
     public string Cauldron { get; set; }
     public string Tools { get; set; }
+    public string Scale { get; set; }
     public string Phials { get; set; }
     public virtual ICollection<CourseStudent> JoinEntitiesCS { get; set; }
   }

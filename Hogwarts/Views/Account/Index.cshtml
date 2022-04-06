@@ -14,58 +14,98 @@
           <div>
             @if (Model.House != null)
             {
-              <img src="~/img/house_crests/@(Model.House).png">
+              <img src="~/img/house_crests/@(Model.House).png" class="letter-logo">
             }
             else
             {
-              <img src="~/img/hogwarts_bw.png">
+              <img src="~/img/hogwarts_bw.png" class="letter-logo">
             }
           </div>
           <table class="table table-bordered">
             <thead>
-              <tr>
+              <tr class="align-middle">
                 <th scope="col">Student Name</th>
-                <th scope="col">@Model.FirstName @Model.LastName</th>
+                <th scope="col">Email</th>
+                <th scope="col">Year</th>
+                <th scope="col">Wand</th>
               </tr>
             </thead>
             <tbody>
-              <tr scope="row">
-                <th>Email</th>
+              <tr class="align-middle">
+                <th>@Model.Title @Model.FirstName @Model.LastName</th>
                 <th>@Model.Email</th>
-              </tr>
-              <tr scope="row">
-                <th>Year</th>
                 <th>@Model.Year</th>
+                <th>
+                  @if (Model.Wand != null)
+                  {
+                    <img src="@Model.WandURL"></img>
+                  }
+                </th>
               </tr>
-              @if (Model.Robes != null)
-              {
-                <tr scope="row">
-                  <th>Robes</th>
-                  <th><img src="@Model.Robes"></img></th>
-                </tr>
-              }
-              @if (Model.Animal != null)
-              {
-                <tr scope="row">
-                  <th>Animal</th>
-                  <th><img src="@Model.Animal"></img></th>
-                </tr>
-              }
-              @if (Model.Wand != null)
-              {
-                <tr scope="row">
-                  <th>Wand</th>
-                  <th>@Model.Wand <img src="@Model.WandURL"></img></th>
-                </tr>
-              }
+              <tr>
+                <th>Robe</th>
+                <th>Animal</th>
+                <th>Tools</th>
+                <th>Phials</th>
+              </tr>
+              <tr class="align-middle">
+                <th>
+                  @if (Model.Robes != null)
+                  {
+                    <img src="@Model.Robes"></img>
+                  }
+                </th>
+                <th>
+                  @if (Model.Animal != null)
+                  {
+                    <img src="@Model.Animal"></img>
+                  }
+                </th>
+                <th>
+                  @if (Model.Tools != null)
+                  {
+                    <img src="@Model.Tools"></img>
+                  }
+                </th>
+                <th>
+                  @if (Model.Phials != null)
+                  {
+                    <img src="@Model.Phials"></img>
+                  }
+                </th>
+              </tr>
+              <tr>
+                <th colspan="3">Books</th>
+                <th>Cauldron</th>
+              </tr>
+              <tr>
+                <th colspan="3" class="books-img" id="@Model.Books">
+                  @if (Model.Books != null)
+                  {
+                    <script>
+                      let books = $(".books-img").attr("id").split(",");
+                      books.forEach(function (elem, index) {
+                        $(".books-img").append(`<img src="${elem}"></img>`);
+                      });
+                    </script>
+                  }
+                </th>
+                <th>
+                  @if (Model.Cauldron != null)
+                  {
+                    <img src="@Model.Cauldron"></img>
+                  }
+                </th>
+              </tr>
             </tbody>
           </table>
-          @if (Model.House != null)
-          {
-            <button>@Html.ActionLink("Home", "Index", "Home")</button>
-          }
+
 
           <div class="buttons-group">
+            @if (Model.House != null)
+            {
+              <button>@Html.ActionLink("Common Room", "Index", "Home")</button>
+            }
             <button type="button" id="edit-student">Edit</button>
             @using (Html.BeginForm("LogOff", "Account"))
             {
@@ -99,6 +139,11 @@
             @Html.HiddenFor(model => model.Robes)
             @Html.HiddenFor(model => model.House)
             @Html.HiddenFor(model => model.WandURL)
+            @Html.HiddenFor(model => model.Animal)
+            @Html.HiddenFor(model => model.Books)
+            @Html.HiddenFor(model => model.Cauldron)
+            @Html.HiddenFor(model => model.Tools)
+            @Html.HiddenFor(model => model.Phials)
             <button type="submit" value="Save" class="btn btn-light mt-3">Edit</button>
           }
         </div>
@@ -111,4 +156,3 @@
     </div>
   </div>
 </div>
-}
