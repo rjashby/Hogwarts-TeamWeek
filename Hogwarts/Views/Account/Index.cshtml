@@ -11,16 +11,16 @@
       @if (User.Identity.IsAuthenticated)
       {
         <div id="account-info">
-          @if (Model.House != null)
-          {
-            <div>
+          <div>
+            @if (Model.House != null)
+            {
               <img src="~/img/house_crests/@(Model.House).png">
-            </div>
-          }
-          else
-          {
-            <img src="~/img/hogwarts_bw.png">
-          }
+            }
+            else
+            {
+              <img src="~/img/hogwarts_bw.png">
+            }
+          </div>
           <p>Student Name: @Model.FirstName @Model.LastName</p>
           <p>Email: @Model.Email</p>
           <p>Year: @Model.Year</p>
@@ -31,6 +31,10 @@
           @if (Model.Wand != null)
           {
             <p>Wand: @Model.Wand</p>
+          }
+          @if (Model.House != null)
+          {
+            <button>@Html.ActionLink("Home", "Index", "Home")</button>
           }
           <div class="buttons-group">
             <button type="button" id="edit-student">Edit</button>
@@ -65,15 +69,15 @@
             @Html.HiddenFor(model => model.Wand)
             @Html.HiddenFor(model => model.Robes)
             @Html.HiddenFor(model => model.House)
-            @Html.HiddenFor(model => model.StudentId)
+            @Html.HiddenFor(model => model.WandURL)
             <button type="submit" value="Save" class="btn btn-light mt-3">Edit</button>
           }
         </div>
       }
       else
       {
-        <button>@Html.ActionLink("Register", "Register", "Account", null, new {@class="button"})</button>
-        <button>@Html.ActionLink("Login", "Login", "Account", null, new {@class="button"})</button>
+        <button>@Html.ActionLink("Register", "Register", "Account")</button>
+        <button>@Html.ActionLink("Login", "Login", "Account")</button>
       }
     </div>
   </div>

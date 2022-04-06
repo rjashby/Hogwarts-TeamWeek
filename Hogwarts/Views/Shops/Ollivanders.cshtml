@@ -1,0 +1,136 @@
+@{
+  Layout = "_Layout";
+}
+<div id="ollivanders" class="full-size">
+  <div class="container p-5 text-white" style="background-color: #2125299e!important;">
+    <div class="h-100 p-5 text-white text-center">
+      <h1 style="text-align: center;">Welcome to Ollivanders</h1>
+      <small style="text-align: center;">Makers of magic wands since 382 BC</small>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <button type="button" id="choose-wand">Lets figure out what wand belongs to you</button>
+      </div>
+      <form id="wand-quiz" class="hide">
+        <div class="form-group">
+          <p>You are in the market for a new wand. What is the ideal core for your new wand?</p>
+          <label>
+            <input type="radio" name="1" value="a" checked>
+            Phoenix Feather
+          </label>
+          <label>
+            <input type="radio" name="1" value="b">
+            Dragon Heartstring
+          </label>
+          <label>
+            <input type="radio" name="1" value="d">
+            Unicorn Hair
+          </label>
+          <label>
+            <input type="radio" name="1" value="c">
+            Basilisk Horn
+          </label>
+        </div>
+        <br>
+        <div class="form-group">
+          <p>Who is your favorite wand maker?</p>
+          <label>
+            <input type="radio" name="2" value="a" checked>
+            Garrick Olivander
+          </label>
+          <label>
+            <input type="radio" name="2" value="b">
+            Mykew Gregorovitch
+          </label>
+          <label>
+            <input type="radio" name="2" value="c">
+            Violetta Beauvais
+          </label>
+          <label>
+            <input type="radio" name="2" value="d">
+            Salazar Slytherin
+          </label>
+        </div>
+        <br>
+        <div class="form-group">
+          <p>You're locked in a duel with a skilled opponent. They fire an unknown spell at you, and you shout…</p>
+          <label>
+            <input type="radio" name="3" value="a" checked>
+            Protego!
+          </label>
+          <label>
+            <input type="radio" name="3" value="b">
+            Crucio!
+          </label>
+          <label>
+            <input type="radio" name="3" value="c">
+            Expelliarmus!
+          </label>
+          <label>
+            <input type="radio" name="3" value="d">
+            Stupefy!
+          </label>
+        </div>
+        <br>
+        <div class="form-group">
+          <p>If you could have a superpower, which would you choose?</p>
+          <label>
+            <input type="radio" name="4" value="a" checked>
+            Read minds
+          </label>
+          <label>
+            <input type="radio" name="4" value="b">
+            Change your appearance
+          </label>
+          <label>
+            <input type="radio" name="4" value="c">
+            Super strength
+          </label>
+          <label>
+            <input type="radio" name="4" value="d">
+            Inivisibilty
+          </label>
+        </div>
+        <br>
+        <div class="form-group">
+          <p>Out of the four potions, which are you most likely to use?</p>
+          <label>
+            <input type="radio" name="5" value="a" checked>
+            Felix Felicis (Also known as Liquid Luck)
+          </label>
+          <label>
+            <input type="radio" name="5" value="b">
+            Polyjuice Potion (Transfiguration Potion)
+          </label>
+          <label>
+            <input type="radio" name="5" value="c">
+            Elixir of Life (Grants Immortality)
+          </label>
+          <label>
+            <input type="radio" name="5" value="d">
+            Veritaserum (Truth Potion)
+          </label>
+        </div>
+        <br>
+        <div class="form-group">
+          <button type="submit">Find Out Your Wand</button>
+        </div>
+        <input type="hidden" id="studentId-hidden" value="@ViewBag.ThisStudentId">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card hide p-5 text-white" style="background-color: #2125299e!important; id=" show-wand">
+        <img src="" id="wand-img-tag" class="card-img-top" alt="magic wand">
+        <div class="card-body">
+          <div class="card-text text-dark text-center">
+            <h6 class="card-title" id="wand-description">wand description</h6>
+            <button class="btn btn-dark" type="button" id="accept-wand">accept wand</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="~/js/shops/wandQuiz.js"></script>

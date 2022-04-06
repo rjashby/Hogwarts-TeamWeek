@@ -11,12 +11,12 @@ $("#open-shopping-list").on("click", function () {
   $("#shopping-list").removeClass("hide");
   $("#acceptance-letter").addClass("hide");
 });
-//after shopping
-$("#open-shopping").on("click", function () {
-  $("#shopping-list").addClass("move");
-  $("#shopping").removeClass("hide");
-});
-
+//shopping
+// $("#open-shopping").on("click", function () {
+//   $("#shopping-list").addClass("move");
+//   $("#shopping").removeClass("hide");
+// });
+//skip shopping
 // $("#open-shopping").on("click", function () {
 //   $("#shopping-list").addClass("hide");
 //   $("#diagon-alley").addClass("hide");

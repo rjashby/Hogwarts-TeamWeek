@@ -119,12 +119,27 @@ namespace Hogwarts.Controllers
     {
       if (studentId != 0)
       {
-          var thisStudent = _db.Students.FirstOrDefault(s => s.StudentId == studentId);
-          thisStudent.Wand = wand;
-          thisStudent.WandURL = wandUrl;
+        Student thisStudent = _db.Students.FirstOrDefault(s => s.StudentId == studentId);
+        thisStudent.Wand = wand;
+        thisStudent.WandURL = wandUrl;
+        _db.Entry(thisStudent).State = EntityState.Modified;
+        _db.SaveChanges();
       }
-      _db.SaveChanges();
-      return RedirectToAction("Index");
+
+      return Json(new { Message = "message" });
+    }
+
+    [HttpPost]
+    public ActionResult SelectRobe(string robe)
+    {
+      if (User.Identity.IsAuthenticated)
+      {
+        Student thisStudent = _db.Students.FirstOrDefault(Student => Student.Email == User.Identity.Name);
+        thisStudent.Robes = robe;
+        _db.Entry(thisStudent).State = EntityState.Modified;
+        _db.SaveChanges();
+      }
+      return RedirectToAction("Index", "Shops");
     }
   }
 }

@@ -51,7 +51,12 @@ a.navbar-brand {
 
 /* Provide sufficient contrast against white background */
 a {
-  color: #0366d6;
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  color: black;
 }
 
 .btn-primary {
@@ -61,7 +66,7 @@ a {
 }
 
 .nav-pills .nav-link.active,
-.nav-pills .show > .nav-link {
+.nav-pills .show>.nav-link {
   color: #fff;
   background-color: #1b6ec2;
   border-color: #1861ac;
@@ -103,15 +108,6 @@ html {
   min-height: 100%;
 }
 
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px;
-  /* Vertically center the text there */
-}
-
 #the-great-hall {
   background-image: url("../img/greathall.png");
 }
@@ -120,6 +116,27 @@ html {
   background-image: url("../img/account.png");
   background-size: cover;
   background-position: bottom;
+}
+
+#account .letter {
+  min-height: 700px;
+  display: flex;
+  justify-content: center;
+}
+
+#account label,
+#account .button {
+  margin: 10px 0;
+}
+
+.column {
+  flex-direction: column;
+  height: 700px;
+}
+
+#account form {
+  display: flex;
+  flex-direction: column;
 }
 
 .full-size {
@@ -237,16 +254,19 @@ button,
   gap: 20px;
 }
 
-#shopping-list {
+#shopping-list,
+#shop-shopping-list {
   padding: 40px 70px;
   font-size: 0.8em;
 }
 
-#shopping-list p {
+#shopping-list p,
+#shop-shopping-list p {
   margin: 1px 0;
 }
 
-#shopping-list h3 {
+#shopping-list h3,
+#shop-shopping-list h3 {
   text-transform: uppercase;
   font-size: 1em;
   margin: 3px 0;
@@ -336,6 +356,7 @@ button,
   justify-content: flex-start;
   align-items: center;
   min-height: 700px;
+  text-align: center;
 }
 
 #edit-student-window {
@@ -433,19 +454,18 @@ button,
 }
 
 #ollivanders {
-  background-image: url("../img/ollivanders.jpg");
+  background-image: url("../img/shops/ollivanders.jpg");
   background-size: 100vw;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 #map-wrapper {
-  width:900px;
+  width: 900px;
 }
 
 #map-wrapper img,
-#map-wrapper map
- {
+#map-wrapper map {
   width: 900px;
 }
 
@@ -456,7 +476,8 @@ button,
   top: -100px;
 }
 
-.box {
+#shop-shopping-list span {
   padding-right: 10px;
-  width: 10px;
+  width: 15px;
+  display: inline-block;
 }

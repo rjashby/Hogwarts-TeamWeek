@@ -19,6 +19,11 @@ namespace Hogwarts.Models
     public string WandURL { get; set; }
     public string Animal { get; set; }
     public string Robes { get; set; }
+
+    public string Books { get; set; }
+    public string Cauldron { get; set; }
+    public string Tools { get; set; }
+    public string Phials { get; set; }
     public virtual ICollection<CourseStudent> JoinEntitiesCS { get; set; }
   }
 }

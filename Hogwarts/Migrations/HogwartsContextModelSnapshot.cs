@@ -149,6 +149,12 @@ namespace Hogwarts.Migrations
                     b.Property<string>("Animal")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
+                    b.Property<string>("Books")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<string>("Cauldron")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
                     b.Property<string>("Email")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
@@ -161,10 +167,19 @@ namespace Hogwarts.Migrations
                     b.Property<string>("LastName")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
+                    b.Property<string>("Owl")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<string>("Phials")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
                     b.Property<string>("Robes")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("Title")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<string>("Tools")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("Wand")
@@ -186,6 +201,12 @@ namespace Hogwarts.Migrations
                     b.Property<int>("TeacherId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    b.Property<string>("CourseId")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<string>("CourseName")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("FirstName")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
@@ -360,7 +381,7 @@ namespace Hogwarts.Migrations
                         .IsRequired();
 
                     b.HasOne("Hogwarts.Models.Teacher", "Teacher")
-                        .WithMany("JoinEntitiesCT")
+                        .WithMany()
                         .HasForeignKey("TeacherId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -429,11 +450,6 @@ namespace Hogwarts.Migrations
             modelBuilder.Entity("Hogwarts.Models.Student", b =>
                 {
                     b.Navigation("JoinEntitiesCS");
-                });
-
-            modelBuilder.Entity("Hogwarts.Models.Teacher", b =>
-                {
-                    b.Navigation("JoinEntitiesCT");
                 });
 #pragma warning restore 612, 618
         }

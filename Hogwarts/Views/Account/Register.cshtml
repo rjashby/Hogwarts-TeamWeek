@@ -6,32 +6,37 @@
 
 @model RegisterViewModel
 
-<h2>Register a New User</h2>
-<hr />
-@using (Html.BeginForm("Register", "Account", FormMethod.Post))
-{
-    @Html.LabelFor(user => user.Email)
-    @Html.TextBoxFor(user=> user.Email)
+<div id="account" class="full-size">
+  <div class="overlay">
+    <div class="letter column">
+      <h2>Register a New User</h2>
+      <hr />
+      @using (Html.BeginForm("Register", "Account", FormMethod.Post))
+      {
+        @Html.LabelFor(user => user.Title)
+        <select name="title" id="title">
+          <option value="Mr.">Mr.</option>
+          <option value="Miss">Miss</option>
+        </select>
+        @Html.LabelFor(user => user.FirstName)
+        @Html.TextBoxFor(user=> user.FirstName)
 
-    @Html.LabelFor(user => user.Title)
-    <select name="title" id="title">
-      <option value="Mr.">Mr.</option>
-      <option value="Miss">Miss</option>
-    </select>
-    @Html.LabelFor(user => user.FirstName)
-    @Html.TextBoxFor(user=> user.FirstName)
+        @Html.LabelFor(user => user.LastName)
+        @Html.TextBoxFor(user=> user.LastName)
 
-    @Html.LabelFor(user => user.LastName)
-    @Html.TextBoxFor(user=> user.LastName)
+        @Html.LabelFor(user => user.Email)
+        @Html.TextBoxFor(user=> user.Email)
 
-    @Html.LabelFor(user => user.Email)
-    @Html.TextBoxFor(user=> user.Email)
+        @Html.LabelFor(user=> user.Password)
+        @Html.PasswordFor(user=> user.Password)
 
-    @Html.LabelFor(user=> user.Password)
-    @Html.PasswordFor(user=> user.Password)
+        @Html.LabelFor(user=> user.ConfirmPassword)
+        @Html.PasswordFor(user=> user.ConfirmPassword)
 
-    @Html.LabelFor(user=> user.ConfirmPassword)
-    @Html.PasswordFor(user=> user.ConfirmPassword)
-
-    <input type="submit" class="btn btn-dark" value="Register" />
-}
+        @Html.LabelFor(user=> user.Year)
+        @Html.PasswordFor(user=> user.Year)
+        <input type="submit" class="button" value="Register" />
+      }
+    </div>
+  </div>
+</div>

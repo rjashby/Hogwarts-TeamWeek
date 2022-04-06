@@ -1,0 +1,91 @@
+@using Hogwarts.Models
+<div id="diagon-alley" class="full-size">
+  <div id="map-wrapper">
+    <img src="~/img/shops/alley-map-fixed.png" usemap="#image-map">
+
+    <map name="image-map">
+      <area target="Shops/Ollivanders" alt="Ollivander's Wand Shop" title="Ollivander's Wand Shop" href="Shops/Ollivanders" coords="606,333,648,332,651,377,610,377" shape="poly">
+      <area target="" alt="Magical Menagerie" title="Magical Menagerie" href="Shops/Menagerie" coords="412,331,455,329,459,386,416,387" shape="poly">
+      <area target="" alt="Potage's Cauldron Shop" title="Potage's Cauldron Shop" href="Shops/Cauldron" coords="175,239,214,242,199,276,172,277" shape="poly">
+      <area target="" alt="Mulpepper's Apothecary" title="Mulpepper's Apothecary" href="Shops/Apothecary" coords="466,343,537,338,543,380,471,386" shape="poly">
+      <area target="/Shops/Malkins" alt="Madam Malkin's Robes" title="Madam Malkin's Robes" href="/Shops/Malkins" coords="313,228,352,234,353,267,296,255" shape="poly">
+      <area target="" alt="Scribbulus' Writing Instruments" title="Scribbulus' Writing Instruments" href="" coords="612,236,630,224,652,264,636,274,615,272" shape="poly">
+      <area target="" alt="Flourish and Blott's Bookshop" title="Flourish and Blott's Bookshop" href="Shops/FlourishAndBlotts" coords="432,219,495,212,498,261,459,267" shape="poly">
+      <area target="" alt="Wiseacre's Wizarding Equipment" title="Wiseacre's Wizarding Equipment" href="Shops/Wiseacres" coords="505,210,524,210,528,265,508,267" shape="poly">
+      <area target="" alt="Eeylops's Owl Emporium" title="Eeylops's Owl Emporium" href="Shops/Owl" coords="533,209,559,206,567,267,537,270" shape="poly">
+      <area target="" alt="Quality Quidditch Supplies" title="Quality Quidditch Supplies" href="Shops/Quidditch" coords="569,207,596,205,606,271,576,269" shape="poly">
+    </map>
+  </div>
+  <div id="shop-shopping-list" class="letter move">
+    <img src="~/img/hogwarts_bw.png">
+    <h3>Uniform</h3>
+    <p>First-year students will require:</p>
+    <p><span class="check-robes"></span>Three sets of plain work robes (black)</p>
+    <p><span class="check-robes"></span>One plain pointed hat (black) for day wear</p>
+    <p><span class="check-robes"></span>One pair of protective gloves (dragon hide or similar)</p>
+    <p><span class="check-robes"></span>One winter cloak (black, with silver fastenings)</p>
+    <p>Please note that all pupil's clothes should carry name tags.</p>
+    <h3>Books</h3>
+    <p>All students should have a copy of each of the following:</p>
+    <p><span class="check-books"></span>The Standard Book of Spells (Grade 1) by Miranda Goshawk</p>
+    <p><span class="check-books"></span>A History of Magic by Bathilda Bagshot</p>
+    <p><span class="check-books"></span>Magical Theory by Adalbert Waffling</p>
+    <p><span class="check-books"></span>A Beginner's Guide to Transfiguration by Emeric Switch</p>
+    <p><span class="check-books"></span>One Thousand Magical Herbs and Fungi by Phyllida Spore</p>
+    <p><span class="check-books"></span>Magical Drafts and Potions by Arsenius Jigger</p>
+    <p><span class="check-books"></span>Fantastic Beasts and Where to Find Them by Newt Scamander</p>
+    <p><span class="check-books"></span>The Dark Forces: A Guide to Self-Protection by Quentin Trimble</p>
+    <h3>Other Equipment</h3>
+    <p><span class="check-wand"></span>1 wand</p>
+    <p><span class="check-cauldron"></span>1 cauldron (pewter, standard size 2)</p>
+    <p><span class="check-phials"></span>1 set glass or crystal phials</p>
+    <p><span class="check-tools"></span>1 telescope</p>
+    <p><span class="check-tools"></span>1 set brass scales</p>
+    <p><span class="check-animal"></span>Students may also bring, if they desire, an Owl OR a Cat OR a Toad.</p>
+    <p class="center">PARENTS ARE REMINDED THAT FIRST YEARS ARE NOT ALLOWED THEIR OWN BROOMSTICK</p>
+    <p class="letter-footer">HOGWARTS SCHOOL of WITCHCRAFT & WIZARDRY<br>Headmaster: Albus Dumbledore<br>(Order of Merlin, First Class, Grand Sorc., Chf. Warlock, Supreme Mugwump, International Confed. of Wizards)</p>
+  </div>
+</div>
+
+@if (@Model.Wand != null)
+{
+  <script>
+    $(".check-wand ").text("✓");
+  </script>
+}
+@if (@Model.Robes != null)
+{
+  <script>
+    $(".check-robes ").text("✓");
+  </script>
+}
+@if (@Model.Books != null)
+{
+  <script>
+    $(".check-books ").text("✓");
+  </script>
+}
+@if (@Model.Cauldron != null)
+{
+  <script>
+    $(".check-cauldron ").text("✓");
+  </script>
+}
+@if (@Model.Phials != null)
+{
+  <script>
+    $(".check-phials ").text("✓");
+  </script>
+}
+@if (@Model.Animal != null)
+{
+  <script>
+    $(".check-animal ").text("✓");
+  </script>
+}
+@if (@Model.Tools != null)
+{
+  <script>
+    $(".check-tools ").text("✓");
+  </script>
+}

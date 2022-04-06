@@ -9,55 +9,55 @@
 @if (User.Identity.IsAuthenticated && @ViewBag.ThisStudent.House != null)
 {
   <div class="full-size">
-    <img id="common-room-map" src="~/img/common_rooms/@(ViewBag.ThisStudent.House).png" usemap="#@(ViewBag.ThisStudent.House)-map"></img>
+    <img id="common-room-map" src="~/img/common_rooms/@(ViewBag.ThisStudent.House).png" usemap="#@(ViewBag.ThisStudent.House)-map" width="1600" height="800"></img>
     <map name="Slytherin-map">
       <area target="" alt="notice-board" title="notice-board" href="#" coords="534,164,633,195,644,312,618,332,590,338,543,312,524,232" shape="poly" data-bs-toggle="modal" data-bs-target="#largeNoticeModal">
       <area target="" alt="chocolate-frog" title="chocolate-frog" href="#" coords="173,582,221,565,282,582,276,629,255,645,177,645,152,605" shape="poly" data-bs-toggle="modal" data-bs-target="#frogModal" class="frogLink">
     </map>
     <map name="Gryffindor-map">
-      <area target="" alt="chocolate-frog" title="chocolate-frog" href="#" coords="345,769,426,801,409,873,287,885,255,823,276,788,277,785,276,788" shape="poly" data-bs-toggle="modal" data-bs-target="#frogModal" class="frogLink">
-      <area target="" alt="notice-board" title="notice-board" href="#" coords="336,335,406,378,399,537,326,582,260,531,255,388"  shape="poly" data-bs-toggle="modal" data-bs-target="#largeNoticeModal">
+      <area target="" alt="chocolate-frog" title="chocolate-frog" href="#" coords="337,650,425,681,384,766,290,762,248,688" shape="poly" data-bs-toggle="modal" data-bs-target="#frogModal" class="frogLink">
+      <area target="" alt="notice-board" title="notice-board" href="#" coords="329,226,399,253,394,404,331,466,248,424,248,271" shape="poly" data-bs-toggle="modal" data-bs-target="#largeNoticeModal">
     </map>
     <map name="Hufflepuff-map">
-      <area target="" alt="chocolate-frog" title="chocolate-frog" href="#" coords="419,863,499,832,571,866,549,932,453,947" shape="poly" data-bs-toggle="modal" data-bs-target="#frogModal" class="frogLink">
-      <area target="" alt="notice-board" title="notice-board" href="#" coords="262,381,344,350,404,392,400,536,341,575,263,558" shape="poly" data-bs-toggle="modal" data-bs-target="#largeNoticeModal">
+      <area target="" alt="chocolate-frog" title="chocolate-frog" href="#" coords="416,639,493,674,463,736,367,738,331,670" shape="poly" data-bs-toggle="modal" data-bs-target="#frogModal" class="frogLink">
+      <area target="" alt="notice-board" title="notice-board" href="#" coords="282,232,341,267,339,380,281,438,210,393,204,253" shape="poly" data-bs-toggle="modal" data-bs-target="#largeNoticeModal">
     </map>
     <map name="Ravenclaw-map">
-      <area target="" alt="chocolate-frog" title="chocolate-frog" href="#" coords="228,427,279,447,257,502,202,496,172,454" shape="poly" data-bs-toggle="modal" data-bs-target="#frogModal" class="frogLink">
-      <area target="" alt="notice-board" title="notice-board" href="#" coords="240,256,276,273,288,323,261,379,235,390,202,376,186,303,195,270" shape="poly" data-bs-toggle="modal" data-bs-target="#largeNoticeModal">    
+      <area target="" alt="chocolate-frog" title="chocolate-frog" href="#" coords="378,606,459,635,433,715,337,717,293,645" shape="poly" data-bs-toggle="modal" data-bs-target="#frogModal" class="frogLink">
+      <area target="" alt="notice-board" title="notice-board" href="#" coords="396,318,470,360,477,498,401,553,313,506,306,346" shape="poly" data-bs-toggle="modal" data-bs-target="#largeNoticeModal">
     </map>
     @* <script>
       $("#common-room-map").on("click", function () {
       $("img#common-room-map").rwdImageMaps();
       $("img[usemap]").addClass("done");
-    });
-    </script> *@
+      });
+      </script> *@
     @* <a data-bs-toggle="modal" data-bs-target="#scheduleModal" class="schedule-sheet">
       <div class="card">
-        <p class="card-body text-dark bg-letter" style="max-width: 200px; height: 200px;">
-          Schedule
-        </p>
+      <p class="card-body text-dark bg-letter" style="max-width: 200px; height: 200px;">
+      Schedule
+      </p>
       </div>
-    </a>*@
+      </a>*@
     <div class="modal fade text-dark" id="scheduleModal" tabindex="-1" aria-labelledby="scheduleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header bg-letter">
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
+          </div>
           <div class="modal-body bg-letter ">
             @Html.Partial("HomeRoom/ClassList.cshtml")
           </div>
           <div class="modal-footer bg-letter">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            </div>
+          </div>
         </div>
       </div>
     </div>
     @Html.Partial("HomeRoom/ChocolateFrog.cshtml")
     @Html.Partial("HomeRoom/NoticeBoard.cshtml")
-     
-  </div> 
+
+  </div>
 }
 else if (User.Identity.IsAuthenticated)
 {
@@ -68,55 +68,16 @@ else if (User.Identity.IsAuthenticated)
         <div id="closed-letter"></div>
         <div id="gif-letter" class="hide"><img src="~/img/hogwarts-letter.gif"></img></div>
         <div id="acceptance-letter" class="letter hide">
-          <img src="~/img/hogwarts_bw.png">
-          <p>Dear @ViewBag.ThisStudent.Title @ViewBag.ThisStudent.LastName</p>
-          <p>&emsp;&emsp;We are pleased to inform you that you have been accepted at Hogwarts School of Witchcraft and Wizardy.</p>
-          <p>Please find enclosed a lost of all necessary books and equipment</p>
-          <p>Term begins on September 1st. We await your owl by no later than July 31st.</p>
-          <p>Yours sincerely,</p>
-          <p class="signature">M.McGonagall</p>
-          <p>Professor McGonagall</p>
-          <p class="letter-footer">HOGWARTS SCHOOL of WITCHCRAFT & WIZARDRY<br>Headmaster: Albus Dumbledore<br>(Order of Merlin, First Class, Grand Sorc., Chf. Warlock, Supreme Mugwump, International Confed. of Wizards)</p>
-          <button type="button" id="open-shopping-list">Shopping List</button>
+          @Html.Partial("HomeRoom/AcceptanceLetter.cshtml")
         </div>
         <div id="shopping-list" class="letter hide">
-          <img src="~/img/hogwarts_bw.png">
-          <h3>Uniform</h3>
-          <p>First-year students will require:</p>
-          <p><span class="box"></span>Three sets of plain work robes (black)</p>
-          <p><span class="box"></span>One plain pointed hat (black) for day wear</p>
-          <p><span class="box"></span>One pair of protective gloves (dragon hide or similar)</p>
-          <p><span class="box"></span>One winter cloak (black, with silver fastenings)</p>
-          <p>Please note that all pupil's clothes should carry name tags.</p>
-          <h3>Books</h3>
-          <p>All students should have a copy of each of the following:</p>
-          <p><span class="box"></span>The Standard Book of Spells (Grade 1) by Miranda Goshawk</p>
-          <p><span class="box"></span>A History of Magic by Bathilda Bagshot</p>
-          <p><span class="box"></span>Magical Theory by Adalbert Waffling</p>
-          <p><span class="box"></span>A Beginner's Guide to Transfiguration by Emeric Switch</p>
-          <p><span class="box"></span>One Thousand Magical Herbs and Fungi by Phyllida Spore</p>
-          <p><span class="box"></span>Magical Drafts and Potions by Arsenius Jigger</p>
-          <p><span class="box"></span>Fantastic Beasts and Where to Find Them by Newt Scamander</p>
-          <p><span class="box"></span>The Dark Forces: A Guide to Self-Protection by Quentin Trimble</p>
-          <h3>Other Equipment</h3>
-          <p><span class="box"></span>1 wand</p>
-          <p><span class="box"></span>1 cauldron (pewter, standard size 2)</p>
-          <p><span class="box"></span>1 set glass or crystal phials</p>
-          <p><span class="box"></span>1 telescope</p>
-          <p><span class="box"></span>1 set brass scales</p>
-          <p class="center">Students may also bring, if they desire, an Owl OR a Cat OR a Toad.<br>PARENTS ARE REMINDED THAT FIRST YEARS ARE NOT ALLOWED THEIR OWN BROOMSTICK</p>
-          <p class="letter-footer">HOGWARTS SCHOOL of WITCHCRAFT & WIZARDRY<br>Headmaster: Albus Dumbledore<br>(Order of Merlin, First Class, Grand Sorc., Chf. Warlock, Supreme Mugwump, International Confed. of Wizards)</p>
-          <button type="button" id="open-shopping">Purchase</button>
-        </div>
-        <div id="shopping" class="full-size hide">
-        
-          @Html.Partial("Shops/DiagonAlley.cshtml")
+          @Html.Partial("HomeRoom/ShoppingList.cshtml")
         </div>
       </div>
     </div>
   </div>
 
-  
+
   // pass sorting quiz
   <div id="the-great-hall" class="full-size hide">
     <div id="welcome">
@@ -124,223 +85,9 @@ else if (User.Identity.IsAuthenticated)
         <h1>Welcome to Hogwarts</h1>
         <p>The start-of-term banquet will begin shortly, but before you take your seats in the Great Hall, you will be sorted into your houses. The Sorting is a very important ceremony because, while you are here, your house will be something like your family within Hogwarts. You will have classes with the rest of your house, sleep in your house dormitory and spend free time in your house common room. </p>
         <p>&emsp;&emsp;The four houses are called Gryffindor, Hufflepuff, Ravenclaw and Slytherin. Each house has its own noble history and each has produced outstanding witches and wizards. While you are at Hogwarts, your triumphs will earn you house points, while any rule-breaking will lose house points. At the end of the year, the house with the most points is awarded the House Cup, a great honour. I hope each of you will be a credit to whichever house becomes yours. </p>
-
         <button type="button" id="start-sorting">Let the Sorting now begin</button>
       </div>
-      <form id="sorting-quiz" class="hide">
-        <div class="form-group">
-          <p>What would you rather be?</p>
-          <label>
-            <input type="radio" name="1" value="g" checked>
-            Trusted
-          </label>
-          <label>
-            <input type="radio" name="1" value="s">
-            Feared
-          </label>
-          <label>
-            <input type="radio" name="1" value="h">
-            Liked
-          </label>
-          <label>
-            <input type="radio" name="1" value="r">
-            Praised
-          </label>
-        </div>
-        <div class="form-group">
-          <p>What would you see in the Mirror of Erised?</p>
-          <label>
-            <input type="radio" name="2" value="s" checked>
-            Myself, surrounded by riches.
-          </label>
-          <label>
-            <input type="radio" name="2" value="h">
-            Myself, surrounded by my loving family and friends.
-          </label>
-          <label>
-            <input type="radio" name="2" value="r">
-            Myself, knowledgable above all.
-          </label>
-          <label>
-            <input type="radio" name="2" value="g">
-            Myself, experiencing a marvellous adventure.
-          </label>
-        </div>
-        <div class="form-group">
-          <p>The first Quidditch match of the season is approaching, and you can't wait to get involved. What role are you playing?</p>
-          <label>
-            <input type="radio" name="3" value="s" checked>
-            Beater. I like having all that power.
-          </label>
-          <label>
-            <input type="radio" name="3" value="g">
-            Seeker. I want the glory!
-          </label>
-          <label>
-            <input type="radio" name="3" value="r">
-            Chaser. I like to be involved, and work as part of the team.
-          </label>
-          <label>
-            <input type="radio" name="3" value="h">
-            I'll be in the crowd, making sure supporter morale is high!
-          </label>
-        </div>
-        <div class="form-group">
-          <p>You're allowed a pet at Hogwarts: an owl, a cat, or a toad. Which do you bring?</p>
-          <label>
-            <input type="radio" name="4" value="h" checked>
-            Toad
-          </label>
-          <label>
-            <input type="radio" name="4" value="g">
-            Owl
-          </label>
-          <label>
-            <input type="radio" name="4" value="r">
-            Cat
-          </label>
-          <label>
-            <input type="radio" name="4" value="s">
-            Super poisonous angry toad
-          </label>
-        </div>
-        <div class="form-group">
-          <p>It's Saturday, you've finished your homework, and you have some free time. You decide to spend some time away from your common room. Where do you go?</p>
-          <label>
-            <input type="radio" name="5" value="s" checked>
-            The Forbidden Forest
-          </label>
-          <label>
-            <input type="radio" name="5" value="r">
-            The Library
-          </label>
-          <label>
-            <input type="radio" name="5" value="g">
-            The Room of Requirement
-          </label>
-          <label>
-            <input type="radio" name="5" value="h">
-            The Lake
-          </label>
-        </div>
-        <div class="form-group">
-          <p>If you could make a potion that is going to guarantee you one thing, what would it be?</p>
-          <label>
-            <input type="radio" name="6" value="h" checked>
-            Love
-          </label>
-          <label>
-            <input type="radio" name="6" value="g">
-            Glory
-          </label>
-          <label>
-            <input type="radio" name="6" value="s">
-            Power
-          </label>
-          <label>
-            <input type="radio" name="6" value="r">
-            Knowledge
-          </label>
-        </div>
-        <div class="form-group">
-          <p>You are approached by a Muggle who calls you a wizard. How would you react?</p>
-          <label>
-            <input type="radio" name="7" value="r" checked>
-            Ask them to explain what they are talking about.
-          </label>
-          <label>
-            <input type="radio" name="7" value="h">
-            Agree and walk away.
-          </label>
-          <label>
-            <input type="radio" name="7" value="s">
-            Jinx them.
-          </label>
-          <label>
-            <input type="radio" name="7" value="g">
-            Modify their memory.
-          </label>
-        </div>
-        <div class="form-group">
-          <p>You're having trouble mastering a new spell, and you've decided to ask for help. Who do you go to?</p>
-          <label>
-            <input type="radio" name="8" value="h" checked>
-            My professor
-          </label>
-          <label>
-            <input type="radio" name="8" value="s">
-            My house ghost
-          </label>
-          <label>
-            <input type="radio" name="8" value="g">
-            My smartest friend
-          </label>
-          <label>
-            <input type="radio" name="8" value="r">
-            The library
-          </label>
-        </div>
-        <div class="form-group">
-          <p>Choose a deathly Hallow:</p>
-          <label>
-            <input type="radio" name="9" value="s" checked>
-            The Elder Wand
-          </label>
-          <label>
-            <input type="radio" name="9" value="r">
-            The Resurrection Stone
-          </label>
-          <label>
-            <input type="radio" name="9" value="g">
-            The Cloak of Inivisibilty
-          </label>
-          <label>
-            <input type="radio" name="9" value="h">
-            No thanks, those things are dangerous!
-          </label>
-        </div>
-        <div class="form-group">
-          <p>Which of these magical events would you most like to experience?</p>
-          <label>
-            <input type="radio" name="10" value="r" checked>
-            The Triwizard Tournament
-          </label>
-          <label>
-            <input type="radio" name="10" value="g">
-            The Quidditch World Cup
-          </label>
-          <label>
-            <input type="radio" name="10" value="s">
-            Halloween at Hogwarts
-          </label>
-          <label>
-            <input type="radio" name="10" value="h">
-            Christmas at Hogwarts
-          </label>
-        </div>
-        <div class="form-group">
-          <p>We know that the Sorting Hat takes into account your preferences. So which Hogwarts house do you feel you identify with most closely?</p>
-          <label>
-            <input type="radio" name="11" value="g" checked>
-            Gryffindor
-          </label>
-          <label>
-            <input type="radio" name="11" value="h">
-            Hufflepuff
-          </label>
-          <label>
-            <input type="radio" name="11" value="r">
-            Ravenclaw
-          </label>
-          <label>
-            <input type="radio" name="11" value="s">
-            Slytherin
-          </label>
-        </div>
-        <div class="form-group">
-          <button type="submit">Find Your House</button>
-        </div>
-      </form>
+      @Html.Partial("HomeRoom/SortingQuiz.cshtml")
       <div id="sorting-result" class="hide">
         <h3>Congratulations!</h3>
         <p>Your house is <span id="new-house"></span></p>
@@ -363,7 +110,7 @@ else
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header text-dark">
-            <h5 class="modal-title" id="loginModalLabel">Register</h5>
+            <h5 class="modal-title text-white" id="loginModalLabel">Login</h5>
             <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           @using (Html.BeginForm("Login", "Account", FormMethod.Post))
@@ -379,14 +126,10 @@ else
                 @Html.LabelFor(user=> user.Password)
                 @Html.PasswordFor(user=> user.Password,new {@id="registerPassword", @class="form-control"})
               </div>
-              <div class="form-group my-3">
-                @Html.LabelFor(user=> user.ConfirmPassword)
-                @Html.PasswordFor(user=> user.ConfirmPassword,new {@id="registerConfirmPassword", @class="form-control"})
-              </div>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
-              <button type="submit" class="btn btn-primary">Login</button>
+              <button type="submit" class="btn btn-light">Login</button>
             </div>
           }
         </div>
@@ -440,8 +183,8 @@ else
               </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-primary">Register</button>
+              <button type="button" data-bs-dismiss="modal">Close</button>
+              <button type="submit">Register</button>
             </div>
           }
         </div>
