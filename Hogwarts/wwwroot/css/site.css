@@ -38,11 +38,11 @@ a.navbar-brand {
   width: 125px;
 }
 
-.nav-item,
-button {
+.nav-item {
   border: 1px solid black;
   padding: 2px;
-  background-image: url("../img/paper.jpeg");
+  background-image: url("../img/letter.png");
+  background-position: center;
 }
 
 .nav-link {
@@ -171,7 +171,7 @@ html {
 
 #gif-letter img {
   width: 500px;
-  margin: auto;
+  margin: 0 auto;
   display: block;
 }
 
@@ -229,6 +229,13 @@ button,
   margin: auto;
   padding: 10px 20px;
   display: block;
+  background-image: url("../img/letter.png");
+  background-position: center;
+}
+
+.buttons-group {
+  display: flex;
+  gap: 20px;
 }
 
 #shopping-list {
@@ -263,10 +270,6 @@ button,
 
 .flex {
   display: flex;
-}
-
-.hide {
-  display: none;
 }
 
 #welcome {
@@ -328,20 +331,17 @@ button,
   color: rgb(251, 246, 233);
 }
 
-/* .account-info {
+#account-info {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  background-image: url("../img/letter.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 600px;
-  height: 500px;
-  color: black;
-  width: 500px;
-} */
+  min-height: 700px;
+}
+
+#edit-student-window {
+  min-height: 700px;
+}
 
 .scroll {
   overflow: scroll;
@@ -427,4 +427,8 @@ button,
   object-fit: cover;
   min-width: 100%;
   min-height: 100%;
+}
+
+.hide {
+  display: none !important;
 }

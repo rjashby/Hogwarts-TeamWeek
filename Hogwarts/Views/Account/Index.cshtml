@@ -13,7 +13,9 @@
         <div id="account-info">
           @if (Model.House != null)
           {
-            <img src="~/img/house_crests/@(Model.House).png">
+            <div>
+              <img src="~/img/house_crests/@(Model.House).png">
+            </div>
           }
           else
           {
@@ -30,11 +32,13 @@
           {
             <p>Wand: @Model.Wand</p>
           }
-          <button type="button" id="edit-student">Edit</button>
-          @using (Html.BeginForm("LogOff", "Account"))
-          {
-            <input type="submit" class="button" value="Log out" />
-          }
+          <div class="buttons-group">
+            <button type="button" id="edit-student">Edit</button>
+            @using (Html.BeginForm("LogOff", "Account"))
+            {
+              <input type="submit" class="button" value="Log out" />
+            }
+          </div>
         </div>
         <div id="edit-student-window" class="hide">
           @using (Html.BeginForm("Edit", "Students", FormMethod.Post))
