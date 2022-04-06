@@ -16,6 +16,7 @@ namespace Hogwarts.Models
     public string House { get; set; }
     public int Year { get; set; }
     public string Wand { get; set; }
+    public string WandURL { get; set; }
     public string Animal { get; set; }
     public string Robes { get; set; }
     public virtual ICollection<CourseStudent> JoinEntitiesCS { get; set; }

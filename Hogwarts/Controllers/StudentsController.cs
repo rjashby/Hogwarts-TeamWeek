@@ -113,5 +113,18 @@ namespace Hogwarts.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
+
+    [HttpPost]
+    public ActionResult BuyWand(int studentId, string wand, string wandUrl)
+    {
+      if (studentId != 0)
+      {
+          var thisStudent = _db.Students.FirstOrDefault(s => s.StudentId == studentId);
+          thisStudent.Wand = wand;
+          thisStudent.WandURL = wandUrl;
+      }
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
   }
 }

@@ -170,6 +170,9 @@ namespace Hogwarts.Migrations
                     b.Property<string>("Wand")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
+                    b.Property<string>("WandURL")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
                     b.Property<int>("Year")
                         .HasColumnType("int");
 
