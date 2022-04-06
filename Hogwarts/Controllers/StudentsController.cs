@@ -115,13 +115,13 @@ namespace Hogwarts.Controllers
     }
 
     [HttpPost]
-    public ActionResult BuyWand(int studentId, string wand, string wandUrl)
+    public ActionResult BuyWand(int studentId, string wand, string wandURL)
     {
       if (studentId != 0)
       {
         Student thisStudent = _db.Students.FirstOrDefault(s => s.StudentId == studentId);
         thisStudent.Wand = wand;
-        thisStudent.WandURL = wandUrl;
+        thisStudent.WandURL = wandURL;
         _db.Entry(thisStudent).State = EntityState.Modified;
         _db.SaveChanges();
       }
@@ -136,6 +136,58 @@ namespace Hogwarts.Controllers
       {
         Student thisStudent = _db.Students.FirstOrDefault(Student => Student.Email == User.Identity.Name);
         thisStudent.Robes = robe;
+        _db.Entry(thisStudent).State = EntityState.Modified;
+        _db.SaveChanges();
+      }
+      return RedirectToAction("Index", "Shops");
+    }
+
+    [HttpPost]
+    public ActionResult BuyAnimal(string animal)
+    {
+      if (User.Identity.IsAuthenticated)
+      {
+        Student thisStudent = _db.Students.FirstOrDefault(Student => Student.Email == User.Identity.Name);
+        thisStudent.Animal = animal;
+        _db.Entry(thisStudent).State = EntityState.Modified;
+        _db.SaveChanges();
+      }
+      return RedirectToAction("Index", "Shops");
+    }
+
+    [HttpPost]
+    public ActionResult BuyTools(string tools)
+    {
+      if (User.Identity.IsAuthenticated)
+      {
+        Student thisStudent = _db.Students.FirstOrDefault(Student => Student.Email == User.Identity.Name);
+        thisStudent.Tools = tools;
+        _db.Entry(thisStudent).State = EntityState.Modified;
+        _db.SaveChanges();
+      }
+      return RedirectToAction("Index", "Shops");
+    }
+
+    [HttpPost]
+    public ActionResult BuyPhials(string phials)
+    {
+      if (User.Identity.IsAuthenticated)
+      {
+        Student thisStudent = _db.Students.FirstOrDefault(Student => Student.Email == User.Identity.Name);
+        thisStudent.Phials = phials;
+        _db.Entry(thisStudent).State = EntityState.Modified;
+        _db.SaveChanges();
+      }
+      return RedirectToAction("Index", "Shops");
+    }
+
+    [HttpPost]
+    public ActionResult BuyCauldron(string cauldron)
+    {
+      if (User.Identity.IsAuthenticated)
+      {
+        Student thisStudent = _db.Students.FirstOrDefault(Student => Student.Email == User.Identity.Name);
+        thisStudent.Cauldron = cauldron;
         _db.Entry(thisStudent).State = EntityState.Modified;
         _db.SaveChanges();
       }

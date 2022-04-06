@@ -2,6 +2,12 @@
   Layout = "_Layout";
 }
 <div id="ollivanders" class="full-size">
+  <!-- <audio autoplay controls hidden>
+    <source src="~/audio/shopdoor.mp3" type="audio/mp3">
+  </audio> -->
+  <audio id="register">
+    <source src="~/audio/cashreg.wav" type="audio/mp3">
+  </audio>
   <div class="container p-5 text-white" style="background-color: #2125299e!important;">
     <div class="h-100 p-5 text-white text-center">
       <h1 style="text-align: center;">Welcome to Ollivanders</h1>
@@ -120,14 +126,12 @@
     </div>
     <div class="row">
       <div class="col-md-12">
-        <div class="card hide p-5 text-white" style="background-color: #2125299e!important;" id="show-wand">
-          <img src="" id="wand-img-tag" class="card-img-top" alt="magic wand">
-          <div class="card-body">
-            <div class="card-text text-white text-center">
-              <h6 class="card-title" id="wand-description">wand description</h6>
-              <button class="btn btn-dark" type="button" id="accept-wand">accept wand</button>
-            </div>
+        <div class="hide p-5 text-white text-center" id="show-wand">
+          <div class="d-flex justify-content-center pb-2">
+            <img src="" id="wand-img-tag" alt="magic wand">
           </div>
+          <h6 class="card-title" id="wand-description">wand description</h6>
+          <button id="accept-wand" class="w-25 button text-dark" type="button">@Html.ActionLink("Accept Wand", "Index", "Shops")</button>
         </div>
       </div>
     </div>

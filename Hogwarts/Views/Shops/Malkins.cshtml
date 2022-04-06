@@ -1,79 +1,112 @@
-<div class="container bg-dark p-5 text-center">
-  <div class="h-100 p-5 text-white text-center">
-    <h1 class="text-center mt-4">Welcome to Madam Malkin's Robes for all Occasions</h1>
-    <p class="text-center">Find a Robe:</p>
-  </div>
-  @if (ViewBag.Student.Robes != null)
-  {
-    <h1 class="text-center mt-4">It appears you already have a robe item from Malkins Robe Shop. Would you like to pick a different one?</h1>
-    <button type="submit" class="btn px-5 pt-2 text-dark fs-1">YES</button>
-  }
-  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active" data-bs-interval="5000">
-        <img src="~/img/robes/gryffRobes.png" style="height:500px;" alt="...">
-        <form method="Post" action="/Students/SelectRobe">
-          <button type="submit" class="btn px-5 pt-2 text-dark fs-1">SELECT</button>
-          <input type="hidden" name="robe" value="img/robes/gryffRobes.png">
-        </form>
-      </div>
-      <div class="carousel-item" data-bs-interval="5000">
-        <img src="~/img/robes/slythRobes.png" style="height:500px;" alt="...">
-        <form method="Post" action="/Students/SelectRobe">
-          <button type="submit" class="btn px-5 pt-2 text-dark fs-1">SELECT</button>
-          <input type="hidden" name="robe" value="img/robes/slythRobes.png">
-        </form>
-      </div>
-      <div class="carousel-item" data-bs-interval="5000">
-        <img src="~/img/robes/huffRobes.png" style="height:500px;" alt="...">
-        <form method="Post" action="/Students/SelectRobe">
-          <button type="submit" class="btn px-5 pt-2 text-dark fs-1">SELECT</button>
-          <input type="hidden" name="robe" value="img/robes/huffRobes.png">
-        </form>
-      </div>
-      <div class="carousel-item" data-bs-interval="5000">
-        <img src="~/img/robes/ravenRobes.png" style="height:500px;" alt="...">
-        <form method="Post" action="/Students/SelectRobe">
-          <button type="submit" class="btn px-5 pt-2 text-dark fs-1">SELECT</button>
-          <input type="hidden" name="robe" value="img/robes/ravenRobes.png">
-        </form>
-      </div>
-      <div class="carousel-item" data-bs-interval="5000">
-        <img src="~/img/robes/blackRobe.png" style="height:500px;" alt="...">
-        <form method="Post" action="/Students/SelectRobe">
-          <button type="submit" class="btn px-5 pt-2 text-dark fs-1">SELECT</button>
-          <input type="hidden" name="robe" value="img/robes/blackRobe.png">
-        </form>
-      </div>
-      <div class="carousel-item" data-bs-interval="5000">
-        <img src="~/img/robes/blackRobe2.png" style="height:500px;" alt="...">
-        <form method="Post" action="/Students/SelectRobe">
-          <button type="submit" class="btn px-5 pt-2 text-dark fs-1">SELECT</button>
-          <input type="hidden" name="robe" value="img/robes/blackRobe2.png">
-        </form>
-      </div>
-      <div class="carousel-item" data-bs-interval="5000">
-        <img src="~/img/robes/darkGloves2.png" style="height:350px;" alt="...">
-        <form method="Post" action="/Students/SelectRobe">
-          <button type="submit" class="btn px-5 pt-2 text-dark fs-1">SELECT</button>
-          <input type="hidden" name="robe" value="img/clothes/darkGloves2.png">
-        </form>
-      </div>
-      <div class="carousel-item" data-bs-interval="5000">
-        <img src="~/img/robes/gloves.png" style="height:350px;" alt="...">
-        <form method="Post" action="/Students/SelectRobe">
-          <button type="submit" class="btn px-5 pt-2 text-dark fs-1">SELECT</button>
-          <input type="hidden" name="robe" value="img/clothes/gloves.png">
-        </form>
+<div id="malkins" class="full-size">
+  <audio id="register">
+    <source src="~/audio/cashreg.wav" type="audio/mp3">
+  </audio>
+  <audio autoplay controls hidden>
+    <source src="~/audio/shopdoor.mp3" type="audio/mp3">
+  </audio>
+  <div class="container p-5 text-center" style="background-color: #2125299e!important;">
+    <div class="h-100 p-5 text-white text-center">
+      <h1 class="text-center mt-4">Welcome to Madam Malkin's Robes for all Occasions</h1>
+
+    </div>
+    @if (ViewBag.Student.Robes != null)
+    {
+      <h1 class="text-center mt-4" id="aleadyHaveRobeYourRobe">Your robe</h1>
+      <img src="/@ViewBag.Student.Robes" id="aleadyHaveRobe" style="height:500px;" alt="...">
+      <h1 class="text-center mt-4" id="aleadyHaveRobeText">If you'd like, you may select another robe. Would you like to pick a different robe?</h1>
+      <button id="showShop" type="button" class="btn px-5 pt-2 text-dark fs-1">YES</button>
+      <script>
+        $("#showShop").click(function () {
+          $("#displayShop").removeClass("d-none");
+          $("#showShop").hide();
+          $("#aleadyHaveRobeText").hide();
+          $("#aleadyHaveRobe").hide();
+          $("#aleadyHaveRobeYourRobe").hide();
+        });
+
+        function play() {
+          let soundclick = document.getElementById("register");
+          soundclick.play();
+        }
+
+      </script>
+      @:<div id="displayShop" class="d-none">
+    }
+    else
+    {
+        <p class="text-center fs-2">Find a Robe</p>
+      @:<div id="displayShop">
+    }
+
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="5000">
+              <img src="~/img/robes/gryffRobes.png" style="height:500px;" alt="...">
+              <form method="Post" action="/Students/SelectRobe">
+                <button onclick="play()" type="submit" class="btn px-5 pt-2 text-dark fs-1">SELECT</button>
+                <input type="hidden" name="robe" value="img/robes/gryffRobes.png">
+              </form>
+            </div>
+            <div class="carousel-item" data-bs-interval="5000">
+              <img src="~/img/robes/slythRobes.png" style="height:500px;" alt="...">
+              <form method="Post" action="/Students/SelectRobe">
+                <button onclick="play()" type="submit" class="btn px-5 pt-2 text-dark fs-1">SELECT</button>
+                <input type="hidden" name="robe" value="img/robes/slythRobes.png">
+              </form>
+            </div>
+            <div class="carousel-item" data-bs-interval="5000">
+              <img src="~/img/robes/huffRobes.png" style="height:500px;" alt="...">
+              <form method="Post" action="/Students/SelectRobe">
+                <button onclick="play()" type="submit" class="btn px-5 pt-2 text-dark fs-1">SELECT</button>
+                <input type="hidden" name="robe" value="img/robes/huffRobes.png">
+              </form>
+            </div>
+            <div class="carousel-item" data-bs-interval="5000">
+              <img src="~/img/robes/ravenRobes.png" style="height:500px;" alt="...">
+              <form method="Post" action="/Students/SelectRobe">
+                <button onclick="play()" type="submit" class="btn px-5 pt-2 text-dark fs-1">SELECT</button>
+                <input type="hidden" name="robe" value="img/robes/ravenRobes.png">
+              </form>
+            </div>
+            <div class="carousel-item" data-bs-interval="5000">
+              <img src="~/img/robes/blackRobe.png" style="height:500px;" alt="...">
+              <form method="Post" action="/Students/SelectRobe">
+                <button onclick="play()" type="submit" class="btn px-5 pt-2 text-dark fs-1">SELECT</button>
+                <input type="hidden" name="robe" value="img/robes/blackRobe.png">
+              </form>
+            </div>
+            <div class="carousel-item" data-bs-interval="5000">
+              <img src="~/img/robes/blackRobe2.png" style="height:500px;" alt="...">
+              <form method="Post" action="/Students/SelectRobe">
+                <button onclick="play()" type="submit" class="btn px-5 pt-2 text-dark fs-1">SELECT</button>
+                <input type="hidden" name="robe" value="img/robes/blackRobe2.png">
+              </form>
+            </div>
+            <div class="carousel-item" data-bs-interval="5000">
+              <img src="~/img/robes/darkGloves2.png" style="height:350px;" alt="...">
+              <form method="Post" action="/Students/SelectRobe">
+                <button onclick="play()" type="submit" class="btn px-5 pt-2 text-dark fs-1">SELECT</button>
+                <input type="hidden" name="robe" value="img/clothes/darkGloves2.png">
+              </form>
+            </div>
+            <div class="carousel-item" data-bs-interval="5000">
+              <img src="~/img/robes/gloves.png" style="height:350px;" alt="...">
+              <form method="Post" action="/Students/SelectRobe">
+                <button onclick="play()" type="submit" class="btn px-5 pt-2 text-dark fs-1">SELECT</button>
+                <input type="hidden" name="robe" value="img/clothes/gloves.png">
+              </form>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
       </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
   </div>
-</div>

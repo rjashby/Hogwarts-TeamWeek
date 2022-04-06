@@ -11,17 +11,19 @@ $("#open-shopping-list").on("click", function () {
   $("#shopping-list").removeClass("hide");
   $("#acceptance-letter").addClass("hide");
 });
+
 //shopping
 // $("#open-shopping").on("click", function () {
 //   $("#shopping-list").addClass("move");
 //   $("#shopping").removeClass("hide");
 // });
-//skip shopping
-// $("#open-shopping").on("click", function () {
-//   $("#shopping-list").addClass("hide");
-//   $("#diagon-alley").addClass("hide");
-//   $("#the-great-hall").removeClass("hide");
-// });
+
+//go to hogwarts
+$("#finish-shopping").on("click", function () {
+  $("#shopping-list").addClass("hide");
+  $("#diagon-alley").addClass("hide");
+  $("#the-great-hall").removeClass("hide");
+});
 
 $("#start-sorting").on("click", function () {
   $("#welcome-text").addClass("hide");

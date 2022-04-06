@@ -460,6 +460,55 @@ button,
   background-repeat: no-repeat;
 }
 
+#malkins {
+  background-image: url("../img/shops/malkins.jpg");
+  background-size: 100vw;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#apothecary {
+  background-image: url("../img/shops/mullpeppers.jpg");
+  background-size: 100vw;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#cauldron {
+  background-image: url("../img/shops/potages.jpg");
+  background-size: 100vw;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#owl {
+  background-image: url("../img/shops/eeylops.jpg");
+  background-size: 100vw;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#quidditch {
+  background-image: url("../img/shops/quality_quidditch.jpg");
+  background-size: 100vw;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#wiseacres {
+  background-image: url("../img/shops/wiseacres.jpg");
+  background-size: 100vw;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#menagerie {
+  background-image: url("../img/shops/magical_menagerie.jpg");
+  background-size: 100vw;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 #map-wrapper {
   width: 900px;
 }
@@ -476,8 +525,14 @@ button,
   top: -100px;
 }
 
-#shop-shopping-list span {
+#shop-shopping-list span,
+#shopping-list span {
   padding-right: 10px;
   width: 15px;
   display: inline-block;
+}
+
+#wand-img-tag {
+  max-width: 10em;
+  height: auto;
 }

@@ -21,21 +21,50 @@
               <img src="~/img/hogwarts_bw.png">
             }
           </div>
-          <p>Student Name: @Model.FirstName @Model.LastName</p>
-          <p>Email: @Model.Email</p>
-          <p>Year: @Model.Year</p>
-          @if (Model.Animal != null)
-          {
-            <p>Animal: @Model.Animal</p>
-          }
-          @if (Model.Wand != null)
-          {
-            <p>Wand: @Model.Wand</p>
-          }
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">Student Name</th>
+                <th scope="col">@Model.FirstName @Model.LastName</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr scope="row">
+                <th>Email</th>
+                <th>@Model.Email</th>
+              </tr>
+              <tr scope="row">
+                <th>Year</th>
+                <th>@Model.Year</th>
+              </tr>
+              @if (Model.Robes != null)
+              {
+                <tr scope="row">
+                  <th>Robes</th>
+                  <th><img src="@Model.Robes"></img></th>
+                </tr>
+              }
+              @if (Model.Animal != null)
+              {
+                <tr scope="row">
+                  <th>Animal</th>
+                  <th><img src="@Model.Animal"></img></th>
+                </tr>
+              }
+              @if (Model.Wand != null)
+              {
+                <tr scope="row">
+                  <th>Wand</th>
+                  <th>@Model.Wand <img src="@Model.WandURL"></img></th>
+                </tr>
+              }
+            </tbody>
+          </table>
           @if (Model.House != null)
           {
             <button>@Html.ActionLink("Home", "Index", "Home")</button>
           }
+
           <div class="buttons-group">
             <button type="button" id="edit-student">Edit</button>
             @using (Html.BeginForm("LogOff", "Account"))

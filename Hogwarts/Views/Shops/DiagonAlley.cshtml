@@ -4,16 +4,15 @@
     <img src="~/img/shops/alley-map-fixed.png" usemap="#image-map">
 
     <map name="image-map">
-      <area target="Shops/Ollivanders" alt="Ollivander's Wand Shop" title="Ollivander's Wand Shop" href="Shops/Ollivanders" coords="606,333,648,332,651,377,610,377" shape="poly">
+      <area target="" alt="Ollivander's Wand Shop" title="Ollivander's Wand Shop" href="/Shops/Ollivanders" coords="606,333,648,332,651,377,610,377" shape="poly">
       <area target="" alt="Magical Menagerie" title="Magical Menagerie" href="Shops/Menagerie" coords="412,331,455,329,459,386,416,387" shape="poly">
       <area target="" alt="Potage's Cauldron Shop" title="Potage's Cauldron Shop" href="Shops/Cauldron" coords="175,239,214,242,199,276,172,277" shape="poly">
       <area target="" alt="Mulpepper's Apothecary" title="Mulpepper's Apothecary" href="Shops/Apothecary" coords="466,343,537,338,543,380,471,386" shape="poly">
-      <area target="/Shops/Malkins" alt="Madam Malkin's Robes" title="Madam Malkin's Robes" href="/Shops/Malkins" coords="313,228,352,234,353,267,296,255" shape="poly">
-      <area target="" alt="Scribbulus' Writing Instruments" title="Scribbulus' Writing Instruments" href="" coords="612,236,630,224,652,264,636,274,615,272" shape="poly">
-      <area target="" alt="Flourish and Blott's Bookshop" title="Flourish and Blott's Bookshop" href="Shops/FlourishAndBlotts" coords="432,219,495,212,498,261,459,267" shape="poly">
-      <area target="" alt="Wiseacre's Wizarding Equipment" title="Wiseacre's Wizarding Equipment" href="Shops/Wiseacres" coords="505,210,524,210,528,265,508,267" shape="poly">
-      <area target="" alt="Eeylops's Owl Emporium" title="Eeylops's Owl Emporium" href="Shops/Owl" coords="533,209,559,206,567,267,537,270" shape="poly">
-      <area target="" alt="Quality Quidditch Supplies" title="Quality Quidditch Supplies" href="Shops/Quidditch" coords="569,207,596,205,606,271,576,269" shape="poly">
+      <area target="" alt="Madam Malkin's Robes" title="Madam Malkin's Robes" href="/Shops/Malkins" coords="313,228,352,234,353,267,296,255" shape="poly">
+      <area target="" alt="Flourish and Blott's Bookshop" title="Flourish and Blott's Bookshop" href="/Shops/FlourishAndBlotts" coords="432,219,495,212,498,261,459,267" shape="poly">
+      <area target="" alt="Wiseacre's Wizarding Equipment" title="Wiseacre's Wizarding Equipment" href="/Shops/Wiseacres" coords="505,210,524,210,528,265,508,267" shape="poly">
+      <area target="" alt="Eeylops's Owl Emporium" title="Eeylops's Owl Emporium" href="/Shops/Owl" coords="533,209,559,206,567,267,537,270" shape="poly">
+      <area target="" alt="Quality Quidditch Supplies" title="Quality Quidditch Supplies" href="/Shops/Quidditch" coords="569,207,596,205,606,271,576,269" shape="poly">
     </map>
   </div>
   <div id="shop-shopping-list" class="letter move">
@@ -44,6 +43,10 @@
     <p><span class="check-animal"></span>Students may also bring, if they desire, an Owl OR a Cat OR a Toad.</p>
     <p class="center">PARENTS ARE REMINDED THAT FIRST YEARS ARE NOT ALLOWED THEIR OWN BROOMSTICK</p>
     <p class="letter-footer">HOGWARTS SCHOOL of WITCHCRAFT & WIZARDRY<br>Headmaster: Albus Dumbledore<br>(Order of Merlin, First Class, Grand Sorc., Chf. Warlock, Supreme Mugwump, International Confed. of Wizards)</p>
+    @if (@Model.Wand != null && @Model.Robes != null && @Model.Books != null && @Model.Cauldron != null && @Model.Phials != null && @Model.Animal != null && @Model.Tools != null)
+    {
+      <button>@Html.ActionLink("Go to Hogwarts", "Index", "Home", null, new{@id="finish-shopping"})</button>
+    }
   </div>
 </div>
 
