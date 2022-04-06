@@ -1,8 +1,13 @@
 <div class="container bg-dark p-5 text-center">
   <div class="h-100 p-5 text-white text-center">
-    <h1 style="text-align: center;">Welcome to Madam Malkin's Robes for all Occasions</h1>
-    <small style="text-align: center;">Find a Robe:</small>
+    <h1 class="text-center mt-4">Welcome to Madam Malkin's Robes for all Occasions</h1>
+    <p class="text-center">Find a Robe:</p>
   </div>
+  @if (ViewBag.Student.Robes != null)
+  {
+    <h1 class="text-center mt-4">It appears you already have a robe item from Malkins Robe Shop. Would you like to pick a different one?</h1>
+    <button type="submit" class="btn px-5 pt-2 text-dark fs-1">YES</button>
+  }
   <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active" data-bs-interval="5000">

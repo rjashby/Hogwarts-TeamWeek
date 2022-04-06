@@ -53,15 +53,13 @@ $("#wand-quiz").submit(function (event) {
       wand.Url = wandD.ImageUrl;
       break;
   }
-
-  // alert($("#studentId-hidden").val());
   $.ajax({
     type: "POST",
     url: "../../Students/BuyWand",
     data: { 'studentId': $("#studentId-hidden").val(), 'wand': wand.Description, 'wandURL': wand.ImageUrl },
-    success: function (response) {
-      alert(response)
-      console.log("success");
+    success: function () {
+      console.log(wand.Description);
+      console.log(wand.ImageUrl);
       $("#wand-description").text(wand.Description);
       $("#wand-img-tag").attr("src", wand.ImageUrl);
       $("#show-wand").removeClass("hide");

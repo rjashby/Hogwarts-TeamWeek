@@ -51,6 +51,10 @@ namespace Hogwarts.Controllers
     }
     public ActionResult Malkins()
     {
+      if (User.Identity.IsAuthenticated)
+      {
+        ViewBag.Student = _db.Students.FirstOrDefault(Student => Student.Email == User.Identity.Name);
+      }
       return View();
     }
     public ActionResult Menagerie()
