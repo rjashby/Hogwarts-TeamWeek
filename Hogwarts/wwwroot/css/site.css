@@ -137,7 +137,6 @@ html {
   margin: auto;
   width: 100%;
   height: 100%;
-
   overflow: hidden;
   clip-path: 0 0;
   transform: translatez(0);
@@ -431,4 +430,33 @@ button,
 
 .hide {
   display: none !important;
+}
+
+#ollivanders {
+  background-image: url("../img/ollivanders.jpg");
+  background-size: 100vw;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#map-wrapper {
+  width:900px;
+}
+
+#map-wrapper img,
+#map-wrapper map
+ {
+  width: 900px;
+}
+
+.move {
+  position: absolute;
+  transform: scale(0.7);
+  right: -75px;
+  top: -100px;
+}
+
+.box {
+  padding-right: 10px;
+  width: 10px;
 }

@@ -11,12 +11,17 @@ $("#open-shopping-list").on("click", function () {
   $("#shopping-list").removeClass("hide");
   $("#acceptance-letter").addClass("hide");
 });
-//temporarily
+//after shopping
 $("#open-shopping").on("click", function () {
-  $("#shopping-list").addClass("hide");
-  $("#diagon-alley").addClass("hide");
-  $("#the-great-hall").removeClass("hide");
+  $("#shopping-list").addClass("move");
+  $("#shopping").removeClass("hide");
 });
+
+// $("#open-shopping").on("click", function () {
+//   $("#shopping-list").addClass("hide");
+//   $("#diagon-alley").addClass("hide");
+//   $("#the-great-hall").removeClass("hide");
+// });
 
 $("#start-sorting").on("click", function () {
   $("#welcome-text").addClass("hide");
@@ -101,4 +106,8 @@ $("#edit-student").on("click", function () {
 $("document").ready(function () {
   $("img[usemap]").rwdImageMaps();
   $("img[usemap]").addClass("done");
+});
+
+$(".box").each(function () {
+  $(this).text("✓");
 });
