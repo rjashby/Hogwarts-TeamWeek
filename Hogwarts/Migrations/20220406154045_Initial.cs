@@ -74,10 +74,7 @@ namespace Hogwarts.Migrations
                     House = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
                     Year = table.Column<int>(type: "int", nullable: false),
                     Wand = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
-<<<<<<<< HEAD:Hogwarts/Migrations/20220406000201_Initial.cs
                     WandURL = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
-========
->>>>>>>> ffcc24136d648b4ea4b4de33403aeacdf6544c8a:Hogwarts/Migrations/20220405182240_Initial.cs
                     Animal = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true),
                     Robes = table.Column<string>(type: "longtext CHARACTER SET utf8mb4", nullable: true)
                 },

@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Hogwarts.Migrations
 {
     [DbContext(typeof(HogwartsContext))]
-    [Migration("20220405182240_Initial")]
+    [Migration("20220406154045_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -170,6 +170,9 @@ namespace Hogwarts.Migrations
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("Wand")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<string>("WandURL")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<int>("Year")
