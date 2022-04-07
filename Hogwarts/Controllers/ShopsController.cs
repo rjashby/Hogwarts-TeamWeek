@@ -37,7 +37,8 @@ namespace Hogwarts.Controllers
     {
       if (User.Identity.IsAuthenticated)
       {
-        ViewBag.ThisStudentId = _db.Students.FirstOrDefault(Student => Student.Email == User.Identity.Name).StudentId;
+        // ViewBag.ThisStudentId = _db.Students.FirstOrDefault(Student => Student.Email == User.Identity.Name).StudentId;
+        ViewBag.Student = _db.Students.FirstOrDefault(Student => Student.Email == User.Identity.Name);
       }
       return View();
     }
