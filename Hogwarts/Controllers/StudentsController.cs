@@ -23,23 +23,6 @@ namespace Hogwarts.Controllers
       _db = db;
     }
 
-    // public ActionResult Create()
-    // {
-    //   return View();
-    // }
-    // public ActionResult Details(int id)
-    // {
-    //   var thisStudent = _db.Students
-    //     .FirstOrDefault(s => s.StudentId == id);
-    //   return View(thisStudent);
-    // }
-
-    // public ActionResult Edit(int id)
-    // {
-    //   var thisStudent = _db.Students.FirstOrDefault(s => s.StudentId == id);
-    //   return View(thisStudent);
-    // }
-
     [HttpPost]
     public ActionResult Edit(Student student)
     {
@@ -104,7 +87,7 @@ namespace Hogwarts.Controllers
       Thread.Sleep(750);
       return RedirectToAction("Index", "Shops");
     }
-    
+
     [HttpPost]
     public ActionResult Tools(string telescope, string scale)
     {

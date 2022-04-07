@@ -147,10 +147,7 @@
 
             <label for="LastName" class="mt-3">Last Name</label>
             @Html.TextBoxFor(model => model.LastName, new {@class="form-control shadow-sm", required="required"})
-
-            <label for="Email" class="mt-3">Email</label>
-            @Html.TextBoxFor(model => model.Email, new {@class="form-control shadow-sm", required="required"})
-
+            @Html.HiddenFor(model => model.Email)
             @Html.HiddenFor(model => model.StudentId)
             @Html.HiddenFor(model => model.Wand)
             @Html.HiddenFor(model => model.Robes)
