@@ -5,13 +5,23 @@
 @using Hogwarts.Models
 @model RegisterViewModel
 
-@if (@ViewBag.ThisStudent != null && @ViewBag.ThisStudent.Wand != null && @ViewBag.ThisStudent.Robes != null && @ViewBag.ThisStudent.Books != null && @ViewBag.ThisStudent.Cauldron != null && @ViewBag.ThisStudent.Phials != null && @ViewBag.ThisStudent.Animal != null && @ViewBag.ThisStudent.Tools != null)
+@if (@ViewBag.ThisStudent != null && @ViewBag.ThisStudent.Wand != null && @ViewBag.ThisStudent.Robes != null && @ViewBag.ThisStudent.Books != null && @ViewBag.ThisStudent.Cauldron != null && @ViewBag.ThisStudent.Phials != null && @ViewBag.ThisStudent.Scale != null && @ViewBag.ThisStudent.Tools != null)
 {
+  <audio controls hidden id="greathall">
+    <source src='~/audio/greathall.mp3' type='audio/mp3'>
+  </audio>
+  <script>
+    function play() {
+      let soundclick = document.getElementById("greathall");
+      soundclick.play();
+    }
+  </script>
   <script>
     $("document").ready(function () {
       $("#shopping-list").addClass("hide");
       $("#diagon-alley").addClass("hide");
       $("#the-great-hall").removeClass("hide");
+      play();
     });
   </script>
 }
@@ -35,34 +45,6 @@
       <area target="" alt="chocolate-frog" title="chocolate-frog" href="#" coords="378,606,459,635,433,715,337,717,293,645" shape="poly" data-bs-toggle="modal" data-bs-target="#frogModal" class="frogLink">
       <area target="" alt="notice-board" title="notice-board" href="#" coords="396,318,470,360,477,498,401,553,313,506,306,346" shape="poly" data-bs-toggle="modal" data-bs-target="#largeNoticeModal">
     </map>
-    @* <script>
-      $("#common-room-map").on("click", function () {
-      $("img#common-room-map").rwdImageMaps();
-      $("img[usemap]").addClass("done");
-      });
-      </script> *@
-    @* <a data-bs-toggle="modal" data-bs-target="#scheduleModal" class="schedule-sheet">
-      <div class="card">
-      <p class="card-body text-dark bg-letter" style="max-width: 200px; height: 200px;">
-      Schedule
-      </p>
-      </div>
-      </a>*@
-    <div class="modal fade text-dark" id="scheduleModal" tabindex="-1" aria-labelledby="scheduleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header bg-letter">
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body bg-letter ">
-            @Html.Partial("HomeRoom/ClassList.cshtml")
-          </div>
-          <div class="modal-footer bg-letter">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
     @Html.Partial("HomeRoom/ChocolateFrog.cshtml")
     @Html.Partial("HomeRoom/NoticeBoard.cshtml")
 
@@ -186,8 +168,6 @@ else
                 @Html.LabelFor(user=> user.ConfirmPassword)
                 @Html.PasswordFor(user=> user.ConfirmPassword,new {@id="registerConfirmPassword", @class="form-control"})
               </div>
-
-              <input type="number" min=1 max=7 class="form-control" name="Year" id="registerYear">
 
             </div>
             <div class="modal-footer">

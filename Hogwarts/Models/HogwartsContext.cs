@@ -5,11 +5,8 @@ namespace Hogwarts.Models
 {
   public class HogwartsContext : IdentityDbContext<ApplicationUser>
   {
-    public DbSet<Course> Courses {get; set;}
     public DbSet<Student> Students {get; set;}
     public DbSet<Teacher> Teachers {get; set;}
-    public DbSet<CourseStudent> CourseStudent {get; set;}
-    public DbSet<CourseTeacher> CourseTeacher {get;set;}
     public HogwartsContext(DbContextOptions options) : base(options) {}
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {

@@ -33,8 +33,6 @@ namespace Hogwarts.Controllers
       {
         var id = _db.Students.FirstOrDefault(Student => Student.Email == User.Identity.Name).StudentId;
         ViewBag.ThisStudent = _db.Students
-            .Include(s => s.JoinEntitiesCS)
-            .ThenInclude(j => j.Course)
             .FirstOrDefault(s => s.StudentId == id);
       }
       return View();

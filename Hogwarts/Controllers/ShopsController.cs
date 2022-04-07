@@ -80,6 +80,10 @@ namespace Hogwarts.Controllers
     }
     public ActionResult Wiseacres()
     {
+      if (User.Identity.IsAuthenticated)
+      {
+        ViewBag.Student = _db.Students.FirstOrDefault(Student => Student.Email == User.Identity.Name);
+      }
       return View();
     }
   }

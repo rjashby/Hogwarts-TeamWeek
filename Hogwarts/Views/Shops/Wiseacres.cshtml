@@ -11,56 +11,217 @@
       soundclick.play();
     }
   </script>
-  <div class="container p-5 text-center" style="background-color: #2125299e!important;">
-    <div class="h-100 p-5 text-white text-center">
-      <h1 style="text-align: center;">Welcome to Wiseacre's Wizarding Equipment</h1>
-      <small style="text-align: center;">One Stop Shop for all Your Socery Needs</small>
+    <div class="container p-5 text-center" style="background-color: #2125299e!important;">
+    <div class="h-100 p-4 text-white text-center">
+      <h1 class="text-center">Welcome to Wiseacres! </h1>
+      <h3 class="text-center">Whether you’re headed back to Hogwarts, brewing a love potion or need help dealing with the gnomes in your garden, we’ve got you covered, from cover to cover!</h3>
     </div>
-    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active" data-bs-interval="5000">
-          <img src="~/img/shopping_items/My_project_8.png" style="height:350px;" alt="...">
-          <form method="Post" action="/Students/BuyTools">
-            <button onclick="play()" class="btn px-5 pt-2 text-dark fs-1">SELECT</button>
-            <input type="hidden" name="tools" value="img/shopping_items/My_project_8.png">
-          </form>
+    @if (ViewBag.Student.Tools != null || ViewBag.Student.Scale != null)
+    {
+      <h1 class="text-center mt-4" id="aleadyHaveToolsYourTools">You've already selected your a telescope.</h1>
+      <h1 class="text-center mt-4" id="aleadyHaveToolsText">If you'd like, you may select different tools. Would you like to pick different tools?</h1>
+      <button id="showShop" type="button" class="btn px-5 pt-2 text-dark fs-1">YES</button>
+      <script>
+        $("#showShop").click(function () {
+          $("#displayShop").removeClass("d-none");
+          $("#showShop").hide();
+          $("#aleadyHaveToolsText").hide();
+          $("#aleadyHaveTools").hide();
+          $("#aleadyHaveToolsYourTools").hide();
+        });
+
+      </script>
+      @:<div id="displayShop" class="d-none">
+    }
+    else
+    {
+      @:<div id="displayShop">
+    }
+        <div class="row">
+          <div class="col-md-4 col-sm-6 col-xs-12 mt-3">
+            <div class="card bg-dark pt-2">
+              <img src="/img/shopping_items/telescope1.png" style="max-height:200px;  object-fit: contain;" class="card-img-top" alt="Telescope 1">
+              <div class="card-body bg-dark">
+                <button onclick="play()" id="telescope1" type="button" class="btn btn-sm"><strong>Add</strong></button>
+                <button id="remove-telescope1" type="button" class="btn btn-sm d-none"><strong>Remove</strong></button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-12 mt-3">
+            <div class="card bg-dark pt-2">
+              <img src="/img/shopping_items/telescope2.png" style="max-height:200px;  object-fit: contain;" class="card-img-top" alt="telescope2">
+              <div class="card-body bg-dark">
+                <button onclick="play()" id="telescope2" type="button" class="btn btn-sm"><strong>Add</strong></button>
+                <button id="remove-telescope2" type="button" class="btn btn-sm d-none"><strong>Remove</strong></button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-12 mt-3">
+            <div class="card bg-dark pt-2">
+              <img src="/img/shopping_items/telescope3.png" style="max-height:200px;  object-fit: contain;" class="card-img-top" alt="telescope3">
+              <div class="card-body bg-dark">
+                <button onclick="play()" id="telescope3" type="button" class="btn btn-sm"><strong>Add</strong></button>
+                <button id="remove-telescope3" type="button" class="btn btn-sm d-none"><strong>Remove</strong></button>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="carousel-item" data-bs-interval="5000">
-          <img src="~/img/shopping_items/My_project_9.png" style="height:350px;" alt="...">
-          <form method="Post" action="/Students/BuyTools">
-            <button onclick="play()" class="btn px-5 pt-2 text-dark fs-1">SELECT</button>
-            <input type="hidden" name="tools" value="img/shopping_items/My_project_9.png">
-          </form>
+        <div class="row">
+          <div class="col-md-4 col-sm-6 col-xs-12 mt-3">
+            <div class="card bg-dark pt-2">
+              <img src="/img/shopping_items/scale1.png" style="max-height:200px;  object-fit: contain;" class="card-img-top" alt="A Histroy of Magic">
+              <div class="card-body bg-dark">
+                <button onclick="play()" id="scale1" type="button" class="btn btn-sm"><strong>Add</strong></button>
+                <button id="remove-scale1" type="button" class="btn btn-sm d-none"><strong>Remove</strong></button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-12 mt-3">
+            <div class="card bg-dark pt-2">
+              <img src="/img/shopping_items/scale2.png" style="max-height:200px;  object-fit: contain;" class="card-img-top" alt="A Histroy of Magic">
+              <div class="card-body bg-dark">
+                <button onclick="play()" id="scale2" type="button" class="btn btn-sm"><strong>Add</strong></button>
+                <button id="remove-scale2" type="button" class="btn btn-sm d-none"><strong>Remove</strong></button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-12 mt-3">
+            <div class="card bg-dark pt-2">
+              <img src="/img/shopping_items/scale3.png" style="max-height:200px;  object-fit: contain;" class="card-img-top" alt="A Histroy of Magic">
+              <div class="card-body bg-dark">
+                <button onclick="play()" id="scale3" type="button" class="btn btn-sm"><strong>Add</strong></button>
+                <button id="remove-scale3" type="button" class="btn btn-sm d-none"><strong>Remove</strong></button>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="carousel-item" data-bs-interval="5000">
-          <img src="~/img/shopping_items/My_project_10.png" style="height:350px;" alt="...">
-          <form method="Post" action="/Students/BuyTools">
-            <button onclick="play()" class="btn px-5 pt-2 text-dark fs-1">SELECT</button>
-            <input type="hidden" name="tools" value="img/shopping_items/My_project_10.png">
+        <div class="text-center mt-5">
+          <form method="Post" action="/Students/Tools">
+            <input type="hidden" value="" name="telescope" id="telescopeString">
+            <input type="hidden" value="" name="scale" id="scaleString">
+            <button onclick="play()" id="submitToolsForm" type="submit" class="btn btn-lg  fs-3" disabled="disabled">Complete Purchase</button>
           </form>
-        </div>
-        <div class="carousel-item" data-bs-interval="5000">
-          <img src="~/img/shopping_items/My_project_11.png" style="height:350px;" alt="...">
-          <form method="Post" action="/Students/BuyScale">
-            <button onclick="play()" class="btn px-5 pt-2 text-dark fs-1">SELECT</button>
-            <input type="hidden" name="tools" value="img/shopping_items/My_project_11.png">
-          </form>
-        </div>
-        <div class="carousel-item" data-bs-interval="5000">
-          <img src="~/img/shopping_items/My_project_12.png" style="height:350px;" alt="...">
-          <form method="Post" action="/Students/BuyScale">
-            <button onclick="play()" class="btn px-5 pt-2 text-dark fs-1">SELECT</button>
-            <input type="hidden" name="tools" value="img/shopping_items/My_project_12.png">
-          </form>
+
+
+          <script>
+          function enablePurchase() {
+            if ($("#telescopeString").val().length > 0 && $("#scaleString").val().length > 0) {
+              $("#submitToolsForm").removeAttr('disabled');
+            }
+          }
+          function disableTelescopes() {
+            $("#telescope1").attr("disabled", "disabled");
+            $("#telescope2").attr("disabled", "disabled");
+            $("#telescope3").attr("disabled", "disabled");
+          }
+          function enableTelescopes() {
+            $("#telescope1").removeAttr('disabled');
+            $("#telescope2").removeAttr('disabled');
+            $("#telescope3").removeAttr('disabled');
+          }
+          //frist telescopes
+            $("#telescope1").click(function () {
+              $("#telescopeString").val("/img/shopping_items/telescope1.png");
+              $("#remove-telescope1").removeClass("d-none");
+              $("#telescope1").text("Added");
+              disableTelescopes();
+              enablePurchase();
+            });
+            $("#remove-telescope1").click(function () {
+              $("#telescopeString").val("");
+              $("#remove-telescope1").addClass("d-none");
+              $("#telescope1").text("Add");
+              $("#submitToolsForm").attr("disabled", "disabled");
+              enableTelescopes();
+            });
+            
+            $("#telescope2").click(function () {
+              $("#telescopeString").val("/img/shopping_items/telescope2.png");
+              $("#remove-telescope2").removeClass("d-none");
+              $("#telescope2").text("Added");
+              disableTelescopes();
+              enablePurchase();
+            });
+            $("#remove-telescope2").click(function () {
+              $("#telescopeString").val("");
+              $("#remove-telescope2").addClass("d-none");
+              $("#telescope2").text("Add");
+              $("#submitToolsForm").attr("disabled", "disabled");
+              enableTelescopes();
+            });
+            
+            $("#telescope3").click(function () {
+              $("#telescopeString").val("/img/shopping_items/telescope3.png");
+              $("#remove-telescope3").removeClass("d-none");
+              $("#telescope3").text("Added");
+              disableTelescopes();
+              enablePurchase();
+            });
+            $("#remove-telescope3").click(function () {
+              $("#telescopeString").val("");
+              $("#remove-telescope3").addClass("d-none");
+              $("#telescope3").text("Add");
+              $("#submitToolsForm").attr("disabled", "disabled");
+              enableTelescopes();
+            });
+            
+            //now scales
+            function disableScales() {
+              $("#scale1").attr("disabled", "disabled");
+              $("#scale2").attr("disabled", "disabled");
+              $("#scale3").attr("disabled", "disabled");
+            }
+            function enableScales() {
+              $("#scale1").removeAttr('disabled');
+              $("#scale2").removeAttr('disabled');
+              $("#scale3").removeAttr('disabled');
+            }
+
+            $("#scale1").click(function () {
+              $("#scaleString").val("/img/shopping_items/scale1.png");
+              $("#remove-scale1").removeClass("d-none");
+              $("#scale1").text("Added");
+              disableScales();
+              enablePurchase();
+            });
+            $("#remove-scale1").click(function () {
+              $("#scaleString").val("");
+              $("#remove-scale1").addClass("d-none");
+              $("#scale1").text("Add");
+              $("#submitToolsForm").attr("disabled", "disabled");
+              enableScales();
+            });
+            
+            $("#scale2").click(function () {
+              $("#scaleString").val("/img/shopping_items/scale2.png");
+              $("#remove-scale2").removeClass("d-none");
+              $("#scale2").text("Added");
+              disableScales();
+              enablePurchase();
+            });
+            $("#remove-scale2").click(function () {
+              $("#scaleString").val("");
+              $("#remove-scale2").addClass("d-none");
+              $("#scale2").text("Add");
+              $("#submitToolsForm").attr("disabled", "disabled");
+              enableScales();
+            });
+            $("#scale3").click(function () {
+              $("#scaleString").val("/img/shopping_items/scale3.png");
+              $("#remove-scale3").removeClass("d-none");
+              $("#scale3").text("Added");
+              disableScales();
+              enablePurchase();
+            });
+            $("#remove-scale3").click(function () {
+              $("#scaleString").val("");
+              $("#remove-scale3").addClass("d-none");
+              $("#scale3").text("Add");
+              $("#submitToolsForm").attr("disabled", "disabled");
+              enableScales();
+            });
+
+          </script>
         </div>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
-  </div>
+</div>

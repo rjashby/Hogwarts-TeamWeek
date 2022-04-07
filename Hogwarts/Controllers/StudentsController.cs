@@ -23,47 +23,22 @@ namespace Hogwarts.Controllers
       _db = db;
     }
 
-    // public async Task<ActionResult> Index()
+    // public ActionResult Create()
     // {
-    //   var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-    //   var currentUser = await _userManager.FindByIdAsync(userId);
-    //   var usersStudent = _db.Students.Where(entry => entry.User.Id == currentUser.Id).ToList();
-    //   return View(usersStudent);
+    //   return View();
     // }
-    // public ActionResult Index()
+    // public ActionResult Details(int id)
     // {
-    //   return View(_db.Students.ToList());
-    // }
-
-    // [HttpPost]
-    // public async Task<ActionResult> Create(Student Student)
-    // {
-    //   var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-    //   var currentUser = await _userManager.FindByIdAsync(userId);
-    //   Student.User = currentUser;
-    //   _db.Students.Add(Student);
-    //   _db.SaveChanges();
-    //   return RedirectToAction("Index");
+    //   var thisStudent = _db.Students
+    //     .FirstOrDefault(s => s.StudentId == id);
+    //   return View(thisStudent);
     // }
 
-    public ActionResult Create()
-    {
-      return View();
-    }
-    public ActionResult Details(int id)
-    {
-      var thisStudent = _db.Students
-        .Include(s => s.JoinEntitiesCS)
-        .ThenInclude(j => j.Course)
-        .FirstOrDefault(s => s.StudentId == id);
-      return View(thisStudent);
-    }
-
-    public ActionResult Edit(int id)
-    {
-      var thisStudent = _db.Students.FirstOrDefault(s => s.StudentId == id);
-      return View(thisStudent);
-    }
+    // public ActionResult Edit(int id)
+    // {
+    //   var thisStudent = _db.Students.FirstOrDefault(s => s.StudentId == id);
+    //   return View(thisStudent);
+    // }
 
     [HttpPost]
     public ActionResult Edit(Student student)
@@ -71,48 +46,6 @@ namespace Hogwarts.Controllers
       _db.Entry(student).State = EntityState.Modified;
       _db.SaveChanges();
       return RedirectToAction("Index", "Account");
-    }
-
-    public ActionResult Delete(int id)
-    {
-      var thisStudent = _db.Students.FirstOrDefault(student => student.StudentId == id);
-      return View(thisStudent);
-    }
-
-    [HttpPost, ActionName("Delete")]
-    public ActionResult DeleteConfirmed(int id)
-    {
-      var thisStudent = _db.Students.FirstOrDefault(b => b.StudentId == id);
-      _db.Students.Remove(thisStudent);
-      _db.SaveChanges();
-      return RedirectToAction("Index");
-    }
-
-    public ActionResult AddCourse(int id)
-    {
-      var thisStudent = _db.Students.FirstOrDefault(s => s.StudentId == id);
-      ViewBag.Courses = _db.Courses.ToList();
-      return View(thisStudent);
-    }
-
-    [HttpPost]
-    public ActionResult AddCourse(int StudentId, int CourseId)
-    {
-      if (CourseId != 0)
-      {
-        _db.CourseStudent.Add(new CourseStudent() { CourseId = CourseId, StudentId = StudentId });
-      }
-      _db.SaveChanges();
-      return RedirectToAction("Index");
-    }
-
-    [HttpPost]
-    public ActionResult DeleteCourse(int joinIdCS)
-    {
-      var joinEntry = _db.CourseStudent.FirstOrDefault(entry => entry.CourseStudentId == joinIdCS);
-      _db.CourseStudent.Remove(joinEntry);
-      _db.SaveChanges();
-      return RedirectToAction("Index");
     }
 
     [HttpPost]
@@ -150,7 +83,7 @@ namespace Hogwarts.Controllers
       if (User.Identity.IsAuthenticated)
       {
         Student thisStudent = _db.Students.FirstOrDefault(Student => Student.Email == User.Identity.Name);
-        thisStudent.Books = booksString.Remove(booksString.Length - 1, 1); ;
+        thisStudent.Books = booksString.Remove(booksString.Length - 1, 1);
         _db.Entry(thisStudent).State = EntityState.Modified;
         _db.SaveChanges();
       }
@@ -171,29 +104,21 @@ namespace Hogwarts.Controllers
       Thread.Sleep(750);
       return RedirectToAction("Index", "Shops");
     }
-
+    
     [HttpPost]
-    public ActionResult BuyTools(string tools)
+    public ActionResult Tools(string telescope, string scale)
     {
       if (User.Identity.IsAuthenticated)
       {
         Student thisStudent = _db.Students.FirstOrDefault(Student => Student.Email == User.Identity.Name);
-        thisStudent.Tools = tools;
-
-        _db.Entry(thisStudent).State = EntityState.Modified;
-        _db.SaveChanges();
-      }
-      Thread.Sleep(750);
-      return RedirectToAction("Index", "Shops");
-    }
-    [HttpPost]
-    public ActionResult BuyScale(string tools)
-    {
-      if (User.Identity.IsAuthenticated)
-      {
-        Student thisStudent = _db.Students.FirstOrDefault(Student => Student.Email == User.Identity.Name);
-        thisStudent.Scale = tools;
-
+        if (telescope != null)
+        {
+          thisStudent.Tools = telescope;
+        }
+        if (scale != null)
+        {
+          thisStudent.Scale = scale;
+        }
         _db.Entry(thisStudent).State = EntityState.Modified;
         _db.SaveChanges();
       }

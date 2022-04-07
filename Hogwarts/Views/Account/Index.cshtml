@@ -26,35 +26,34 @@
               <tr class="align-middle">
                 <th scope="col">Student Name</th>
                 <th scope="col">Email</th>
-                <th scope="col">Year</th>
                 <th scope="col">Wand</th>
+                <th scope="col">Robe</th>
               </tr>
             </thead>
             <tbody>
               <tr class="align-middle">
                 <th>@Model.Title @Model.FirstName @Model.LastName</th>
                 <th>@Model.Email</th>
-                <th>@Model.Year</th>
                 <th>
                   @if (Model.Wand != null)
                   {
                     <img src="@Model.WandURL"></img>
                   }
                 </th>
-              </tr>
-              <tr>
-                <th>Robe</th>
-                <th>Animal</th>
-                <th>Tools</th>
-                <th>Phials</th>
-              </tr>
-              <tr class="align-middle">
                 <th>
                   @if (Model.Robes != null)
                   {
                     <img src="@Model.Robes"></img>
                   }
                 </th>
+              </tr>
+              <tr>
+                <th>Animal</th>
+                <th>Tools</th>
+                <th>Scales</th>
+                <th>Phials</th>
+              </tr>
+              <tr class="align-middle">
                 <th>
                   @if (Model.Animal != null)
                   {
@@ -65,6 +64,12 @@
                   @if (Model.Tools != null)
                   {
                     <img src="@Model.Tools"></img>
+                  }
+                </th>
+                <th>
+                  @if (Model.Scale != null)
+                  {
+                    <img src="@Model.Scale"></img>
                   }
                 </th>
                 <th>
@@ -100,11 +105,26 @@
             </tbody>
           </table>
 
-
+          <div class="modal fade text-dark" id="scheduleModal" tabindex="-1" aria-labelledby="scheduleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content bg-letter">
+                <div class="modal-header">
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  @Html.Partial("ClassList.cshtml")
+                </div>
+                <div class="modal-footer">
+                  <button type="button" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
           <div class="buttons-group">
             @if (Model.House != null)
             {
               <button>@Html.ActionLink("Common Room", "Index", "Home")</button>
+              <button type="button"><a data-bs-toggle="modal" data-bs-target="#scheduleModal">Schedule</a></button>
             }
             <button type="button" id="edit-student">Edit</button>
             @using (Html.BeginForm("LogOff", "Account"))
@@ -131,9 +151,6 @@
             <label for="Email" class="mt-3">Email</label>
             @Html.TextBoxFor(model => model.Email, new {@class="form-control shadow-sm", required="required"})
 
-            <label for="Year" class="mt-3">Year</label>
-            @Html.TextBoxFor(model => model.Year, new {@class="form-control shadow-sm", required="required", @type="number"})
-
             @Html.HiddenFor(model => model.StudentId)
             @Html.HiddenFor(model => model.Wand)
             @Html.HiddenFor(model => model.Robes)
@@ -144,6 +161,7 @@
             @Html.HiddenFor(model => model.Cauldron)
             @Html.HiddenFor(model => model.Tools)
             @Html.HiddenFor(model => model.Phials)
+            @Html.HiddenFor(model => model.Scale)
             <button type="submit" value="Save" class="btn btn-light mt-3">Edit</button>
           }
         </div>

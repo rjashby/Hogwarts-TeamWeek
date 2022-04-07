@@ -4,21 +4,8 @@
 
 @model Hogwarts.Models.Teacher
 
-<h2>Teacher Details</h2>
+<h2>Professor Details</h2>
 <h4>First Name: @Html.DisplayFor(model => model.FirstName)</h4>
 <h4>Last Name: @Html.DisplayFor(model => model.LastName)</h4>
 <h4>House: @Html.DisplayFor(model => model.House)</h4>
-
-
-else
-{
-<h4>Teaching the following courses:</h4>
-<ul>
-
-  <p>Course here</p>
-
-</ul>
-}
-<p class="btn btn-primary">@Html.ActionLink("Add a Course", "AddCourse", new {id = Model.TeacherId})</p>
-<p class="btn btn-primary">@Html.ActionLink("Edit Teacher Profile", "Edit", new { id = Model.TeacherId })</p>
-<p class="btn btn-primary">@Html.ActionLink("Sack Professor", "Delete", new { id = Model.TeacherId })</p>
+<h4>Course Taught: @Html.DisplayFor(model => model.CourseName)</h4>

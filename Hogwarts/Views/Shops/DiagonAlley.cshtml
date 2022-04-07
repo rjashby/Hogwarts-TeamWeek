@@ -1,8 +1,15 @@
 @using Hogwarts.Models
 <div id="diagon-alley" class="full-size">
-  <!-- <audio autoplay controls hidden>
+
+ @if (@Model.Wand == null && @Model.Robes == null && @Model.Books == null && @Model.Cauldron != null && @Model.Phials == null && @Model.Tools == null && @Model.Tools == null && @Model.Animal == null)
+ {
+  <audio autoplay controls hidden>
     <source src="~/audio/welcome.mp3" type="audio/mp3">
-  </audio> -->
+  </audio>
+  }
+
+
+  
   <div id="map-wrapper">
     <img src="~/img/shops/alley-map-fixed.png" usemap="#image-map">
 
@@ -42,11 +49,11 @@
     <p><span class="check-cauldron"></span>1 cauldron (pewter, standard size 2)</p>
     <p><span class="check-phials"></span>1 set glass or crystal phials</p>
     <p><span class="check-tools"></span>1 telescope</p>
-    <p><span class="check-tools"></span>1 set brass scales</p>
+    <p><span class="check-scale"></span>1 set brass scales</p>
     <p><span class="check-animal"></span>Students may also bring, if they desire, an Owl OR a Cat OR a Toad.</p>
     <p class="center">PARENTS ARE REMINDED THAT FIRST YEARS ARE NOT ALLOWED THEIR OWN BROOMSTICK</p>
     <p class="letter-footer">HOGWARTS SCHOOL of WITCHCRAFT & WIZARDRY<br>Headmaster: Albus Dumbledore<br>(Order of Merlin, First Class, Grand Sorc., Chf. Warlock, Supreme Mugwump, International Confed. of Wizards)</p>
-    @if (@Model.Wand != null && @Model.Robes != null && @Model.Books != null && @Model.Cauldron != null && @Model.Phials != null && @Model.Animal != null && @Model.Tools != null)
+    @if (@Model.Wand != null && @Model.Robes != null && @Model.Books != null && @Model.Cauldron != null && @Model.Phials != null && @Model.Tools != null && @Model.Tools != null)
     {
       <button>@Html.ActionLink("Go to Hogwarts", "Index", "Home", null, new{@id="finish-shopping"})</button>
     }
@@ -93,5 +100,11 @@
 {
   <script>
     $(".check-tools ").text("✓");
+  </script>
+}
+@if (@Model.Scale != null)
+{
+  <script>
+    $(".check-scale ").text("✓");
   </script>
 }

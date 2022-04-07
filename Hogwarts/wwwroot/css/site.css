@@ -122,6 +122,8 @@ html {
   min-height: 700px;
   display: flex;
   justify-content: center;
+  background-size: 100% 100% !important;
+  padding: 40px 130px;
 }
 
 #account label,
@@ -216,13 +218,16 @@ html {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  width: 600px;
+  min-width: 600px;
   padding: 40px 100px;
   color: black;
 }
 
 .bg-letter {
-  background-image: url("../img/paper.jpeg");
+  background-image: url("../img/letter.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .letter-logo {
@@ -258,6 +263,7 @@ button,
 #shop-shopping-list {
   padding: 40px 70px;
   font-size: 0.8em;
+  width: 600px;
 }
 
 #shopping-list p,
@@ -270,6 +276,11 @@ button,
   text-transform: uppercase;
   font-size: 1em;
   margin: 3px 0;
+}
+
+#shop-shopping-list button {
+  font-size: 2rem;
+  margin: 20px auto;
 }
 
 .center {

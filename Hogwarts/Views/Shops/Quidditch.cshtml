@@ -2,15 +2,6 @@
   <!-- <audio autoplay controls hidden>
     <source src="~/audio/shopdoor.mp3" type="audio/mp3">
   </audio> -->
-  <audio id="register">
-    <source src="~/audio/cashreg.wav" type="audio/mp3">
-  </audio>
-  <script>
-    function play() {
-      let soundclick = document.getElementById("register");
-      soundclick.play();
-    }
-  </script>
   <div class="container p-5 text-center" style="background-color: #2125299e!important;">
     <div class="h-100 p-5 text-white text-center">
       <h1 style="text-align: center;">Welcome to Quality Quidditch Supplies</h1>
@@ -19,31 +10,66 @@
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active" data-bs-interval="5000">
-          <img src="~/img/robes/gryffRobes.png" class="d-block w-100" alt="...">
-          <form method="Post" action="/Students/SelectRobes">
-            <button onclick="play()" class="btn px-5 pt-2 text-dark fs-1">SELECT</button>
-            <input type="hidden" name="robes" value="img/robes/gryffRobes.png">
+          <img src="~/img/quidditch/gryffindor.png" style="height:350px" alt="gryffindor">
+          <form method="Post" action="/Students/Quidditch">
+            <button disabled class="btn px-5 pt-2 text-dark fs-1">Unavailable to First-Years</button>
+            <input type="hidden" name="quidditch" value="img/quidditch/gryffindor.png">
           </form>
         </div>
         <div class="carousel-item" data-bs-interval="5000">
-          <img src="~/img/robes/slythRobes.png" class="d-block w-100" alt="...">
-          <form method="Post" action="/Students/SelectRobes">
-            <button onclick="play()" class="btn px-5 pt-2 text-dark fs-1">SELECT</button>
-            <input type="hidden" name="robes" value="img/robes/slythRobes.png">
+          <img src="~/img/quidditch/hufflepuff.png" style="height:350px" alt="hufflepuff">
+          <form method="Post" action="/Students/Quidditch">
+            <button disabled class="btn px-5 pt-2 text-dark fs-1">Unavailable to First-Years</button>
+            <input type="hidden" name="quidditch" value="img/quidditch/hufflepuff.png">
           </form>
         </div>
         <div class="carousel-item" data-bs-interval="5000">
-          <img src="~/img/robes/huffRobes.png" class="d-block w-100" alt="...">
-          <form method="Post" action="/Students/SelectRobes">
-            <button onclick="play()" class="btn px-5 pt-2 text-dark fs-1">SELECT</button>
-            <input type="hidden" name="robes" value="img/robes/huffRobes.png">
+          <img src="~/img/quidditch/slytherin.png" style="height:350px" alt="slytherin">
+          <form method="Post" action="/Students/Quidditch">
+            <button disabled class="btn px-5 pt-2 text-dark fs-1">Unavailable to First-Years</button>
+            <input type="hidden" name="quidditch" value="img/quidditch/slytherin.png">
           </form>
         </div>
         <div class="carousel-item" data-bs-interval="5000">
-          <img src="~/img/robes/ravenRobes.png" class="d-block w-100" alt="...">
-          <form method="Post" action="/Students/SelectRobes">
-            <button onclick="play()" class="btn px-5 pt-2 text-dark fs-1">SELECT</button>
-            <input type="hidden" name="robes" value="img/robes/ravenRobes.png">
+          <img src="~/img/quidditch/ravenclaw.png" style="height:350px" alt="ravenclaw">
+          <form method="Post" action="/Students/Quidditch">
+            <button disabled class="btn px-5 pt-2 text-dark fs-1">Unavailable to First-Years</button>
+            <input type="hidden" name="quidditch" value="img/quidditch/ravenclaw.png">
+          </form>
+        </div>
+        <div class="carousel-item" data-bs-interval="5000">
+          <img src="~/img/quidditch/Firebolt.png" style="height:350px" alt="Firebolt">
+          <form method="Post" action="/Students/Quidditch">
+            <button disabled class="btn px-5 pt-2 text-dark fs-1">Unavailable to First-Years</button>
+            <input type="hidden" name="quidditch" value="img/quidditch/Firebolt.png">
+          </form>
+        </div>
+          <div class="carousel-item" data-bs-interval="5000">
+          <img src="~/img/quidditch/Nimbus_2000.png" style="height:350px" alt="Nimbus_2000">
+          <form method="Post" action="/Students/Quidditch">
+            <button disabled class="btn px-5 pt-2 text-dark fs-1">Unavailable to First-Years</button>
+            <input type="hidden" name="quidditch" value="img/quidditch/Nimbus_2000.png">
+          </form>
+        </div>
+          <div class="carousel-item" data-bs-interval="5000">
+          <img src="~/img/quidditch/Nimbus_2001.png" style="height:350px" alt="Nimbus_2001">
+          <form method="Post" action="/Students/Quidditch">
+            <button disabled class="btn px-5 pt-2 text-dark fs-1">Unavailable to First-Years</button>
+            <input type="hidden" name="quidditch" value="img/quidditch/Nimbus_2001.png">
+          </form>
+        </div>
+        <div class="carousel-item" data-bs-interval="5000">
+          <img src="~/img/quidditch/quidditch_pads.png" style="height:350px" alt="quidditch_pads">
+          <form method="Post" action="/Students/Quidditch">
+            <button disabled class="btn px-5 pt-2 text-dark fs-1">Unavailable to First-Years</button>
+            <input type="hidden" name="quidditch" value="img/quidditch/quidditch_pads.png">
+          </form>
+        </div>
+        <div class="carousel-item" data-bs-interval="5000">
+          <img src="~/img/quidditch/quidditch_set.png" style="height:350px" alt="quidditch_set">
+          <form method="Post" action="/Students/Quidditch">
+            <button disabled class="btn px-5 pt-2 text-dark fs-1">Unavailable to First-Years</button>
+            <input type="hidden" name="quidditch" value="img/quidditch/quidditch_set.png">
           </form>
         </div>
       </div>
