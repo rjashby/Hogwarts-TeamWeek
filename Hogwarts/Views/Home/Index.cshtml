@@ -5,7 +5,7 @@
 @using Hogwarts.Models
 @model RegisterViewModel
 
-@if (@ViewBag.ThisStudent != null && @ViewBag.ThisStudent.Wand != null && @ViewBag.ThisStudent.Robes != null && @ViewBag.ThisStudent.Books != null && @ViewBag.ThisStudent.Cauldron != null && @ViewBag.ThisStudent.Phials != null && @ViewBag.ThisStudent.Scale != null && @ViewBag.ThisStudent.Tools != null)
+@if (@ViewBag.ThisStudent != null && @ViewBag.ThisStudent.Wand != null && @ViewBag.ThisStudent.Robes != null && @ViewBag.ThisStudent.Books != null && @ViewBag.ThisStudent.Cauldron != null && @ViewBag.ThisStudent.Phials != null && @ViewBag.ThisStudent.Scale != null && @ViewBag.ThisStudent.Tools != null && @ViewBag.ThisStudent.House == null)
 {
   <audio controls hidden id="greathall">
     <source src='~/audio/greathall.mp3' type='audio/mp3'>
@@ -92,7 +92,7 @@ else
   // request to register and/or login
   <div id="lake" class="full-size">
     <div class="video">
-      <video src="..\video\HogwartsArrival.mp4" loop muted autoplay></video>
+      <video src="..\video\HogwartsArrival.mp4" loop autoplay></video>
     </div>
     <button type="button" style="z-index:1;" data-bs-toggle="modal" data-bs-target="#loginModal" id="showRegisterButton">
       Login
