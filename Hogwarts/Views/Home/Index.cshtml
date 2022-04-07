@@ -10,8 +10,9 @@
   <audio controls hidden id="greathall">
     <source src='~/audio/greathall.mp3' type='audio/mp3'>
   </audio>
+  
   <script>
-    function play() {
+    function playGreatHall() {
       let soundclick = document.getElementById("greathall");
       soundclick.play();
     }
@@ -21,14 +22,14 @@
       $("#shopping-list").addClass("hide");
       $("#diagon-alley").addClass("hide");
       $("#the-great-hall").removeClass("hide");
-      play();
+      playGreatHall();
     });
   </script>
 }
 @if (User.Identity.IsAuthenticated && @ViewBag.ThisStudent.House != null)
 {
   <div class="full-size">
-    <img id="common-room-map" src="~/img/common_rooms/@(ViewBag.ThisStudent.House).png" usemap="#@(ViewBag.ThisStudent.House)-map" width="1600" height="800"></img>
+    <img id="common-room-map" src="~/img/common_rooms/@(ViewBag.ThisStudent.House).png" usemap="#@(ViewBag.ThisStudent.House)-map" width="1600" height="800">
     <map name="Slytherin-map">
       <area target="" alt="notice-board" title="notice-board" href="#" coords="534,164,633,195,644,312,618,332,590,338,543,312,524,232" shape="poly" data-bs-toggle="modal" data-bs-target="#largeNoticeModal">
       <area target="" alt="chocolate-frog" title="chocolate-frog" href="#" coords="173,582,221,565,282,582,276,629,255,645,177,645,152,605" shape="poly" data-bs-toggle="modal" data-bs-target="#frogModal" class="frogLink">
@@ -91,10 +92,13 @@ else
 {
   // request to register and/or login
   <div id="lake" class="full-size">
+    <audio controls hidden id="hedwig" autoplay>
+      <source src='~/audio/Hedwigs_Theme.mp3' type='audio/mp3'>
+    </audio>
     <div class="video">
-      <video src="..\video\HogwartsArrival.mp4" loop autoplay></video>
+      <video src="..\video\HogwartsArrival.mp4" muted autoplay></video>
     </div>
-    <button type="button" style="z-index:1;" data-bs-toggle="modal" data-bs-target="#loginModal" id="showRegisterButton">
+    <button type="button" style="z-index:1;" data-bs-toggle="modal" data-bs-target="#loginModal" id="showLoginButton">
       Login
     </button>
     <div class="modal fade rounded" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
@@ -111,11 +115,11 @@ else
               </p>
               <div class="form-group my-3">
                 @Html.LabelFor(user => user.Email)
-                @Html.TextBoxFor(user=> user.Email, new {@id="registerEmail", @class="form-control"})
+                @Html.TextBoxFor(user=> user.Email, new {@id="loginEmail", @class="form-control"})
               </div>
               <div class="form-group my-3">
                 @Html.LabelFor(user=> user.Password)
-                @Html.PasswordFor(user=> user.Password,new {@id="registerPassword", @class="form-control"})
+                @Html.PasswordFor(user=> user.Password,new {@id="loginPassword", @class="form-control"})
               </div>
             </div>
             <div class="modal-footer">

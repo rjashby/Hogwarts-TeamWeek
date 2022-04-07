@@ -3,13 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Hogwarts.Models;
 using System.Threading.Tasks;
 using Hogwarts.ViewModels;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Security.Claims;
 
 namespace Hogwarts.Controllers
 {
@@ -91,7 +85,7 @@ namespace Hogwarts.Controllers
     public async Task<ActionResult> LogOff()
     {
       await _signInManager.SignOutAsync();
-      return RedirectToAction("Index");
+      return RedirectToAction("Index", "Home");
     }
   }
 }

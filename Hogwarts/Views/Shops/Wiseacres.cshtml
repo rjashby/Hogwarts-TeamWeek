@@ -1,7 +1,7 @@
 <div id="wiseacres" class="full-size">
-  <!-- <audio autoplay controls hidden>
+  <audio autoplay controls hidden>
     <source src="~/audio/shopdoor.mp3" type="audio/mp3">
-  </audio> -->
+  </audio>
   <audio id="register">
     <source src="~/audio/cashreg.wav" type="audio/mp3">
   </audio>
@@ -18,7 +18,7 @@
     </div>
     @if (ViewBag.Student.Tools != null || ViewBag.Student.Scale != null)
     {
-      <h1 class="text-center mt-4" id="aleadyHaveToolsYourTools">You've already selected your a telescope.</h1>
+      <h1 class="text-center mt-4" id="aleadyHaveToolsYourTools">You've already selected your tools.</h1>
       <h1 class="text-center mt-4" id="aleadyHaveToolsText">If you'd like, you may select different tools. Would you like to pick different tools?</h1>
       <button id="showShop" type="button" class="btn px-5 pt-2 text-dark fs-1">YES</button>
       <script>
@@ -42,7 +42,7 @@
             <div class="card bg-dark pt-2">
               <img src="/img/shopping_items/telescope1.png" style="max-height:200px;  object-fit: contain;" class="card-img-top" alt="Telescope 1">
               <div class="card-body bg-dark">
-                <button onclick="play()" id="telescope1" type="button" class="btn btn-sm"><strong>Add</strong></button>
+                <button id="telescope1" type="button" class="btn btn-sm"><strong>Add</strong></button>
                 <button id="remove-telescope1" type="button" class="btn btn-sm d-none"><strong>Remove</strong></button>
               </div>
             </div>
@@ -51,7 +51,7 @@
             <div class="card bg-dark pt-2">
               <img src="/img/shopping_items/telescope2.png" style="max-height:200px;  object-fit: contain;" class="card-img-top" alt="telescope2">
               <div class="card-body bg-dark">
-                <button onclick="play()" id="telescope2" type="button" class="btn btn-sm"><strong>Add</strong></button>
+                <button id="telescope2" type="button" class="btn btn-sm"><strong>Add</strong></button>
                 <button id="remove-telescope2" type="button" class="btn btn-sm d-none"><strong>Remove</strong></button>
               </div>
             </div>
@@ -60,7 +60,7 @@
             <div class="card bg-dark pt-2">
               <img src="/img/shopping_items/telescope3.png" style="max-height:200px;  object-fit: contain;" class="card-img-top" alt="telescope3">
               <div class="card-body bg-dark">
-                <button onclick="play()" id="telescope3" type="button" class="btn btn-sm"><strong>Add</strong></button>
+                <button id="telescope3" type="button" class="btn btn-sm"><strong>Add</strong></button>
                 <button id="remove-telescope3" type="button" class="btn btn-sm d-none"><strong>Remove</strong></button>
               </div>
             </div>
@@ -71,7 +71,7 @@
             <div class="card bg-dark pt-2">
               <img src="/img/shopping_items/scale1.png" style="max-height:200px;  object-fit: contain;" class="card-img-top" alt="A Histroy of Magic">
               <div class="card-body bg-dark">
-                <button onclick="play()" id="scale1" type="button" class="btn btn-sm"><strong>Add</strong></button>
+                <button id="scale1" type="button" class="btn btn-sm"><strong>Add</strong></button>
                 <button id="remove-scale1" type="button" class="btn btn-sm d-none"><strong>Remove</strong></button>
               </div>
             </div>
@@ -80,7 +80,7 @@
             <div class="card bg-dark pt-2">
               <img src="/img/shopping_items/scale2.png" style="max-height:200px;  object-fit: contain;" class="card-img-top" alt="A Histroy of Magic">
               <div class="card-body bg-dark">
-                <button onclick="play()" id="scale2" type="button" class="btn btn-sm"><strong>Add</strong></button>
+                <button id="scale2" type="button" class="btn btn-sm"><strong>Add</strong></button>
                 <button id="remove-scale2" type="button" class="btn btn-sm d-none"><strong>Remove</strong></button>
               </div>
             </div>
@@ -89,7 +89,7 @@
             <div class="card bg-dark pt-2">
               <img src="/img/shopping_items/scale3.png" style="max-height:200px;  object-fit: contain;" class="card-img-top" alt="A Histroy of Magic">
               <div class="card-body bg-dark">
-                <button onclick="play()" id="scale3" type="button" class="btn btn-sm"><strong>Add</strong></button>
+                <button id="scale3" type="button" class="btn btn-sm"><strong>Add</strong></button>
                 <button id="remove-scale3" type="button" class="btn btn-sm d-none"><strong>Remove</strong></button>
               </div>
             </div>
@@ -119,7 +119,7 @@
             $("#telescope2").removeAttr('disabled');
             $("#telescope3").removeAttr('disabled');
           }
-          //frist telescopes
+          //first telescopes
             $("#telescope1").click(function () {
               $("#telescopeString").val("/img/shopping_items/telescope1.png");
               $("#remove-telescope1").removeClass("d-none");

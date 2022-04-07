@@ -126,6 +126,7 @@
               <button>@Html.ActionLink("Common Room", "Index", "Home")</button>
               <button type="button"><a data-bs-toggle="modal" data-bs-target="#scheduleModal">Schedule</a></button>
             }
+            <button>@Html.ActionLink("Teachers", "Index", "Teachers")</button>
             <button type="button" id="edit-student">Edit</button>
             @using (Html.BeginForm("LogOff", "Account"))
             {
@@ -165,8 +166,8 @@
       }
       else
       {
-        <button>@Html.ActionLink("Register", "Register", "Account")</button>
-        <button>@Html.ActionLink("Login", "Login", "Account")</button>
+        <button>@Html.ActionLink("Register", "Index", "Home")</button>
+        <button>@Html.ActionLink("Login", "Index", "Home")</button>
       }
     </div>
   </div>

@@ -161,7 +161,8 @@ html {
   transform: translatez(0);
 }
 
-#lake video {
+#lake video, #wand video
+{
   z-index: -1;
   transform: translatez(0);
   position: absolute;
@@ -169,9 +170,7 @@ html {
   bottom: -100%;
   left: -100%;
   right: -100%;
-
   margin: auto;
-
   min-width: 100%;
   min-height: 100%;
 }
@@ -183,7 +182,6 @@ html {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  cursor: pointer;
   margin: 0;
 }
 
@@ -349,7 +347,6 @@ button,
   border: 1px solid rgb(117, 24, 24);
   margin: 2px;
   padding: 10px 20px;
-  cursor: pointer;
 }
 
 .form-group p {
@@ -582,13 +579,15 @@ button,
 map,
 button,
 .button {
-  cursor: pointer;
+  /* cursor: pointer; */
+  /* cursor: default; */
 }
 
 #ollivanders form p {
   font-family: 2rem;
   text-decoration: underline;
 }
-#ollivanders label {
+/* #ollivanders label {
   cursor: pointer;
-}
+} */
+

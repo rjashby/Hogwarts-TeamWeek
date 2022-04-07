@@ -1,7 +1,7 @@
 <div id="flourish-and-blotts" class="full-size">
-  <!-- <audio autoplay controls hidden>
+  <audio autoplay controls hidden>
     <source src="~/audio/shopdoor.mp3" type="audio/mp3">
-  </audio> -->
+  </audio>
   <audio id="register">
     <source src="~/audio/cashreg.wav" type="audio/mp3">
   </audio>
@@ -19,7 +19,7 @@
     @if (ViewBag.Student.Books != null)
     {
       <h1 class="text-center mt-4" id="aleadyHaveBooksYourBooks">You've already selected your books</h1>
-      <h1 class="text-center mt-4" id="aleadyHaveBooksText">If you'd like, you may select different books. Would you like do pick different books?</h1>
+      <h1 class="text-center mt-4" id="aleadyHaveBooksText">If you'd like, you may select different books. Would you like to pick different books?</h1>
       <button id="showShop" type="button" class="btn px-5 pt-2 text-dark fs-1">YES</button>
       <script>
         $("#showShop").click(function () {
@@ -43,7 +43,7 @@
               <img src="/img/books/darkforces.png" style="max-height:200px;  object-fit: contain;" class="card-img-top" alt="The Dark Forces: A Guide to Self-Protection">
               <div class="card-body bg-dark">
                 <h5 class="card-text">The Dark Forces: A Guide to Self-Protection</h5>
-                <button onclick="play()" id="darkforces" type="button" class="btn btn-sm"><strong>Add</strong></button>
+                <button id="darkforces" type="button" class="btn btn-sm"><strong>Add</strong></button>
               </div>
             </div>
           </div>
@@ -52,7 +52,7 @@
               <img src="/img/books/fantastic-beasts.png" style="max-height:200px;  object-fit: contain;" class="card-img-top" alt="Fantastic Beasts and Where to Find Them">
               <div class="card-body bg-dark">
                 <h5 class="card-text">Fantastic Beasts and Where to Find Them</h5>
-                <button onclick="play()" id="fantastic-beasts" type="button" class="btn btn-sm"><strong>Add</strong></button>
+                <button id="fantastic-beasts" type="button" class="btn btn-sm"><strong>Add</strong></button>
               </div>
             </div>
           </div>
@@ -61,7 +61,7 @@
               <img src="/img/books/herbs.png" style="max-height:200px;  object-fit: contain;" class="card-img-top" alt="One Thousand Magical Herbs and Fungi">
               <div class="card-body bg-dark">
                 <h5 class="card-text">One Thousand Magical Herbs and Fungi</h5>
-                <button onclick="play()" id="herbs" type="button" class="btn btn-sm"><strong>Add</strong></button>
+                <button id="herbs" type="button" class="btn btn-sm"><strong>Add</strong></button>
               </div>
             </div>
           </div>
@@ -69,8 +69,48 @@
             <div class="card bg-dark pt-2">
               <img src="/img/books/historyofmagic.png" style="max-height:200px;  object-fit: contain;" class="card-img-top" alt="A Histroy of Magic">
               <div class="card-body bg-dark">
-                <h5 class="card-text">A History of Magic</h5>
-                <button onclick="play()" id="historyofmagic" type="button" class="btn btn-sm"><strong>Add</strong></button>
+                <h5 class="card-text">A History of Magic <br><br></h5>
+                <button id="historyofmagic" type="button" class="btn btn-sm"><strong>Add</strong></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        
+        <div class="row">
+          <div class="col-md-3 col-sm-6 col-xs-12 mt-3">
+            <div class="card bg-dark pt-2">
+              <img src="/img/books/transfig.png" style="max-height:200px;  object-fit: contain;" class="card-img-top" alt="A Beginner's Guide to Transfiguration">
+              <div class="card-body bg-dark">
+                <h5 class="card-text">A Beginner's Guide to Transfiguration</h5>
+                <button id="transfig" type="button" class="btn btn-sm"><strong>Add</strong></button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12 mt-3">
+            <div class="card bg-dark pt-2">
+              <img src="/img/books/potions.png" style="max-height:200px;  object-fit: contain;" class="card-img-top" alt="Advanced Potion-Making">
+              <div class="card-body bg-dark">
+                <h5 class="card-text">Advanced Potion-Making<br><br></h5>
+                <button id="potions" type="button" class="btn btn-sm"><strong>Add</strong></button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12 mt-3">
+            <div class="card bg-dark pt-2">
+              <img src="/img/books/magicaltheory.png" style="max-height:200px;  object-fit: contain;" class="card-img-top" alt="Magical Theory">
+              <div class="card-body bg-dark">
+                <h5 class="card-text">Magical Theory<br><br></h5>
+                <button id="magicaltheory" type="button" class="btn btn-sm"><strong>Add</strong></button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12 mt-3">
+            <div class="card bg-dark pt-2">
+              <img src="/img/books/standardspells.png" style="max-height:200px;  object-fit: contain;" class="card-img-top" alt="Standard Book of Spells">
+              <div class="card-body bg-dark">
+                <h5 class="card-text">The Standard Book of Spells</h5>
+                <button id="standardspells" type="button" class="btn btn-sm"><strong>Add</strong></button>
               </div>
             </div>
           </div>
@@ -110,6 +150,34 @@
               $("#submitBooksForm").removeAttr('disabled');
               $("#historyofmagic").attr("disabled", "disabled");
               $("#historyofmagic").text("Added");
+            });
+            $("#transfig").click(function () {
+              let currentValue = $("#booksString").val() + "/img/books/transfig.png,";
+              $("#booksString").val(currentValue);
+              $("#submitBooksForm").removeAttr('disabled');
+              $("#transfig").attr("disabled", "disabled");
+              $("#transfig").text("Added");
+            });
+            $("#potions").click(function () {
+              let currentValue = $("#booksString").val() + "/img/books/potions.png,";
+              $("#booksString").val(currentValue);
+              $("#submitBooksForm").removeAttr('disabled');
+              $("#potions").attr("disabled", "disabled");
+              $("#potions").text("Added");
+            });
+            $("#standardspells").click(function () {
+              let currentValue = $("#booksString").val() + "/img/books/standardspells.png,";
+              $("#booksString").val(currentValue);
+              $("#submitBooksForm").removeAttr('disabled');
+              $("#standardspells").attr("disabled", "disabled");
+              $("#standardspells").text("Added");
+            });
+            $("#magicaltheory").click(function () {
+              let currentValue = $("#booksString").val() + "/img/books/magicaltheory.png,";
+              $("#booksString").val(currentValue);
+              $("#submitBooksForm").removeAttr('disabled');
+              $("#magicaltheory").attr("disabled", "disabled");
+              $("#magicaltheory").text("Added");
             });
           </script>
         </div>

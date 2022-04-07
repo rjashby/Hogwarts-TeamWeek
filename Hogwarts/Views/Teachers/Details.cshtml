@@ -3,9 +3,13 @@
 }
 
 @model Hogwarts.Models.Teacher
-
-<h2>Professor Details</h2>
-<h4>First Name: @Html.DisplayFor(model => model.FirstName)</h4>
-<h4>Last Name: @Html.DisplayFor(model => model.LastName)</h4>
-<h4>House: @Html.DisplayFor(model => model.House)</h4>
-<h4>Course Taught: @Html.DisplayFor(model => model.CourseName)</h4>
+<div class="container bg-dark p-5 border rounded-3 text-center">
+  <h1 class="display-1" style="margin-top: 6rem!important;">@Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName)</h1>
+  <img src="../..@Model.HeadshotPhotoURL" alt="@Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName)">
+  @if (@Model.House != null)
+  {
+    <h2 class="mt-5">House: @Html.DisplayFor(model => model.House)</h2>
+  }
+  <h2 class="mt-5">@Html.DisplayFor(model => model.CourseName)</h2>
+  <a href="/Teachers"><button type="button" class="btn px-5 pt-2 text-dark fs-3 mt-4">TEACHER LIST</button></a>
+</div>

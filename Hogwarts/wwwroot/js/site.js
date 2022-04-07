@@ -96,3 +96,7 @@ $("document").ready(function () {
   $("img[usemap]").rwdImageMaps();
   $("img[usemap]").addClass("done");
 });
+
+$("#home-button").on("click", function() {
+  playHedwig();
+});

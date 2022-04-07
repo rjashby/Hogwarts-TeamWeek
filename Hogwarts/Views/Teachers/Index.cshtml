@@ -8,21 +8,21 @@
   <h1 class="display-1" style="margin-top: 6rem!important;">Hogwarts Teachers</h1>
   @foreach (Teacher teacher in @Model)
   {
-    <div class="card my-5 p-5 bg-dark bg-gradient border rounded shadow-sm">
-
-      <div class="card bg-dark text-white">
-        <img src="../@teacher.HeadshotPhotoURL" class="card-img" alt="photo of @teacher.FirstName @teacher.LastName">
-        <div class="card-img-overlay text-center">
-          <h1 class="card-title">@teacher.FirstName @teacher.LastName</h1>
-          @if (@teacher.House != null)
-          {
-            <h3>Head of @teacher.House</h3>
-          }
-
+    <a href="/Teachers/Details/@teacher.TeacherId">
+      <div class="card my-5 p-5 bg-dark bg-gradient border rounded shadow-sm">
+        <div class="card bg-dark text-white" >
+          <div class="card-header text-center">
+              <h1 class="card-title">@teacher.FirstName @teacher.LastName</h1>
+              @if (@teacher.House != null)
+              {
+                <h3>Head of @teacher.House</h3>
+              }
+              <h3>Course: @teacher.CourseName</h3>
+          </div>
+          <img src="../@teacher.HeadshotPhotoURL" class="card-img" alt="photo of @teacher.FirstName @teacher.LastName" style="max-height:300px; object-fit: contain;">
         </div>
       </div>
-      <h6>@Html.ActionLink("Professor Details", "Details", new { id = teacher.TeacherId })<h6>
-    </div>
+    </a>
 
   }
 </div>

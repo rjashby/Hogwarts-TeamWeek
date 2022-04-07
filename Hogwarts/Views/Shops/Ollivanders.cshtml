@@ -1,7 +1,15 @@
 <div id="ollivanders" class="full-size">
-  <audio autoplay controls hidden>
+  <div id="wand" class="video">
+    <video src="..\video\OllivanderSlide.mp4" autoplay></video>
+    <script>
+      $('#wand video').bind('ended', function(){
+      $(this).parent().fadeOut();
+      });
+    </script>
+  </div>
+  <!-- <audio autoplay controls hidden>
     <source src="~/audio/shopdoor.mp3" type="audio/mp3">
-  </audio>
+  </audio> -->
   <audio id="register">
     <source src="~/audio/cashreg.wav" type="audio/mp3">
   </audio>
@@ -18,17 +26,19 @@
     </div>
     @if (ViewBag.Student.Wand != null)
     {
-
       <div class="row" id="wandAndDesc">
-        <div class="col-sm-6 col-xs-12 text-end">
+        <div class="col-sm-3 col-xs-12"></div>
+        <div class="col-sm-3 col-xs-12 text-end">
           <img src="@ViewBag.Student.WandURL" alt="my wand">
         </div>
-        <div class="col-sm-6 col-xs-12 pt-5">
+        <div class="col-sm-3 col-xs-12 pt-5">
           <h2>@ViewBag.Student.Wand</h2>
         </div>
+        <div class="col-sm-3 col-xs-12"></div>
       </div>
-      <h3 class="text-center mt-3" id="aleadyHaveToolsText">If you'd like, you may select different wand.</h3>
-      <button id="showShop" type="button" class="btn px-5 pt-2 text-dark fs-3 mt-4">SELECT NEW?</button>
+      <h3 class="text-center mt-3" id="aleadyHaveToolsText">If you'd like, you may select a different wand.</h3>
+      <button id="showShop" type="button" class="btn px-5 pt-2 text-dark fs-3 mt-4">SELECT NEW</button>
+      <a href="/Shops" id="navigateToAlley" ><button type="button" class="btn px-5 pt-2 text-dark fs-3 ms-3 mt-4">No</button></a>
       <script>
         $("#showShop").click(function () {
           $("#displayShop").removeClass("d-none");
@@ -36,6 +46,7 @@
           $("#wandAndDesc").hide();
           $("#aleadyHaveToolsText").hide();
           $("#aleadyHaveTools").hide();
+          $("#navigateToAlley").hide();
         });
 
       </script>
