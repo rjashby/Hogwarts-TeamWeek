@@ -1,6 +1,6 @@
-<h1 align="center">Hogwarts</h1> 
+<h1 align="center">Hogwarts</h1>
 
-#### By _**Ryan Ashby, Liam Eller, Daniel Lindsay, Anastasiia Riabets, and Sarah Espinet**_ 
+#### By _**Ryan Ashby, Liam Eller, Daniel Lindsey, Anastasiia Riabets, and Sarah Espinet**_ 
 
 #### _This application serves as a portal for new Hogwarts students to be accepted into the school, buy supplies, get sorted into the respective houses, and explore their common room._
 
@@ -116,12 +116,12 @@ _The entirety of the application will be subject to login authorization via Iden
 
 ### License
 
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT). Copyright (C) 2022 Ryan Ashby, Liam Eller, Daniel Lindsay, Anastasiia Riabets, and Sarah Espinet. All Rights Reserved.
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT). Copyright (C) 2022 Ryan Ashby, Liam Eller, Daniel Lindsey, Anastasiia Riabets, and Sarah Espinet. All Rights Reserved.
 
 ```
 MIT License
 
-Copyright (c) 2022 Ryan Ashby, Liam Eller, Daniel Lindsay, Anastasiia Riabets, and Sarah Espinet.
+Copyright (c) 2022 Ryan Ashby, Liam Eller, Daniel Lindsey, Anastasiia Riabets, and Sarah Espinet.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and 
 associated documentation files (the "Software"), to deal in the Software without restriction, including 

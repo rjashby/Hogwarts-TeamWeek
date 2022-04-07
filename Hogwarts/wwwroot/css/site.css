@@ -110,6 +110,7 @@ html {
 
 #the-great-hall {
   background-image: url("../img/greathall.png");
+  background-size: cover;
 }
 
 #account {
