@@ -12,18 +12,5 @@ namespace Hogwarts.Models
     {
       optionsBuilder.UseLazyLoadingProxies();
     }
-    
-    // protected override void OnModelCreating(ModelBuilder builder)
-    // {
-    //   builder.Entity<Teacher>()
-    //       .HasData(
-    //         new Teacher {TeacherId = 1, Name = "Minerva McGonagall", HeadshotPhotoURL = "~/img/teachers/headshot-mcgonagall.gif"},
-    //         new Teacher {TeacherId = 2, Name = "Pomona Sprout", HeadshotPhotoURL = "~/img/teachers/headshot-sprout.gif"},
-    //         new Teacher {TeacherId = 3, Name = "Severus Snape", HeadshotPhotoURL = "~/img/teachers/headshot-snape.gif"},
-    //         new Teacher {TeacherId = 4, Name = "Horace Slughorn", HeadshotPhotoURL = "~/img/teachers/headshot-slughorn.gif"}
-    //       );
-    // }
-          
-
   }
 }

@@ -1,4 +1,4 @@
-# _Howarts_ 
+<h1 align="center">Hogwarts</h1> 
 
 #### By _**Ryan Ashby, Liam Eller, Daniel Lindsay, Anastasiia Riabets, and Sarah Espinet**_ 
 
