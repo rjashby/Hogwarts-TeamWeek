@@ -1,5 +1,7 @@
 <h1 align="center">Hogwarts</h1> 
 
+![Hogwarts Castle](https://static.onecms.io/wp-content/uploads/sites/6/2018/07/hogwarts1-2000.jpg)
+
 #### By _**Ryan Ashby, Liam Eller, Daniel Lindsay, Anastasiia Riabets, and Sarah Espinet**_ 
 
 #### _This application serves as a portal for new Hogwarts students to be accepted into the school, buy supplies, get sorted into the respective houses, and explore their common room._
